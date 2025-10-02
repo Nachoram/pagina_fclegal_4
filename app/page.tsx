@@ -94,14 +94,12 @@ export default function CFLegalPage() {
   const [hoveredMember, setHoveredMember] = useState<string | null>(null)
 
   useEffect(() => {
-    // Hide splash screen after 2 seconds
     const timer = setTimeout(() => {
       setShowLogo(false)
-    }, 2000)
+    }, 3000)
 
-    // Handle scroll for fixed header
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
+      setScrolled(window.scrollY > 100)
     }
 
     window.addEventListener("scroll", handleScroll)
@@ -115,7 +113,7 @@ export default function CFLegalPage() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id)
     if (element) {
-      const offset = 80 // Height of fixed header
+      const offset = 80
       const elementPosition = element.getBoundingClientRect().top
       const offsetPosition = elementPosition + window.pageYOffset - offset
 
@@ -128,39 +126,44 @@ export default function CFLegalPage() {
 
   if (showLogo) {
     return (
-      <div className="fixed inset-0 z-50 flex items-center justify-center bg-cf-dark-gray animate-fade-in">
-        <div className="animate-fade-out">
-          <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo%20-VgZn2an7wzNpqvKuR31shACLygdT1E.png"
-            alt="CF Legal"
-            width={400}
-            height={120}
-            className="w-auto h-24"
-          />
-        </div>
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#4A5568]">
+        <Image
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo%20-VgZn2an7wzNpqvKuR31shACLygdT1E.png"
+          alt="CF Legal"
+          width={400}
+          height={120}
+          className="w-auto h-24"
+        />
       </div>
     )
   }
 
   return (
     <div className="min-h-screen bg-white font-sans">
-      {/* Fixed Header */}
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
           scrolled ? "bg-white shadow-md" : "bg-transparent"
         }`}
       >
-        <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center">
+        <div className="container mx-auto px-8 py-5 flex items-center justify-between">
+          <div
+            className={`flex items-center transition-all duration-500 ${
+              scrolled ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8 pointer-events-none"
+            }`}
+          >
             <Image
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo%20-VgZn2an7wzNpqvKuR31shACLygdT1E.png"
               alt="CF Legal"
-              width={180}
-              height={54}
-              className={`transition-all duration-300 ${scrolled ? "h-12 w-auto" : "h-14 w-auto"}`}
+              width={200}
+              height={60}
+              className="h-14 w-auto"
             />
           </div>
-          <nav className="hidden md:flex items-center gap-8">
+          <nav
+            className={`hidden md:flex items-center gap-10 transition-all duration-500 ${
+              scrolled ? "ml-auto" : "mx-auto"
+            }`}
+          >
             {["Nosotros", "Áreas de Práctica", "Equipo", "Contacto"].map((item) => (
               <button
                 key={item}
@@ -173,7 +176,7 @@ export default function CFLegalPage() {
                       .replace(/[\u0300-\u036f]/g, ""),
                   )
                 }
-                className={`font-raleway font-medium transition-colors duration-200 ${
+                className={`font-raleway font-normal text-base transition-colors duration-300 uppercase tracking-wide ${
                   scrolled ? "text-cf-dark-gray hover:text-cf-burgundy" : "text-white hover:text-cf-burgundy"
                 }`}
               >
@@ -184,23 +187,16 @@ export default function CFLegalPage() {
         </div>
       </header>
 
-      {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center">
         <div className="absolute inset-0 z-0">
-          <Image src="/modern-corporate-office-building-professional.jpg" alt="CF Legal Hero" fill className="object-cover" priority />
-          <div className="absolute inset-0 bg-cf-dark-gray/60" />
-        </div>
-        <div className="relative z-10 text-center text-white px-6">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo%20-VgZn2an7wzNpqvKuR31shACLygdT1E.png"
-            alt="CF Legal"
-            width={500}
-            height={150}
-            className="mx-auto mb-12 w-auto h-32"
+            src="/modern-corporate-office-building-professional.jpg"
+            alt="CF Legal Hero"
+            fill
+            className="object-cover"
+            priority
           />
-          <p className="font-raleway text-xl md:text-2xl font-light max-w-2xl mx-auto">
-            Asesoría legal de excelencia para empresas y patrimonios
-          </p>
+          <div className="absolute inset-0 bg-cf-dark-gray/40" />
         </div>
       </section>
 
