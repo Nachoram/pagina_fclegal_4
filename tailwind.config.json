@@ -1,0 +1,17 @@
+{
+  "theme": {
+    "extend": {
+      "fontFamily": {
+        "raleway": ["var(--font-raleway)"],
+        "arial": ["Arial", "sans-serif"]
+      },
+      "colors": {
+        "cf-dark-gray": "#0F1822",
+        "cf-blue": "#042A3D",
+        "cf-light-gray": "#CDD4D8",
+        "cf-gray": "#808184",
+        "cf-burgundy": "#8E1927"
+      }
+    }
+  }
+}
