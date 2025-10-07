@@ -183,12 +183,13 @@ html {
   /* Prevent horizontal scrolling */
   body {
     overflow-x: hidden;
+    width: 100%;
   }
   
   /* Improve touch targets */
-  button, a {
+  button:not([aria-label="Toggle menu"]):not([data-slot="dialog-close"]), 
+  a:not([href^="mailto"]):not([href^="tel"]) {
     min-height: 44px;
-    min-width: 44px;
   }
   
   /* Better text rendering on mobile */
@@ -196,6 +197,37 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+  }
+  
+  /* Optimize images for mobile */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Improve scroll performance */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Disable pull-to-refresh in some browsers */
+  body {
+    overscroll-behavior-y: contain;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 375px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Tablet landscape */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 }
 
