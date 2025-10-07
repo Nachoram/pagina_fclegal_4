@@ -18,6 +18,19 @@ export const metadata: Metadata = {
   title: "CF Legal - Estudio Jurídico",
   description: "Asesoría legal de excelencia para empresas y patrimonios",
   generator: "v0.app",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+    userScalable: true,
+  },
+  themeColor: "#0F1822",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "CF Legal",
+  },
 }
 
 export default function RootLayout({
