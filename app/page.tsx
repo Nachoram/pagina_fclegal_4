@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
-import { Mail, Phone, Linkedin } from "lucide-react"
+import { Mail, Phone, Linkedin, Scale, Home, Briefcase, TrendingUp } from "lucide-react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 
 interface TeamMember {
@@ -38,65 +38,92 @@ const teamMembers: TeamMember[] = [
   },
   {
     id: "2",
-    name: "María Fernández",
-    title: "Asociada Senior",
-    photo: "/professional-lawyer-portrait-female.jpg",
-    photoColor: "/professional-lawyer-portrait-female-color.jpg",
-    education: [
-      "Licenciada en Derecho, Pontificia Universidad Católica",
-      "Diplomado en Derecho Corporativo, Universidad de los Andes",
-    ],
-    experience: [
-      "Asociada Senior, CF Legal (2024 - Presente)",
-      "Asociada, Estudio Corporativo (2019 - 2024)",
-      "Abogada Junior, Firma Internacional (2016 - 2019)",
-    ],
-    email: "mfernandez@cflegal.cl",
-    linkedin: "https://linkedin.com/in/mariafernandez",
-  },
-  {
-    id: "3",
-    name: "Pedro Ramírez",
+    name: "Pedro Urrestarazu",
     title: "Socio",
     photo: "/professional-lawyer-portrait-male-senior.jpg",
     photoColor: "/professional-lawyer-portrait-male-senior-color.jpg",
-    education: ["Licenciado en Derecho, Universidad de Chile", "MBA, Universidad Adolfo Ibáñez"],
+    education: [
+      "Licenciado en Derecho, Universidad de Chile",
+      "MBA, Universidad Adolfo Ibáñez",
+    ],
     experience: [
       "Socio Fundador, CF Legal (2024 - Presente)",
       "Gerente Legal, Corporación Multinacional (2017 - 2024)",
       "Asociado Senior, Estudio Tributario (2012 - 2017)",
     ],
-    email: "pramirez@cflegal.cl",
-    linkedin: "https://linkedin.com/in/pedroramirez",
+    email: "purrestarazu@cflegal.cl",
+    linkedin: "https://linkedin.com/in/pedrourrestarazu",
   },
   {
-    id: "4",
-    name: "Carolina Torres",
-    title: "Asociada",
-    photo: "/professional-lawyer-portrait-female-young.jpg",
-    photoColor: "/professional-lawyer-portrait-female-young-color.jpg",
+    id: "3",
+    name: "Mauro Inserrato",
+    title: "Socio",
+    photo: "/professional-male-lawyer.png",
+    photoColor: "/professional-lawyer-portrait-male-color.jpg",
     education: [
-      "Licenciada en Derecho, Universidad de los Andes",
-      "Diplomado en Derecho Inmobiliario, Universidad Católica",
+      "Licenciado en Derecho, Pontificia Universidad Católica",
+      "Diplomado en Derecho Corporativo, Universidad de los Andes",
     ],
-    experience: ["Asociada, CF Legal (2023 - Presente)", "Abogada Junior, Estudio Inmobiliario (2020 - 2023)"],
-    email: "ctorres@cflegal.cl",
-    linkedin: "https://linkedin.com/in/carolinatorres",
+    experience: [
+      "Socio Fundador, CF Legal (2024 - Presente)",
+      "Asociado, Estudio Corporativo (2019 - 2024)",
+      "Abogado Junior, Firma Internacional (2016 - 2019)",
+    ],
+    email: "minserrato@cflegal.cl",
+    linkedin: "https://linkedin.com/in/mauroinserrato",
   },
 ]
 
-const practiceAreas = ["Derecho Tributario", "Gestión de Patrimonio", "Derecho Corporativo", "Derecho Inmobiliario"]
+const practiceAreas = [
+  {
+    name: "Derecho Tributario",
+    icon: Scale,
+    description: "Asesoría integral en materia tributaria y fiscal",
+    details: "Planificación tributaria, defensa ante el SII, estructuración de inversiones, compliance fiscal y optimización de carga tributaria para personas y empresas."
+  },
+  {
+    name: "Gestión de Patrimonio",
+    icon: TrendingUp,
+    description: "Planificación y protección patrimonial estratégica",
+    details: "Estructuración patrimonial, sucesiones, fideicomisos, planificación hereditaria y estrategias de protección de activos para familias y empresas."
+  },
+  {
+    name: "Derecho Corporativo",
+    icon: Briefcase,
+    description: "Soluciones legales para empresas y sociedades",
+    details: "Constitución de sociedades, fusiones y adquisiciones, reestructuraciones corporativas, gobierno corporativo y asesoría en operaciones comerciales complejas."
+  },
+  {
+    name: "Derecho Inmobiliario",
+    icon: Home,
+    description: "Asesoría especializada en transacciones inmobiliarias",
+    details: "Compraventa de propiedades, due diligence inmobiliario, contratos de arriendo, desarrollo de proyectos y resolución de conflictos en materia inmobiliaria."
+  }
+]
 
 export default function CFLegalPage() {
   const [showLogo, setShowLogo] = useState(true)
+  const [logoVisible, setLogoVisible] = useState(false)
+  const [logoFading, setLogoFading] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null)
   const [hoveredMember, setHoveredMember] = useState<string | null>(null)
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowLogo(false)
+    // Fade in
+    const showTimer = setTimeout(() => {
+      setLogoVisible(true)
+    }, 100)
+
+    // Fade out
+    const fadeTimer = setTimeout(() => {
+      setLogoFading(true)
     }, 3000)
+
+    // Hide completely
+    const hideTimer = setTimeout(() => {
+      setShowLogo(false)
+    }, 4500)
 
     const handleScroll = () => {
       setScrolled(window.scrollY > 100)
@@ -105,7 +132,9 @@ export default function CFLegalPage() {
     window.addEventListener("scroll", handleScroll)
 
     return () => {
-      clearTimeout(timer)
+      clearTimeout(showTimer)
+      clearTimeout(fadeTimer)
+      clearTimeout(hideTimer)
       window.removeEventListener("scroll", handleScroll)
     }
   }, [])
@@ -126,13 +155,18 @@ export default function CFLegalPage() {
 
   if (showLogo) {
     return (
-      <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#4A5568]">
+      <div className={`fixed inset-0 z-50 flex items-center justify-center bg-[#CDD4D8] transition-opacity duration-[1500ms] ease-in-out ${
+        logoFading ? 'opacity-0' : logoVisible ? 'opacity-100' : 'opacity-0'
+      }`}>
         <Image
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo%20-VgZn2an7wzNpqvKuR31shACLygdT1E.png"
+          src="/cf-legal-logo-horizontal.png"
           alt="CF Legal"
           width={400}
           height={120}
-          className="w-auto h-24"
+          className={`w-auto h-[432px] transition-all duration-[1500ms] ease-in-out ${
+            logoFading ? 'opacity-0 scale-90' : logoVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+          }`}
+          priority
         />
       </div>
     )
@@ -145,25 +179,19 @@ export default function CFLegalPage() {
           scrolled ? "bg-white shadow-md" : "bg-transparent"
         }`}
       >
-        <div className="container mx-auto px-8 py-5 flex items-center justify-between">
-          <div
-            className={`flex items-center transition-all duration-500 ${
-              scrolled ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8 pointer-events-none"
-            }`}
-          >
+        <div className="w-[80%] mx-auto px-4 py-[5px] flex items-center justify-between">
+          <div className="flex items-center ml-0">
             <Image
               src="/cf-legal-logo-horizontal.png"
               alt="CF Legal"
-              width={540}
-              height={150}
-              className="h-32 w-auto"
+              width={216}
+              height={60}
+              className={`h-[77px] w-auto origin-left transition-all duration-500 ${
+                scrolled ? "scale-[1.95] opacity-100" : "scale-0 opacity-0"
+              }`}
             />
           </div>
-          <nav
-            className={`hidden md:flex items-center gap-10 transition-all duration-500 ${
-              scrolled ? "ml-auto" : "mx-auto"
-            }`}
-          >
+          <nav className="hidden md:flex items-center gap-4 ml-auto mr-[1cm]">
             {["Nosotros", "Áreas de Práctica", "Equipo", "Contacto"].map((item) => (
               <button
                 key={item}
@@ -176,8 +204,8 @@ export default function CFLegalPage() {
                       .replace(/[\u0300-\u036f]/g, ""),
                   )
                 }
-                className={`font-raleway font-normal text-base transition-colors duration-300 uppercase tracking-wide ${
-                  scrolled ? "text-cf-dark-gray hover:text-cf-burgundy" : "text-white hover:text-cf-burgundy"
+                className={`font-raleway font-normal text-sm transition-colors duration-300 uppercase tracking-wide ${
+                  scrolled ? "text-[#0F1822] hover:text-cf-burgundy" : "text-white hover:text-cf-burgundy"
                 }`}
               >
                 {item}
@@ -187,7 +215,7 @@ export default function CFLegalPage() {
         </div>
       </header>
 
-      <section className="relative h-screen flex items-center justify-center">
+      <section className="relative h-[60vh] flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <Image
             src="/modern-corporate-office-building-professional.jpg"
@@ -202,24 +230,17 @@ export default function CFLegalPage() {
           <Image
             src="/cf-legal-slash-logo.png"
             alt="CF Legal"
-            width={200}
-            height={300}
-            className="w-auto h-64 mb-8 opacity-90"
+            width={240}
+            height={360}
+            className="w-auto h-[430px] mb-8 opacity-90"
           />
-          <h1 className="font-raleway font-light text-5xl md:text-6xl text-white mb-6 tracking-wide">
-            Excelencia Legal
-          </h1>
-          <p className="font-arial text-xl md:text-2xl text-white/90 max-w-3xl leading-relaxed">
-            Soluciones jurídicas innovadoras con un compromiso inquebrantable hacia la excelencia y el servicio
-            personalizado
-          </p>
         </div>
       </section>
 
       {/* Nosotros Section */}
       <section id="nosotros" className="py-24 bg-white">
         <div className="container mx-auto px-6">
-          <h2 className="font-raleway font-bold text-4xl md:text-5xl text-cf-dark-gray text-center mb-16">Nosotros</h2>
+          <h2 className="font-raleway font-bold text-4xl md:text-5xl text-[#042A3D] text-center mb-16">Nosotros</h2>
           <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
             <div className="space-y-4">
               <p className="font-arial text-lg text-cf-gray leading-relaxed">
@@ -244,20 +265,46 @@ export default function CFLegalPage() {
       {/* Áreas de Práctica Section */}
       <section id="areas-de-practica" className="py-24 bg-cf-light-gray">
         <div className="container mx-auto px-6">
-          <h2 className="font-raleway font-bold text-4xl md:text-5xl text-cf-dark-gray text-center mb-16">
+          <h2 className="font-raleway font-bold text-4xl md:text-5xl text-[#042A3D] text-center mb-16">
             Áreas de Práctica
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-            {practiceAreas.map((area, index) => (
-              <div
-                key={index}
-                className="group relative overflow-hidden bg-white rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 p-8 flex items-center justify-center min-h-[200px] border-t-4 border-cf-burgundy"
-              >
-                <h3 className="font-raleway font-semibold text-xl text-cf-dark-gray text-center group-hover:text-cf-burgundy transition-colors duration-300">
-                  {area}
-                </h3>
-              </div>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+            {practiceAreas.map((area, index) => {
+              const IconComponent = area.icon
+              return (
+                <div
+                  key={index}
+                  className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 flex flex-col items-center justify-center min-h-[280px] transform hover:-translate-y-2"
+                  style={{ backgroundColor: '#CDD4D8' }}
+                >
+                  {/* Contenido normal */}
+                  <div className="transition-opacity duration-300 group-hover:opacity-0 flex flex-col items-center">
+                    <div className="mb-6 p-4 rounded-full bg-white/60 transition-all duration-300">
+                      <IconComponent className="w-12 h-12 text-cf-burgundy transition-colors duration-300" />
+                    </div>
+                    <h3 className="font-raleway font-bold text-xl text-[#0F1822] text-center mb-3 transition-colors duration-300">
+                      {area.name}
+                    </h3>
+                    <p className="font-arial text-sm text-cf-gray text-center leading-relaxed opacity-90">
+                      {area.description}
+                    </p>
+                  </div>
+
+                  {/* Contenido hover */}
+                  <div className="absolute inset-0 p-8 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="mb-4 p-4 rounded-full bg-cf-burgundy">
+                      <IconComponent className="w-12 h-12 text-white" />
+                    </div>
+                    <h3 className="font-raleway font-bold text-xl text-cf-burgundy text-center mb-4">
+                      {area.name}
+                    </h3>
+                    <p className="font-arial text-sm text-[#0F1822] text-center leading-relaxed">
+                      {area.details}
+                    </p>
+                  </div>
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -265,10 +312,10 @@ export default function CFLegalPage() {
       {/* Equipo Section */}
       <section id="equipo" className="py-24 bg-white">
         <div className="container mx-auto px-6">
-          <h2 className="font-raleway font-bold text-4xl md:text-5xl text-cf-dark-gray text-center mb-16">
+          <h2 className="font-raleway font-bold text-4xl md:text-5xl text-[#042A3D] text-center mb-16">
             Nuestro Equipo
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
             {teamMembers.map((member) => (
               <div
                 key={member.id}
@@ -295,7 +342,7 @@ export default function CFLegalPage() {
                 <div className="text-center">
                   <h3
                     className={`font-raleway font-semibold text-xl mb-2 transition-colors duration-300 ${
-                      hoveredMember === member.id ? "text-cf-burgundy" : "text-cf-dark-gray"
+                      hoveredMember === member.id ? "text-cf-burgundy" : "text-[#0F1822]"
                     }`}
                   >
                     {member.name}
@@ -328,12 +375,12 @@ export default function CFLegalPage() {
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-raleway font-bold text-3xl text-cf-dark-gray mb-2">{selectedMember.name}</h3>
+                  <h3 className="font-raleway font-bold text-3xl text-[#0F1822] mb-2">{selectedMember.name}</h3>
                   <p className="font-arial text-lg text-cf-gray mb-6">{selectedMember.title}</p>
 
                   <div className="space-y-6">
                     <div>
-                      <h4 className="font-raleway font-semibold text-xl text-cf-dark-gray mb-3">Educación</h4>
+                      <h4 className="font-raleway font-semibold text-xl text-[#0F1822] mb-3">Educación</h4>
                       <ul className="space-y-2">
                         {selectedMember.education.map((edu, index) => (
                           <li key={index} className="font-arial text-cf-gray leading-relaxed">
@@ -344,7 +391,7 @@ export default function CFLegalPage() {
                     </div>
 
                     <div>
-                      <h4 className="font-raleway font-semibold text-xl text-cf-dark-gray mb-3">
+                      <h4 className="font-raleway font-semibold text-xl text-[#0F1822] mb-3">
                         Experiencia Profesional
                       </h4>
                       <ul className="space-y-2">
@@ -383,7 +430,7 @@ export default function CFLegalPage() {
       {/* Contacto Section */}
       <section id="contacto" className="py-24 bg-cf-dark-gray text-white">
         <div className="container mx-auto px-6">
-          <h2 className="font-raleway font-bold text-4xl md:text-5xl text-center mb-16">Sigamos en Contacto</h2>
+          <h2 className="font-raleway font-bold text-4xl md:text-5xl text-white text-center mb-16">Sigamos en Contacto</h2>
           <div className="max-w-2xl mx-auto text-center space-y-8">
             <div className="flex flex-col md:flex-row items-center justify-center gap-8">
               <a
