@@ -165,12 +165,44 @@
   }
 }
 
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
 .animate-fade-in {
   animation: fade-in 0.5s ease-in;
 }
 
 .animate-fade-out {
   animation: fade-out 2s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.6s ease-out;
+}
+
+/* Backdrop blur support */
+@supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)) {
+  .backdrop-blur-custom {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
 }
 
 /* Smooth scrolling */
@@ -224,6 +256,16 @@ body {
   /* Disable pull-to-refresh in some browsers */
   body {
     overscroll-behavior-y: contain;
+  }
+  
+  /* Enhance tap highlighting */
+  button, a {
+    -webkit-tap-highlight-color: rgba(142, 25, 39, 0.15);
+  }
+  
+  /* Smooth momentum scrolling */
+  section {
+    scroll-behavior: smooth;
   }
 }
 
