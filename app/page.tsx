@@ -152,11 +152,11 @@ export default function CFLegalPage() {
             }`}
           >
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo%20-VgZn2an7wzNpqvKuR31shACLygdT1E.png"
+              src="/cf-legal-logo-horizontal.png"
               alt="CF Legal"
-              width={200}
-              height={60}
-              className="h-14 w-auto"
+              width={540}
+              height={150}
+              className="h-32 w-auto"
             />
           </div>
           <nav
@@ -197,6 +197,22 @@ export default function CFLegalPage() {
             priority
           />
           <div className="absolute inset-0 bg-cf-dark-gray/40" />
+        </div>
+        <div className="relative z-10 flex flex-col items-center justify-center text-center px-6">
+          <Image
+            src="/cf-legal-slash-logo.png"
+            alt="CF Legal"
+            width={200}
+            height={300}
+            className="w-auto h-64 mb-8 opacity-90"
+          />
+          <h1 className="font-raleway font-light text-5xl md:text-6xl text-white mb-6 tracking-wide">
+            Excelencia Legal
+          </h1>
+          <p className="font-arial text-xl md:text-2xl text-white/90 max-w-3xl leading-relaxed">
+            Soluciones jurídicas innovadoras con un compromiso inquebrantable hacia la excelencia y el servicio
+            personalizado
+          </p>
         </div>
       </section>
 
@@ -404,13 +420,7 @@ export default function CFLegalPage() {
       <footer className="bg-cf-dark-gray border-t border-cf-gray/20 py-8">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo%20-VgZn2an7wzNpqvKuR31shACLygdT1E.png"
-              alt="CF Legal"
-              width={150}
-              height={45}
-              className="w-auto h-10"
-            />
+            <Image src="/cf-legal-logo-horizontal.png" alt="CF Legal" width={150} height={45} className="w-auto h-10" />
             <p className="font-arial text-cf-light-gray text-sm">
               © {new Date().getFullYear()} CF Legal. Todos los derechos reservados.
             </p>
