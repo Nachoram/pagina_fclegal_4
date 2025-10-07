@@ -178,7 +178,7 @@ export default function CFLegalPage() {
             alt="CF Legal"
             width={400}
             height={120}
-            className={`w-auto h-[29px] xs:h-[38px] sm:h-[63px] md:h-[105px] lg:h-[147px] max-w-[65vw] transition-all duration-[1500ms] ease-in-out ${
+            className={`w-auto h-[20px] xs:h-[27px] sm:h-[44px] md:h-[74px] lg:h-[103px] max-w-[60vw] transition-all duration-[1500ms] ease-in-out ${
               logoFading ? 'opacity-0 scale-90' : logoVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}
             priority
@@ -195,14 +195,14 @@ export default function CFLegalPage() {
           scrolled ? "bg-white shadow-md" : "bg-transparent"
         }`}
       >
-        <div className="w-full md:w-[80%] mx-auto px-4 sm:px-6 md:px-4 py-1 sm:py-1.5 md:py-[5px] flex items-center justify-between max-w-[100vw]">
+        <div className="w-full md:w-[80%] mx-auto px-4 sm:px-6 md:px-4 py-3 sm:py-4 md:py-[5px] flex items-center justify-between max-w-[100vw]">
           <div className="flex items-center min-w-0 flex-shrink">
             <Image
               src="/cf-legal-logo-horizontal.png"
               alt="CF Legal"
               width={216}
               height={60}
-              className={`h-[10px] sm:h-[13px] md:h-[77px] w-auto origin-left transition-all duration-500 ${
+              className={`h-[7px] sm:h-[9px] md:h-[77px] w-auto origin-left transition-all duration-500 ${
                 scrolled ? "scale-100 sm:scale-105 md:scale-[1.95] opacity-100" : "scale-0 opacity-0"
               }`}
               priority
@@ -234,14 +234,14 @@ export default function CFLegalPage() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-1.5 sm:p-2 z-50 rounded-md transition-colors active:scale-95 flex-shrink-0"
+            className="md:hidden p-2 sm:p-2.5 z-50 rounded-md transition-colors active:scale-95 flex-shrink-0 min-h-[44px] min-w-[44px] flex items-center justify-center"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
-              <X className="w-6 h-6 sm:w-7 sm:h-7 text-[#0F1822]" />
+              <X className="w-7 h-7 sm:w-8 sm:h-8 text-[#0F1822]" />
             ) : (
-              <Menu className="w-6 h-6 sm:w-7 sm:h-7 text-[#0F1822]" />
+              <Menu className="w-7 h-7 sm:w-8 sm:h-8 text-[#0F1822]" />
             )}
           </button>
         </div>
@@ -253,7 +253,7 @@ export default function CFLegalPage() {
               className="md:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-30"
               onClick={() => setMobileMenuOpen(false)}
             />
-            <div className="md:hidden fixed top-[36px] sm:top-[40px] left-0 right-0 bg-white shadow-2xl z-40 animate-in slide-in-from-top duration-300 max-h-[calc(100vh-36px)] overflow-y-auto">
+            <div className="md:hidden fixed top-[48px] sm:top-[56px] left-0 right-0 bg-white shadow-2xl z-40 animate-in slide-in-from-top duration-300 max-h-[calc(100vh-48px)] overflow-y-auto">
               <nav className="flex flex-col py-1.5">
                 {["Nosotros", "Áreas de Práctica", "Equipo", "Contacto"].map((item, index) => (
                   <button
@@ -279,7 +279,7 @@ export default function CFLegalPage() {
         )}
       </header>
 
-      <section className="relative h-[25vh] min-h-[200px] sm:h-[35vh] md:h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[20vh] min-h-[180px] sm:h-[30vh] md:h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="/modern-corporate-office-building-professional.jpg"
@@ -296,7 +296,7 @@ export default function CFLegalPage() {
             alt="CF Legal"
             width={240}
             height={360}
-            className="w-auto h-[25px] xs:h-[34px] sm:h-[59px] md:h-[101px] lg:h-[134px] max-w-[40vw] sm:max-w-[45vw] mb-0 opacity-95"
+            className="w-auto h-[18px] xs:h-[24px] sm:h-[41px] md:h-[71px] lg:h-[94px] max-w-[35vw] sm:max-w-[40vw] mb-0 opacity-95"
             priority
           />
         </div>
