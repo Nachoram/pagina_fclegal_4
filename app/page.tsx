@@ -178,7 +178,7 @@ export default function CFLegalPage() {
             alt="CF Legal"
             width={400}
             height={120}
-            className={`w-auto h-[20px] xs:h-[27px] sm:h-[44px] md:h-[74px] lg:h-[103px] max-w-[60vw] transition-all duration-[1500ms] ease-in-out ${
+            className={`w-auto h-[4px] xs:h-[5px] sm:h-[9px] md:h-[15px] lg:h-[21px] max-w-[50vw] transition-all duration-[1500ms] ease-in-out ${
               logoFading ? 'opacity-0 scale-90' : logoVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}
             priority
@@ -202,7 +202,7 @@ export default function CFLegalPage() {
               alt="CF Legal"
               width={216}
               height={60}
-              className={`h-[7px] sm:h-[9px] md:h-[77px] w-auto origin-left transition-all duration-500 ${
+              className={`h-[1px] sm:h-[2px] md:h-[77px] w-auto origin-left transition-all duration-500 ${
                 scrolled ? "scale-100 sm:scale-105 md:scale-[1.95] opacity-100" : "scale-0 opacity-0"
               }`}
               priority
@@ -296,7 +296,7 @@ export default function CFLegalPage() {
             alt="CF Legal"
             width={240}
             height={360}
-            className="w-auto h-[18px] xs:h-[24px] sm:h-[41px] md:h-[71px] lg:h-[94px] max-w-[35vw] sm:max-w-[40vw] mb-0 opacity-95"
+            className="w-auto h-[4px] xs:h-[5px] sm:h-[8px] md:h-[14px] lg:h-[19px] max-w-[30vw] sm:max-w-[35vw] mb-0 opacity-95"
             priority
           />
         </div>
