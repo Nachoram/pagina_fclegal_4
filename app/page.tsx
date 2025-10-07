@@ -467,7 +467,13 @@ export default function CFLegalPage() {
       <footer className="bg-cf-dark-gray border-t border-cf-gray/20 py-8">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <Image src="/cf-legal-logo-horizontal.png" alt="CF Legal" width={150} height={45} className="w-auto h-10" />
+            <Image 
+              src="/cf-legal-logo-horizontal.png" 
+              alt="CF Legal" 
+              width={150} 
+              height={45} 
+              className="w-auto h-10 brightness-0 invert" 
+            />
             <p className="font-arial text-cf-light-gray text-sm">
               © {new Date().getFullYear()} CF Legal. Todos los derechos reservados.
             </p>
