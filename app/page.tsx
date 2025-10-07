@@ -178,7 +178,7 @@ export default function CFLegalPage() {
             alt="CF Legal"
             width={400}
             height={120}
-            className={`w-auto h-[100px] xs:h-[130px] sm:h-[200px] md:h-[280px] lg:h-[380px] max-w-[80vw] transition-all duration-[1500ms] ease-in-out ${
+            className={`w-auto h-[70px] xs:h-[90px] sm:h-[150px] md:h-[250px] lg:h-[350px] max-w-[75vw] transition-all duration-[1500ms] ease-in-out ${
               logoFading ? 'opacity-0 scale-90' : logoVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}
             priority
@@ -195,14 +195,14 @@ export default function CFLegalPage() {
           scrolled ? "bg-white shadow-md" : "bg-transparent"
         }`}
       >
-        <div className="w-full md:w-[80%] mx-auto px-4 sm:px-6 md:px-4 py-2.5 sm:py-3 md:py-[5px] flex items-center justify-between max-w-[100vw]">
+        <div className="w-full md:w-[80%] mx-auto px-4 sm:px-6 md:px-4 py-2 sm:py-2.5 md:py-[5px] flex items-center justify-between max-w-[100vw]">
           <div className="flex items-center min-w-0 flex-shrink">
             <Image
               src="/cf-legal-logo-horizontal.png"
               alt="CF Legal"
               width={216}
               height={60}
-              className={`h-[28px] sm:h-[38px] md:h-[77px] w-auto origin-left transition-all duration-500 ${
+              className={`h-[24px] sm:h-[32px] md:h-[77px] w-auto origin-left transition-all duration-500 ${
                 scrolled ? "scale-100 sm:scale-105 md:scale-[1.95] opacity-100" : "scale-0 opacity-0"
               }`}
               priority
@@ -253,7 +253,7 @@ export default function CFLegalPage() {
               className="md:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-30"
               onClick={() => setMobileMenuOpen(false)}
             />
-            <div className="md:hidden fixed top-[50px] sm:top-[58px] left-0 right-0 bg-white shadow-2xl z-40 animate-in slide-in-from-top duration-300 max-h-[calc(100vh-50px)] overflow-y-auto">
+            <div className="md:hidden fixed top-[44px] sm:top-[50px] left-0 right-0 bg-white shadow-2xl z-40 animate-in slide-in-from-top duration-300 max-h-[calc(100vh-44px)] overflow-y-auto">
               <nav className="flex flex-col py-1.5">
                 {["Nosotros", "Áreas de Práctica", "Equipo", "Contacto"].map((item, index) => (
                   <button
@@ -279,7 +279,7 @@ export default function CFLegalPage() {
         )}
       </header>
 
-      <section className="relative h-[40vh] min-h-[300px] sm:h-[50vh] md:h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[35vh] min-h-[250px] sm:h-[45vh] md:h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="/modern-corporate-office-building-professional.jpg"
@@ -296,7 +296,7 @@ export default function CFLegalPage() {
             alt="CF Legal"
             width={240}
             height={360}
-            className="w-auto h-[90px] xs:h-[120px] sm:h-[180px] md:h-[280px] lg:h-[380px] max-w-[60vw] sm:max-w-[70vw] mb-0 opacity-95"
+            className="w-auto h-[60px] xs:h-[80px] sm:h-[140px] md:h-[240px] lg:h-[320px] max-w-[50vw] sm:max-w-[60vw] mb-0 opacity-95"
             priority
           />
         </div>
