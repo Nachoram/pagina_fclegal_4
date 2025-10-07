@@ -178,7 +178,7 @@ export default function CFLegalPage() {
             alt="CF Legal"
             width={400}
             height={120}
-            className={`w-auto h-[42px] xs:h-[54px] sm:h-[90px] md:h-[150px] lg:h-[210px] max-w-[70vw] transition-all duration-[1500ms] ease-in-out ${
+            className={`w-auto h-[29px] xs:h-[38px] sm:h-[63px] md:h-[105px] lg:h-[147px] max-w-[65vw] transition-all duration-[1500ms] ease-in-out ${
               logoFading ? 'opacity-0 scale-90' : logoVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}
             priority
@@ -195,14 +195,14 @@ export default function CFLegalPage() {
           scrolled ? "bg-white shadow-md" : "bg-transparent"
         }`}
       >
-        <div className="w-full md:w-[80%] mx-auto px-4 sm:px-6 md:px-4 py-1.5 sm:py-2 md:py-[5px] flex items-center justify-between max-w-[100vw]">
+        <div className="w-full md:w-[80%] mx-auto px-4 sm:px-6 md:px-4 py-1 sm:py-1.5 md:py-[5px] flex items-center justify-between max-w-[100vw]">
           <div className="flex items-center min-w-0 flex-shrink">
             <Image
               src="/cf-legal-logo-horizontal.png"
               alt="CF Legal"
               width={216}
               height={60}
-              className={`h-[14px] sm:h-[19px] md:h-[77px] w-auto origin-left transition-all duration-500 ${
+              className={`h-[10px] sm:h-[13px] md:h-[77px] w-auto origin-left transition-all duration-500 ${
                 scrolled ? "scale-100 sm:scale-105 md:scale-[1.95] opacity-100" : "scale-0 opacity-0"
               }`}
               priority
@@ -239,9 +239,9 @@ export default function CFLegalPage() {
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
-              <X className={`w-6 h-6 sm:w-7 sm:h-7 ${scrolled || mobileMenuOpen ? "text-[#0F1822]" : "text-white"}`} />
+              <X className="w-6 h-6 sm:w-7 sm:h-7 text-[#0F1822]" />
             ) : (
-              <Menu className={`w-6 h-6 sm:w-7 sm:h-7 ${scrolled ? "text-[#0F1822]" : "text-white"}`} />
+              <Menu className="w-6 h-6 sm:w-7 sm:h-7 text-[#0F1822]" />
             )}
           </button>
         </div>
@@ -253,7 +253,7 @@ export default function CFLegalPage() {
               className="md:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-30"
               onClick={() => setMobileMenuOpen(false)}
             />
-            <div className="md:hidden fixed top-[40px] sm:top-[44px] left-0 right-0 bg-white shadow-2xl z-40 animate-in slide-in-from-top duration-300 max-h-[calc(100vh-40px)] overflow-y-auto">
+            <div className="md:hidden fixed top-[36px] sm:top-[40px] left-0 right-0 bg-white shadow-2xl z-40 animate-in slide-in-from-top duration-300 max-h-[calc(100vh-36px)] overflow-y-auto">
               <nav className="flex flex-col py-1.5">
                 {["Nosotros", "Áreas de Práctica", "Equipo", "Contacto"].map((item, index) => (
                   <button
@@ -279,7 +279,7 @@ export default function CFLegalPage() {
         )}
       </header>
 
-      <section className="relative h-[30vh] min-h-[220px] sm:h-[40vh] md:h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[25vh] min-h-[200px] sm:h-[35vh] md:h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="/modern-corporate-office-building-professional.jpg"
@@ -296,7 +296,7 @@ export default function CFLegalPage() {
             alt="CF Legal"
             width={240}
             height={360}
-            className="w-auto h-[36px] xs:h-[48px] sm:h-[84px] md:h-[144px] lg:h-[192px] max-w-[45vw] sm:max-w-[50vw] mb-0 opacity-95"
+            className="w-auto h-[25px] xs:h-[34px] sm:h-[59px] md:h-[101px] lg:h-[134px] max-w-[40vw] sm:max-w-[45vw] mb-0 opacity-95"
             priority
           />
         </div>
