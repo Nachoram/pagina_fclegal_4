@@ -172,13 +172,13 @@ export default function CFLegalPage() {
       <div className={`fixed inset-0 z-50 flex items-center justify-center bg-[#CDD4D8] transition-opacity duration-[1500ms] ease-in-out ${
         logoFading ? 'opacity-0' : logoVisible ? 'opacity-100' : 'opacity-0'
       }`}>
-        <div className="px-4">
+        <div className="px-6 sm:px-8">
           <Image
             src="/cf-legal-logo-horizontal.png"
             alt="CF Legal"
             width={400}
             height={120}
-            className={`w-auto h-[180px] xs:h-[220px] sm:h-[280px] md:h-[380px] lg:h-[432px] max-w-[90vw] transition-all duration-[1500ms] ease-in-out ${
+            className={`w-auto h-[140px] xs:h-[180px] sm:h-[240px] md:h-[320px] lg:h-[400px] max-w-[85vw] transition-all duration-[1500ms] ease-in-out ${
               logoFading ? 'opacity-0 scale-90' : logoVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}
             priority
@@ -195,15 +195,15 @@ export default function CFLegalPage() {
           scrolled ? "bg-white shadow-md" : "bg-transparent"
         }`}
       >
-        <div className="w-full md:w-[80%] mx-auto px-3 sm:px-4 md:px-4 py-2 md:py-[5px] flex items-center justify-between">
-          <div className="flex items-center ml-0">
+        <div className="w-full md:w-[80%] mx-auto px-4 sm:px-6 md:px-4 py-3 sm:py-3.5 md:py-[5px] flex items-center justify-between max-w-[100vw]">
+          <div className="flex items-center min-w-0 flex-shrink">
             <Image
               src="/cf-legal-logo-horizontal.png"
               alt="CF Legal"
               width={216}
               height={60}
-              className={`h-[40px] sm:h-[50px] md:h-[77px] w-auto origin-left transition-all duration-500 ${
-                scrolled ? "scale-[1.3] sm:scale-[1.5] md:scale-[1.95] opacity-100" : "scale-0 opacity-0"
+              className={`h-[35px] sm:h-[45px] md:h-[77px] w-auto origin-left transition-all duration-500 ${
+                scrolled ? "scale-100 sm:scale-110 md:scale-[1.95] opacity-100" : "scale-0 opacity-0"
               }`}
               priority
             />
@@ -234,14 +234,14 @@ export default function CFLegalPage() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 z-50 rounded-md hover:bg-white/10 transition-colors active:scale-95"
+            className="md:hidden p-1.5 sm:p-2 z-50 rounded-md transition-colors active:scale-95 flex-shrink-0"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
-              <X className={`w-7 h-7 ${scrolled || mobileMenuOpen ? "text-[#0F1822]" : "text-white"}`} />
+              <X className={`w-6 h-6 sm:w-7 sm:h-7 ${scrolled || mobileMenuOpen ? "text-[#0F1822]" : "text-white"}`} />
             ) : (
-              <Menu className={`w-7 h-7 ${scrolled ? "text-[#0F1822]" : "text-white"}`} />
+              <Menu className={`w-6 h-6 sm:w-7 sm:h-7 ${scrolled ? "text-[#0F1822]" : "text-white"}`} />
             )}
           </button>
         </div>
@@ -253,7 +253,7 @@ export default function CFLegalPage() {
               className="md:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-30"
               onClick={() => setMobileMenuOpen(false)}
             />
-            <div className="md:hidden fixed top-[60px] left-0 right-0 bg-white shadow-2xl z-40 animate-in slide-in-from-top duration-300">
+            <div className="md:hidden fixed top-[56px] sm:top-[62px] left-0 right-0 bg-white shadow-2xl z-40 animate-in slide-in-from-top duration-300 max-h-[calc(100vh-56px)] overflow-y-auto">
               <nav className="flex flex-col py-2">
                 {["Nosotros", "Áreas de Práctica", "Equipo", "Contacto"].map((item, index) => (
                   <button
@@ -267,7 +267,7 @@ export default function CFLegalPage() {
                           .replace(/[\u0300-\u036f]/g, ""),
                       )
                     }
-                    className="font-raleway font-normal text-base text-[#0F1822] hover:text-cf-burgundy hover:bg-cf-light-gray/40 active:bg-cf-light-gray/60 transition-all duration-200 uppercase tracking-wide py-4 px-6 text-left border-b border-cf-light-gray/30 last:border-b-0"
+                    className="font-raleway font-normal text-sm sm:text-base text-[#0F1822] hover:text-cf-burgundy hover:bg-cf-light-gray/40 active:bg-cf-light-gray/60 transition-all duration-200 uppercase tracking-wide py-3.5 sm:py-4 px-5 sm:px-6 text-left border-b border-cf-light-gray/30 last:border-b-0"
                     style={{ animationDelay: `${index * 50}ms` }}
                   >
                     {item}
@@ -279,7 +279,7 @@ export default function CFLegalPage() {
         )}
       </header>
 
-      <section className="relative h-[45vh] min-h-[350px] sm:h-[55vh] md:h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[40vh] min-h-[300px] sm:h-[50vh] md:h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="/modern-corporate-office-building-professional.jpg"
@@ -296,7 +296,7 @@ export default function CFLegalPage() {
             alt="CF Legal"
             width={240}
             height={360}
-            className="w-auto h-[180px] xs:h-[220px] sm:h-[280px] md:h-[380px] lg:h-[430px] max-w-[85vw] mb-0 opacity-95"
+            className="w-auto h-[120px] xs:h-[150px] sm:h-[220px] md:h-[320px] lg:h-[400px] max-w-[70vw] sm:max-w-[80vw] mb-0 opacity-95"
             priority
           />
         </div>
