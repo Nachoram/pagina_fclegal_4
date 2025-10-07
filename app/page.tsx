@@ -195,7 +195,7 @@ export default function CFLegalPage() {
           scrolled ? "bg-white shadow-md" : "bg-transparent"
         }`}
       >
-        <div className="w-full md:w-[80%] mx-auto px-4 sm:px-6 md:px-4 py-3 sm:py-4 md:py-[5px] flex items-center justify-between max-w-[100vw]">
+        <div className="w-full md:w-[80%] mx-auto px-4 sm:px-6 md:px-4 py-0.5 sm:py-1 md:py-[5px] flex items-center justify-between max-w-[100vw]">
           <div className="flex items-center min-w-0 flex-shrink">
             <Image
               src="/cf-legal-logo-horizontal.png"
@@ -253,7 +253,7 @@ export default function CFLegalPage() {
               className="md:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-30"
               onClick={() => setMobileMenuOpen(false)}
             />
-            <div className="md:hidden fixed top-[48px] sm:top-[56px] left-0 right-0 bg-white shadow-2xl z-40 animate-in slide-in-from-top duration-300 max-h-[calc(100vh-48px)] overflow-y-auto">
+            <div className="md:hidden fixed top-[8px] sm:top-[12px] left-0 right-0 bg-white shadow-2xl z-40 animate-in slide-in-from-top duration-300 max-h-[calc(100vh-8px)] overflow-y-auto">
               <nav className="flex flex-col py-1.5">
                 {["Nosotros", "Áreas de Práctica", "Equipo", "Contacto"].map((item, index) => (
                   <button
