@@ -223,7 +223,7 @@ export default function CFLegalPage() {
                       .replace(/[\u0300-\u036f]/g, ""),
                   )
                 }
-                className={`font-raleway font-normal text-sm transition-colors duration-300 uppercase tracking-wide ${
+                className={`font-medium text-sm transition-colors duration-300 uppercase tracking-wider ${
                   scrolled ? "text-[#0F1822] hover:text-cf-burgundy" : "text-white hover:text-cf-burgundy"
                 }`}
               >
@@ -291,13 +291,13 @@ export default function CFLegalPage() {
                             .replace(/[\u0300-\u036f]/g, ""),
                         )
                       }
-                      className="group flex items-center gap-4 font-raleway font-medium text-base text-white/90 hover:text-white hover:bg-white/10 active:bg-white/20 transition-all duration-200 py-4 px-4 rounded-xl text-left"
+                      className="group flex items-center gap-4 font-medium text-base text-white/90 hover:text-white hover:bg-white/10 active:bg-white/20 transition-all duration-200 py-4 px-4 rounded-xl text-left"
                       style={{ animationDelay: `${index * 50}ms` }}
                     >
                       <svg className="w-5 h-5 text-cf-burgundy group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
                       </svg>
-                      <span className="tracking-wide">{item.name}</span>
+                      <span className="tracking-wider">{item.name}</span>
                       <svg className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
@@ -365,7 +365,7 @@ export default function CFLegalPage() {
       {/* Nosotros Section */}
       <section id="nosotros" className="py-10 sm:py-14 md:py-20 lg:py-24 bg-white">
         <div className="container mx-auto px-5 sm:px-6 max-w-7xl">
-          <h2 className="font-raleway font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-brand-dark text-center mb-6 sm:mb-10 md:mb-14 lg:mb-16 leading-tight">
+          <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-brand-dark text-center mb-6 sm:mb-10 md:mb-14 lg:mb-16 leading-tight tracking-tight">
             Nosotros
           </h2>
           <div className="grid md:grid-cols-2 gap-5 sm:gap-6 md:gap-10 lg:gap-12 max-w-6xl mx-auto">
@@ -397,8 +397,8 @@ export default function CFLegalPage() {
 
         <div className="container mx-auto px-5 sm:px-6 max-w-7xl relative z-10">
           <div className="text-center mb-12 sm:mb-16 md:mb-20">
-            <p className="font-raleway text-sm sm:text-base text-brand-bordeaux font-semibold mb-3 tracking-widest uppercase">Especialidades</p>
-            <h2 className="font-raleway font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-brand-dark mb-4 leading-tight tracking-wider">
+            <p className="font-medium text-sm sm:text-base text-brand-bordeaux mb-3 tracking-wider uppercase">Especialidades</p>
+            <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-brand-dark mb-4 leading-tight tracking-tight">
               Áreas de Práctica
             </h2>
             <div className="w-20 h-1 bg-brand-bordeaux mx-auto rounded-full" />
@@ -418,7 +418,7 @@ export default function CFLegalPage() {
                         <IconComponent className="w-8 h-8 sm:w-10 sm:h-10 text-brand-bordeaux" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h3 className="font-raleway font-bold text-xl sm:text-2xl md:text-2xl text-brand-light mb-2 leading-tight group-hover:text-brand-bordeaux transition-colors">
+                        <h3 className="font-bold text-xl sm:text-2xl md:text-2xl text-brand-light mb-2 leading-tight tracking-tight group-hover:text-brand-bordeaux transition-colors">
                           {area.name}
                         </h3>
                         <p className="font-normal text-sm sm:text-base text-brand-light/80 leading-relaxed">
@@ -432,7 +432,7 @@ export default function CFLegalPage() {
                     </p>
 
                     {/* Arrow indicator on mobile */}
-                    <div className="md:hidden flex items-center justify-center mt-4 text-brand-bordeaux text-xs font-raleway font-medium">
+                    <div className="md:hidden flex items-center justify-center mt-4 text-brand-bordeaux text-xs font-medium tracking-wider">
                       <span>Toca para más info</span>
                       <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -457,8 +457,8 @@ export default function CFLegalPage() {
         
         <div className="container mx-auto px-5 sm:px-6 max-w-7xl relative z-10">
           <div className="text-center mb-12 sm:mb-16 md:mb-20">
-            <p className="font-raleway text-sm sm:text-base text-cf-burgundy font-semibold mb-3 tracking-widest uppercase">Profesionales</p>
-            <h2 className="font-raleway font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-4 leading-tight">
+            <p className="font-medium text-sm sm:text-base text-cf-burgundy mb-3 tracking-wider uppercase">Profesionales</p>
+            <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-4 leading-tight tracking-tight">
               Nuestro Equipo
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-cf-burgundy to-white mx-auto rounded-full" />
@@ -504,7 +504,7 @@ export default function CFLegalPage() {
                     </div>
                     
                     <div className="text-center">
-                      <h3 className={`font-raleway font-bold text-xl sm:text-2xl mb-2 transition-colors duration-300 leading-tight ${
+                      <h3 className={`font-bold text-xl sm:text-2xl mb-2 transition-colors duration-300 leading-tight tracking-tight ${
                         hoveredMember === member.id ? "text-cf-burgundy" : "text-white"
                       }`}>
                         {member.name}
@@ -530,7 +530,7 @@ export default function CFLegalPage() {
                         </a>
                       </div>
                       
-                      <p className="font-normal text-xs text-cf-burgundy/80 mt-4 md:hidden">Toca para ver perfil completo</p>
+                      <p className="font-medium text-xs text-cf-burgundy/80 mt-4 md:hidden tracking-wider">Toca para ver perfil completo</p>
                     </div>
                   </div>
                 </div>
@@ -560,7 +560,7 @@ export default function CFLegalPage() {
                   </div>
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h3 className="font-raleway font-bold text-xl sm:text-2xl md:text-3xl text-[#0F1822] mb-1 sm:mb-1.5 md:mb-2 leading-tight">
+                  <h3 className="font-bold text-xl sm:text-2xl md:text-3xl text-[#0F1822] mb-1 sm:mb-1.5 md:mb-2 leading-tight tracking-tight">
                     {selectedMember.name}
                   </h3>
                   <p className="font-normal text-sm sm:text-base md:text-lg text-cf-gray mb-3 sm:mb-4 md:mb-6">
@@ -569,7 +569,7 @@ export default function CFLegalPage() {
 
                   <div className="space-y-3 sm:space-y-4 md:space-y-6">
                     <div>
-                      <h4 className="font-raleway font-semibold text-base sm:text-lg md:text-xl text-[#0F1822] mb-2 sm:mb-2.5 md:mb-3 flex items-center gap-2">
+                      <h4 className="font-medium text-base sm:text-lg md:text-xl text-[#0F1822] mb-2 sm:mb-2.5 md:mb-3 flex items-center gap-2 tracking-tight">
                         <svg className="w-4 h-4 sm:w-5 sm:h-5 text-cf-burgundy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                         </svg>
@@ -585,7 +585,7 @@ export default function CFLegalPage() {
                     </div>
 
                     <div>
-                      <h4 className="font-raleway font-semibold text-base sm:text-lg md:text-xl text-[#0F1822] mb-2 sm:mb-2.5 md:mb-3 flex items-center gap-2">
+                      <h4 className="font-medium text-base sm:text-lg md:text-xl text-[#0F1822] mb-2 sm:mb-2.5 md:mb-3 flex items-center gap-2 tracking-tight">
                         <svg className="w-4 h-4 sm:w-5 sm:h-5 text-cf-burgundy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
@@ -635,11 +635,11 @@ export default function CFLegalPage() {
         <div className="container mx-auto px-6 sm:px-8 max-w-5xl relative z-10">
           <div className="text-center mb-20 sm:mb-24 md:mb-28">
             {/* Subtítulo con Raleway Medium, tracking amplio y color burdeo */}
-            <p className="font-raleway font-medium text-sm sm:text-base text-[#8E1927] mb-6 tracking-widest uppercase">
+            <p className="font-medium text-sm sm:text-base text-[#8E1927] mb-6 tracking-wider uppercase">
               Hablemos
             </p>
             {/* Título principal con Raleway Bold */}
-            <h2 className="font-raleway font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#0F1822] mb-8 leading-tight tracking-tight">
+            <h2 className="font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#0F1822] mb-8 leading-tight tracking-tight">
               Contacta con Nosotros
             </h2>
             {/* Línea decorativa sutil */}
@@ -663,7 +663,7 @@ export default function CFLegalPage() {
                 </div>
                 <div className="flex-1 min-w-0">
                   {/* Título de tarjeta con Raleway Medium */}
-                  <h3 className="font-raleway font-medium text-xl text-[#0F1822] mb-3 group-hover:text-[#042A3D] transition-colors duration-500">
+                  <h3 className="font-medium text-xl text-[#0F1822] mb-3 group-hover:text-[#042A3D] transition-colors duration-500 tracking-tight">
                     Email
                   </h3>
                   {/* Texto con Raleway Regular */}
@@ -690,7 +690,7 @@ export default function CFLegalPage() {
                 </div>
                 <div className="flex-1 min-w-0">
                   {/* Título de tarjeta con Raleway Medium */}
-                  <h3 className="font-raleway font-medium text-xl text-[#0F1822] mb-3 group-hover:text-[#042A3D] transition-colors duration-500">
+                  <h3 className="font-medium text-xl text-[#0F1822] mb-3 group-hover:text-[#042A3D] transition-colors duration-500 tracking-tight">
                     Teléfono
                   </h3>
                   {/* Texto con Raleway Regular */}
@@ -712,7 +712,7 @@ export default function CFLegalPage() {
               href="https://linkedin.com/company/cflegal"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-5 px-12 py-5 bg-[#042A3D] hover:bg-[#0F1822] rounded-xl transition-all duration-500 font-raleway font-medium text-base text-white shadow-sm hover:shadow-lg hover:scale-[1.02] w-full sm:w-auto max-w-sm"
+              className="group inline-flex items-center justify-center gap-5 px-12 py-5 bg-[#042A3D] hover:bg-[#0F1822] rounded-xl transition-all duration-500 font-medium text-base text-white shadow-sm hover:shadow-lg hover:scale-[1.02] w-full sm:w-auto max-w-sm tracking-tight"
             >
               <Linkedin className="w-6 h-6 group-hover:scale-110 transition-transform duration-500" />
               <span>Síguenos en LinkedIn</span>
@@ -744,7 +744,7 @@ export default function CFLegalPage() {
             
             {/* Quick links */}
             <div className="text-center">
-              <h4 className="font-raleway font-semibold text-white text-sm sm:text-base mb-4">Enlaces Rápidos</h4>
+              <h4 className="font-medium text-white text-sm sm:text-base mb-4 tracking-tight">Enlaces Rápidos</h4>
               <div className="flex flex-col gap-2">
                 {["Nosotros", "Áreas de Práctica", "Equipo", "Contacto"].map((item) => (
                   <button
@@ -762,7 +762,7 @@ export default function CFLegalPage() {
             
             {/* Social */}
             <div className="text-center md:text-right">
-              <h4 className="font-raleway font-semibold text-white text-sm sm:text-base mb-4">Síguenos</h4>
+              <h4 className="font-medium text-white text-sm sm:text-base mb-4 tracking-tight">Síguenos</h4>
               <div className="flex gap-3 justify-center md:justify-end">
                 <a
                   href="https://linkedin.com/company/cflegal"
