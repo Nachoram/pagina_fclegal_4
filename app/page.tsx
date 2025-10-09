@@ -355,34 +355,9 @@ export default function CFLegalPage() {
               alt="CF Legal"
               width={240}
               height={360}
-              className="w-auto h-[90px] sm:h-[110px] md:h-[140px] max-w-[200px] sm:max-w-[250px] mx-auto opacity-95"
+              className="w-auto h-[200px] sm:h-[250px] md:h-[340px] lg:h-[400px] max-w-[440px] sm:max-w-[540px] md:max-w-[680px] lg:max-w-[800px] mx-auto opacity-95"
               priority
             />
-          </div>
-          <h1 className="font-raleway font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-5 md:mb-6 leading-tight tracking-tight animate-in fade-in slide-in-from-bottom-6 duration-700 delay-200">
-            Asesoría Legal de Excelencia
-          </h1>
-          <p className="font-raleway text-base sm:text-lg md:text-xl text-white/90 mb-8 md:mb-10 max-w-2xl leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300">
-            Soluciones jurídicas estratégicas para tu empresa y patrimonio
-          </p>
-          <button
-            onClick={() => scrollToSection("contacto")}
-            className="group relative font-raleway font-semibold text-base sm:text-lg px-8 sm:px-10 py-4 sm:py-5 bg-cf-burgundy hover:bg-cf-burgundy/90 text-white rounded-full shadow-2xl hover:shadow-cf-burgundy/50 transition-all duration-300 active:scale-95 animate-in fade-in slide-in-from-bottom-10 duration-700 delay-500 overflow-hidden"
-          >
-            <span className="relative z-10 flex items-center gap-3">
-              Contáctanos
-              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-cf-burgundy via-[#a01d2f] to-cf-burgundy bg-[length:200%_100%] group-hover:bg-[position:100%_0] transition-all duration-500" />
-          </button>
-          
-          {/* Scroll indicator */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <div className="w-6 h-10 border-2 border-white/40 rounded-full flex items-start justify-center p-2">
-              <div className="w-1.5 h-1.5 bg-white/60 rounded-full animate-pulse" />
-            </div>
           </div>
         </div>
       </section>
@@ -415,55 +390,49 @@ export default function CFLegalPage() {
       </section>
 
       {/* Áreas de Práctica Section */}
-      <section id="areas-de-practica" className="py-16 sm:py-20 md:py-24 lg:py-28 bg-gradient-to-br from-white via-cf-light-gray/30 to-white relative overflow-hidden">
+      <section id="areas-de-practica" className="py-16 sm:py-20 md:py-24 lg:py-28 bg-gray-50 relative overflow-hidden">
         {/* Background decoration */}
-        <div className="absolute top-0 right-0 w-72 h-72 bg-cf-burgundy/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-cf-blue/5 rounded-full blur-3xl" />
-        
+        <div className="absolute top-0 right-0 w-72 h-72 bg-brand-bordeaux/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-bordeaux/5 rounded-full blur-3xl" />
+
         <div className="container mx-auto px-5 sm:px-6 max-w-7xl relative z-10">
           <div className="text-center mb-12 sm:mb-16 md:mb-20">
-            <p className="font-raleway text-sm sm:text-base text-cf-burgundy font-semibold mb-3 tracking-widest uppercase">Especialidades</p>
-            <h2 className="font-raleway font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-cf-dark-gray mb-4 leading-tight">
+            <p className="font-raleway text-sm sm:text-base text-brand-bordeaux font-semibold mb-3 tracking-widest uppercase">Especialidades</p>
+            <h2 className="font-raleway font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-brand-dark mb-4 leading-tight tracking-wider">
               Áreas de Práctica
             </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-cf-burgundy to-cf-blue mx-auto rounded-full" />
+            <div className="w-20 h-1 bg-brand-bordeaux mx-auto rounded-full" />
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 md:gap-8 max-w-5xl mx-auto">
             {practiceAreas.map((area, index) => {
               const IconComponent = area.icon
               return (
                 <div
                   key={index}
-                  className="group relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1 active:scale-[0.98]"
+                  className="group relative bg-white border border-brand-gray hover:border-brand-bordeaux transition-all duration-300 rounded-3xl overflow-hidden"
                 >
-                  {/* Gradient background */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white via-cf-light-gray/50 to-white group-hover:from-cf-light-gray/70 group-hover:to-white transition-all duration-500" />
-                  
-                  {/* Accent line */}
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cf-burgundy via-cf-blue to-cf-burgundy bg-[length:200%_100%] group-hover:bg-[position:100%_0] transition-all duration-700" />
-                  
                   <div className="relative p-6 sm:p-8 md:p-10">
                     <div className="flex items-start gap-5 mb-4">
-                      <div className="flex-shrink-0 p-4 rounded-2xl bg-gradient-to-br from-cf-burgundy to-cf-blue shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                        <IconComponent className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+                      <div className="flex-shrink-0">
+                        <IconComponent className="w-8 h-8 sm:w-10 sm:h-10 text-brand-bordeaux" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h3 className="font-raleway font-bold text-xl sm:text-2xl md:text-2xl text-cf-dark-gray mb-2 leading-tight group-hover:text-cf-burgundy transition-colors">
+                        <h3 className="font-raleway font-bold text-xl sm:text-2xl md:text-2xl text-brand-light mb-2 leading-tight group-hover:text-brand-bordeaux transition-colors">
                           {area.name}
                         </h3>
-                        <p className="font-arial text-sm sm:text-base text-cf-gray/80 leading-relaxed">
+                        <p className="font-arial text-sm sm:text-base text-brand-light/80 leading-relaxed">
                           {area.description}
                         </p>
                       </div>
                     </div>
-                    
-                    <p className="font-arial text-[13px] sm:text-sm text-cf-gray leading-relaxed pl-[76px] opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-40 transition-all duration-500 overflow-hidden">
+
+                    <p className="font-arial text-[13px] sm:text-sm text-brand-light leading-relaxed pl-[76px] opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-40 transition-all duration-500 overflow-hidden">
                       {area.details}
                     </p>
-                    
+
                     {/* Arrow indicator on mobile */}
-                    <div className="md:hidden flex items-center justify-center mt-4 text-cf-burgundy text-xs font-raleway font-medium">
+                    <div className="md:hidden flex items-center justify-center mt-4 text-brand-bordeaux text-xs font-raleway font-medium">
                       <span>Toca para más info</span>
                       <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
