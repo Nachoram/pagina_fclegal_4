@@ -1,0 +1,79 @@
+{
+  "tech_stack": [
+    "TypeScript",
+    "Next.js",
+    "React",
+    "Tailwind CSS",
+    "Radix UI",
+    "Lucide React",
+    "Geist Fonts",
+    "Vercel Analytics"
+  ],
+  "features": [
+    {
+      "name": "Landing Page Layout",
+      "description": "Main page component with multiple sections including hero, about, practice areas, team, and contact sections",
+      "files": ["app/page.tsx"]
+    },
+    {
+      "name": "Responsive Navigation",
+      "description": "Fixed header with smooth scrolling navigation, mobile hamburger menu, and logo scaling effects",
+      "files": ["app/page.tsx"]
+    },
+    {
+      "name": "Logo Animation",
+      "description": "Animated logo display on page load with fade-in and fade-out effects",
+      "files": ["app/page.tsx"]
+    },
+    {
+      "name": "Practice Areas Section",
+      "description": "Interactive cards displaying legal practice areas with hover effects and expandable details",
+      "files": ["app/page.tsx"]
+    },
+    {
+      "name": "Team Profiles",
+      "description": "Team member cards with hover effects, modal dialogs showing detailed profiles, education, and experience",
+      "files": ["app/page.tsx"]
+    },
+    {
+      "name": "Contact Section",
+      "description": "Contact information cards with email and phone links, LinkedIn integration",
+      "files": ["app/page.tsx"]
+    },
+    {
+      "name": "Footer",
+      "description": "Site footer with logo, quick links, social media links, and copyright information",
+      "files": ["app/page.tsx"]
+    },
+    {
+      "name": "Theme Provider",
+      "description": "Next.js themes provider for potential dark/light mode support",
+      "files": ["components/theme-provider.tsx"]
+    },
+    {
+      "name": "Dialog Component",
+      "description": "Reusable dialog component using Radix UI for team member modals",
+      "files": ["components/ui/dialog.tsx"]
+    },
+    {
+      "name": "Utility Functions",
+      "description": "Tailwind CSS class merging utility using clsx and tailwind-merge",
+      "files": ["lib/utils.ts"]
+    },
+    {
+      "name": "App Layout",
+      "description": "Root layout with metadata, fonts (Raleway, Geist), and analytics integration",
+      "files": ["app/layout.tsx"]
+    },
+    {
+      "name": "Global Styles",
+      "description": "Global CSS styles and font configurations",
+      "files": ["app/globals.css", "styles/globals.css"]
+    },
+    {
+      "name": "Design System",
+      "description": "Custom color palette and typography configuration for the CF Legal brand",
+      "files": ["tailwind.config.json"]
+    }
+  ]
+}

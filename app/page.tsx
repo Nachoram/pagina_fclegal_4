@@ -365,7 +365,7 @@ export default function CFLegalPage() {
       {/* Nosotros Section */}
       <section id="nosotros" className="py-10 sm:py-14 md:py-20 lg:py-24 bg-white">
         <div className="container mx-auto px-5 sm:px-6 max-w-7xl">
-          <h2 className="font-raleway font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#042A3D] text-center mb-6 sm:mb-10 md:mb-14 lg:mb-16 leading-tight">
+          <h2 className="font-raleway font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-brand-dark text-center mb-6 sm:mb-10 md:mb-14 lg:mb-16 leading-tight">
             Nosotros
           </h2>
           <div className="grid md:grid-cols-2 gap-5 sm:gap-6 md:gap-10 lg:gap-12 max-w-6xl mx-auto">

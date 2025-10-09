@@ -84,11 +84,11 @@
 
 @theme inline {
   /* Raleway Font */
-  --font-raleway: "Raleway", var(--font-geist-sans);
+  --font-raleway: "Raleway", sans-serif;
   --font-arial: "Arial", sans-serif;
 
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: system-ui, sans-serif;
+  --font-mono: "Courier New", monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);

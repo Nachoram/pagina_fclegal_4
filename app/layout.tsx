@@ -1,8 +1,6 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Raleway } from "next/font/google"
-import { GeistSans } from "geist/font/sans"
-import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import "./globals.css"
@@ -18,19 +16,23 @@ export const metadata: Metadata = {
   title: "CF Legal - Estudio Jurídico",
   description: "Asesoría legal de excelencia para empresas y patrimonios",
   generator: "v0.app",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
-  },
-  themeColor: "#0F1822",
   manifest: "/manifest.json",
   appleWebApp: {
-    capable: true,
+    capable: false,
     statusBarStyle: "default",
     title: "CF Legal",
   },
+  mobileWebApp: {
+    capable: true,
+  },
+}
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: "#0F1822",
 }
 
 export default function RootLayout({
@@ -40,7 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${raleway.variable}`}>
-      <body className={`font-raleway font-medium ${GeistSans.variable} ${GeistMono.variable}`}>
+      <body className={`font-raleway font-medium`}>
         <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
       </body>
