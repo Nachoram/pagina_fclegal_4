@@ -355,7 +355,7 @@ export default function CFLegalPage() {
               alt="CF Legal"
               width={240}
               height={360}
-              className="w-auto h-[200px] sm:h-[250px] md:h-[340px] lg:h-[400px] max-w-[440px] sm:max-w-[540px] md:max-w-[680px] lg:max-w-[800px] mx-auto opacity-95"
+              className="w-auto h-[280px] sm:h-[350px] md:h-[480px] lg:h-[560px] xl:h-[640px] max-w-[600px] sm:max-w-[720px] md:max-w-[960px] lg:max-w-[1120px] xl:max-w-[1280px] mx-auto opacity-95"
               priority
             />
           </div>
