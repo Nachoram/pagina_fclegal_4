@@ -134,7 +134,7 @@ export default function CFLegalPage() {
       }
     }
 
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll, { passive: true })
 
     // Prevent body scroll when mobile menu is open
     if (mobileMenuOpen) {
@@ -307,7 +307,7 @@ export default function CFLegalPage() {
                 
                 {/* Drawer Footer */}
                 <div className="pt-6 mt-auto border-t border-white/10">
-                  <p className="text-white/60 text-xs font-arial mb-3">Síguenos</p>
+                  <p className="text-white/60 text-xs font-normal mb-3">Síguenos</p>
                   <div className="flex gap-3">
                     <a
                       href="https://linkedin.com/company/cflegal"
@@ -370,7 +370,7 @@ export default function CFLegalPage() {
           </h2>
           <div className="grid md:grid-cols-2 gap-5 sm:gap-6 md:gap-10 lg:gap-12 max-w-6xl mx-auto">
             <div className="space-y-4">
-              <p className="font-arial text-[15px] sm:text-base md:text-lg text-cf-gray leading-relaxed text-justify sm:text-left">
+              <p className="font-normal text-[15px] sm:text-base md:text-lg text-cf-gray leading-relaxed text-justify sm:text-left">
                 En CF Legal, nos comprometemos a brindar una asesoría de excelencia, eficiente e innovadora. Nuestro
                 equipo de profesionales altamente calificados trabaja de manera cercana con cada cliente, entendiendo
                 sus necesidades específicas y ofreciendo soluciones jurídicas personalizadas que generan valor real para
@@ -378,7 +378,7 @@ export default function CFLegalPage() {
               </p>
             </div>
             <div className="space-y-4">
-              <p className="font-arial text-[15px] sm:text-base md:text-lg text-cf-gray leading-relaxed text-justify sm:text-left">
+              <p className="font-normal text-[15px] sm:text-base md:text-lg text-cf-gray leading-relaxed text-justify sm:text-left">
                 Nos destacamos por nuestra experiencia como asesores in-house, lo que nos permite comprender
                 profundamente las operaciones empresariales y optimizar procesos legales. Esta perspectiva única nos
                 posiciona como socios estratégicos capaces de anticipar desafíos y proponer soluciones prácticas y
@@ -421,13 +421,13 @@ export default function CFLegalPage() {
                         <h3 className="font-raleway font-bold text-xl sm:text-2xl md:text-2xl text-brand-light mb-2 leading-tight group-hover:text-brand-bordeaux transition-colors">
                           {area.name}
                         </h3>
-                        <p className="font-arial text-sm sm:text-base text-brand-light/80 leading-relaxed">
+                        <p className="font-normal text-sm sm:text-base text-brand-light/80 leading-relaxed">
                           {area.description}
                         </p>
                       </div>
                     </div>
 
-                    <p className="font-arial text-[13px] sm:text-sm text-brand-light leading-relaxed pl-[76px] opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-40 transition-all duration-500 overflow-hidden">
+                    <p className="font-normal text-[13px] sm:text-sm text-brand-light leading-relaxed pl-[76px] opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-40 transition-all duration-500 overflow-hidden">
                       {area.details}
                     </p>
 
@@ -509,7 +509,7 @@ export default function CFLegalPage() {
                       }`}>
                         {member.name}
                       </h3>
-                      <p className="font-arial text-sm sm:text-base text-white/70 mb-4">{member.title}</p>
+                      <p className="font-normal text-sm sm:text-base text-white/70 mb-4">{member.title}</p>
                       
                       <div className="flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-all duration-300">
                         <a
@@ -530,7 +530,7 @@ export default function CFLegalPage() {
                         </a>
                       </div>
                       
-                      <p className="font-arial text-xs text-cf-burgundy/80 mt-4 md:hidden">Toca para ver perfil completo</p>
+                      <p className="font-normal text-xs text-cf-burgundy/80 mt-4 md:hidden">Toca para ver perfil completo</p>
                     </div>
                   </div>
                 </div>
@@ -563,7 +563,7 @@ export default function CFLegalPage() {
                   <h3 className="font-raleway font-bold text-xl sm:text-2xl md:text-3xl text-[#0F1822] mb-1 sm:mb-1.5 md:mb-2 leading-tight">
                     {selectedMember.name}
                   </h3>
-                  <p className="font-arial text-sm sm:text-base md:text-lg text-cf-gray mb-3 sm:mb-4 md:mb-6">
+                  <p className="font-normal text-sm sm:text-base md:text-lg text-cf-gray mb-3 sm:mb-4 md:mb-6">
                     {selectedMember.title}
                   </p>
 
@@ -577,7 +577,7 @@ export default function CFLegalPage() {
                       </h4>
                       <ul className="space-y-1.5 sm:space-y-2">
                         {selectedMember.education.map((edu, index) => (
-                          <li key={index} className="font-arial text-[13px] sm:text-sm md:text-base text-cf-gray leading-relaxed pl-2">
+                          <li key={index} className="font-normal text-[13px] sm:text-sm md:text-base text-cf-gray leading-relaxed pl-2">
                             • {edu}
                           </li>
                         ))}
@@ -593,7 +593,7 @@ export default function CFLegalPage() {
                       </h4>
                       <ul className="space-y-1.5 sm:space-y-2">
                         {selectedMember.experience.map((exp, index) => (
-                          <li key={index} className="font-arial text-[13px] sm:text-sm md:text-base text-cf-gray leading-relaxed pl-2">
+                          <li key={index} className="font-normal text-[13px] sm:text-sm md:text-base text-cf-gray leading-relaxed pl-2">
                             • {exp}
                           </li>
                         ))}
@@ -603,7 +603,7 @@ export default function CFLegalPage() {
                     <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 pt-3 sm:pt-4 border-t border-cf-light-gray">
                       <a
                         href={`mailto:${selectedMember.email}`}
-                        className="font-arial text-[13px] sm:text-sm md:text-base text-cf-blue hover:text-cf-burgundy transition-colors duration-200 break-all flex items-center gap-2"
+                        className="font-normal text-[13px] sm:text-sm md:text-base text-cf-blue hover:text-cf-burgundy transition-colors duration-200 break-all flex items-center gap-2"
                       >
                         <Mail className="w-4 h-4 flex-shrink-0" />
                         {selectedMember.email}
@@ -627,83 +627,97 @@ export default function CFLegalPage() {
       </Dialog>
 
       {/* Contacto Section */}
-      <section id="contacto" className="py-16 sm:py-20 md:py-24 lg:py-28 bg-white relative overflow-hidden">
-        {/* Background decoration */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-cf-burgundy/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-cf-blue/5 rounded-full blur-3xl" />
-        
-        <div className="container mx-auto px-5 sm:px-6 max-w-5xl relative z-10">
-          <div className="text-center mb-12 sm:mb-16">
-            <p className="font-raleway text-sm sm:text-base text-cf-burgundy font-semibold mb-3 tracking-widest uppercase">Hablemos</p>
-            <h2 className="font-raleway font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-cf-dark-gray mb-4 leading-tight">
+      <section id="contacto" className="py-24 sm:py-28 md:py-32 lg:py-36 bg-white relative overflow-hidden">
+        {/* Background decoration - More subtle and premium */}
+        <div className="absolute top-0 left-0 w-96 h-96 bg-[#CDD4D8]/15 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#808184]/8 rounded-full blur-3xl" />
+
+        <div className="container mx-auto px-6 sm:px-8 max-w-5xl relative z-10">
+          <div className="text-center mb-20 sm:mb-24 md:mb-28">
+            {/* Subtítulo con Raleway Medium, tracking amplio y color burdeo */}
+            <p className="font-raleway font-medium text-sm sm:text-base text-[#8E1927] mb-6 tracking-widest uppercase">
+              Hablemos
+            </p>
+            {/* Título principal con Raleway Bold */}
+            <h2 className="font-raleway font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#0F1822] mb-8 leading-tight tracking-tight">
               Contacta con Nosotros
             </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-cf-burgundy to-cf-blue mx-auto rounded-full mb-6" />
-            <p className="font-arial text-base sm:text-lg text-cf-gray max-w-2xl mx-auto">
+            {/* Línea decorativa sutil */}
+            <div className="w-20 h-0.5 bg-[#8E1927] mx-auto rounded-full mb-10" />
+            {/* Párrafo con Raleway Regular */}
+            <p className="font-raleway font-normal text-base sm:text-lg text-[#808184] max-w-2xl mx-auto leading-relaxed">
               Estamos listos para ayudarte con tus necesidades legales. Contáctanos hoy mismo.
             </p>
           </div>
-          
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-10">
-            {/* Email Card */}
+
+          <div className="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto mb-20">
+            {/* Email Card - Diseño premium y sutil */}
             <a
               href="mailto:administracion@cflegal.cl"
-              className="group relative overflow-hidden bg-gradient-to-br from-cf-light-gray/30 to-white rounded-2xl p-6 sm:p-8 border-2 border-cf-light-gray/50 hover:border-cf-burgundy/50 transition-all duration-300 hover:shadow-xl active:scale-[0.98]"
+              className="group relative bg-[#CDD4D8]/20 hover:bg-[#CDD4D8]/25 rounded-2xl p-10 border border-[#CDD4D8]/40 hover:border-[#8E1927]/60 transition-all duration-500 shadow-sm hover:shadow-md backdrop-blur-sm"
             >
-              <div className="flex items-start gap-5">
-                <div className="flex-shrink-0 p-4 bg-gradient-to-br from-cf-burgundy to-cf-blue rounded-xl shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                  <Mail className="w-7 h-7 text-white" />
+              <div className="flex items-start gap-8">
+                {/* Icono con fondo sutil y color burdeo */}
+                <div className="flex-shrink-0 p-4 bg-transparent border border-[#8E1927]/20 rounded-xl group-hover:bg-[#8E1927]/5 transition-colors duration-500">
+                  <Mail className="w-7 h-7 text-[#8E1927]" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h3 className="font-raleway font-bold text-lg sm:text-xl text-cf-dark-gray mb-2 group-hover:text-cf-burgundy transition-colors">
+                  {/* Título de tarjeta con Raleway Medium */}
+                  <h3 className="font-raleway font-medium text-xl text-[#0F1822] mb-3 group-hover:text-[#042A3D] transition-colors duration-500">
                     Email
                   </h3>
-                  <p className="font-arial text-sm sm:text-base text-cf-gray break-all">
+                  {/* Texto con Raleway Regular */}
+                  <p className="font-raleway font-normal text-sm text-[#808184] break-all leading-relaxed">
                     administracion@cflegal.cl
                   </p>
                 </div>
-                <svg className="w-5 h-5 text-cf-gray group-hover:text-cf-burgundy group-hover:translate-x-1 transition-all flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                {/* Flecha sutil */}
+                <svg className="w-5 h-5 text-[#808184] group-hover:text-[#0F1822] group-hover:translate-x-1 transition-all duration-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
                 </svg>
               </div>
             </a>
-            
-            {/* Phone Card */}
+
+            {/* Phone Card - Diseño premium y sutil */}
             <a
               href="tel:+56912345678"
-              className="group relative overflow-hidden bg-gradient-to-br from-cf-light-gray/30 to-white rounded-2xl p-6 sm:p-8 border-2 border-cf-light-gray/50 hover:border-cf-blue/50 transition-all duration-300 hover:shadow-xl active:scale-[0.98]"
+              className="group relative bg-[#CDD4D8]/20 hover:bg-[#CDD4D8]/25 rounded-2xl p-10 border border-[#CDD4D8]/40 hover:border-[#8E1927]/60 transition-all duration-500 shadow-sm hover:shadow-md backdrop-blur-sm"
             >
-              <div className="flex items-start gap-5">
-                <div className="flex-shrink-0 p-4 bg-gradient-to-br from-cf-blue to-cf-burgundy rounded-xl shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                  <Phone className="w-7 h-7 text-white" />
+              <div className="flex items-start gap-8">
+                {/* Icono con fondo sutil y color burdeo */}
+                <div className="flex-shrink-0 p-4 bg-transparent border border-[#8E1927]/20 rounded-xl group-hover:bg-[#8E1927]/5 transition-colors duration-500">
+                  <Phone className="w-7 h-7 text-[#8E1927]" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h3 className="font-raleway font-bold text-lg sm:text-xl text-cf-dark-gray mb-2 group-hover:text-cf-blue transition-colors">
+                  {/* Título de tarjeta con Raleway Medium */}
+                  <h3 className="font-raleway font-medium text-xl text-[#0F1822] mb-3 group-hover:text-[#042A3D] transition-colors duration-500">
                     Teléfono
                   </h3>
-                  <p className="font-arial text-sm sm:text-base text-cf-gray">
+                  {/* Texto con Raleway Regular */}
+                  <p className="font-raleway font-normal text-sm text-[#808184] leading-relaxed">
                     +56 9 1234 5678
                   </p>
                 </div>
-                <svg className="w-5 h-5 text-cf-gray group-hover:text-cf-blue group-hover:translate-x-1 transition-all flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                {/* Flecha sutil */}
+                <svg className="w-5 h-5 text-[#808184] group-hover:text-[#0F1822] group-hover:translate-x-1 transition-all duration-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
                 </svg>
               </div>
             </a>
           </div>
-          
-          {/* LinkedIn CTA */}
+
+          {/* LinkedIn CTA - Opción A: Botón sólido premium */}
           <div className="text-center">
             <a
               href="https://linkedin.com/company/cflegal"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-cf-burgundy to-cf-blue hover:from-cf-blue hover:to-cf-burgundy rounded-full transition-all duration-500 font-raleway font-semibold text-base sm:text-lg text-white shadow-2xl hover:shadow-cf-burgundy/50 active:scale-95 w-full sm:w-auto max-w-sm"
+              className="group inline-flex items-center justify-center gap-5 px-12 py-5 bg-[#042A3D] hover:bg-[#0F1822] rounded-xl transition-all duration-500 font-raleway font-medium text-base text-white shadow-sm hover:shadow-lg hover:scale-[1.02] w-full sm:w-auto max-w-sm"
             >
-              <Linkedin className="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform" />
+              <Linkedin className="w-6 h-6 group-hover:scale-110 transition-transform duration-500" />
               <span>Síguenos en LinkedIn</span>
-              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </a>
           </div>
@@ -723,7 +737,7 @@ export default function CFLegalPage() {
                 height={45} 
                 className="w-auto h-8 sm:h-9 brightness-0 invert mx-auto md:mx-0 mb-3" 
               />
-              <p className="font-arial text-white/60 text-xs sm:text-sm leading-relaxed max-w-xs mx-auto md:mx-0">
+              <p className="font-normal text-white/60 text-xs sm:text-sm leading-relaxed max-w-xs mx-auto md:mx-0">
                 Asesoría legal de excelencia para tu empresa y patrimonio
               </p>
             </div>
@@ -738,7 +752,7 @@ export default function CFLegalPage() {
                     onClick={() => scrollToSection(
                       item.toLowerCase().replace(/\s+/g, "-").normalize("NFD").replace(/[\u0300-\u036f]/g, "")
                     )}
-                    className="font-arial text-white/70 hover:text-cf-burgundy text-xs sm:text-sm transition-colors"
+                    className="font-normal text-white/70 hover:text-cf-burgundy text-xs sm:text-sm transition-colors"
                   >
                     {item}
                   </button>
@@ -775,7 +789,7 @@ export default function CFLegalPage() {
           </div>
           
           <div className="border-t border-white/10 pt-6 text-center">
-            <p className="font-arial text-white/50 text-xs sm:text-sm">
+            <p className="font-normal text-white/50 text-xs sm:text-sm">
               © {new Date().getFullYear()} CF Legal. Todos los derechos reservados.
             </p>
           </div>

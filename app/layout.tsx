@@ -42,7 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${raleway.variable}`}>
-      <body className={`font-raleway font-medium`}>
+      <body className="font-sans">
         <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
       </body>
