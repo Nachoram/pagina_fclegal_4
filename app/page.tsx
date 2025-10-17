@@ -338,17 +338,6 @@ export default function CFLegalPage() {
       </header>
 
       <section className="relative h-[75vh] min-h-[600px] md:h-[85vh] flex items-center justify-center overflow-hidden">
-        {/* SVG Filter para nitidez del logo */}
-        <svg className="absolute w-0 h-0">
-          <defs>
-            <filter id="sharpen-logo">
-              <feGaussianBlur in="SourceGraphic" stdDeviation="0.5" result="blur" />
-              <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 9 0" result="goo" />
-              <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
-            </filter>
-          </defs>
-        </svg>
-        
         <div className="absolute inset-0 z-0">
           <Image
             src="/modern-corporate-office-building-professional.jpg"
@@ -365,16 +354,16 @@ export default function CFLegalPage() {
             <Image
               src="/cf-legal-slash-logo.png"
               alt="CF Legal"
-              width={960}
-              height={1440}
+              width={800}
+              height={1200}
               sizes="(max-width: 640px) 600px, (max-width: 768px) 720px, (max-width: 1024px) 960px, (max-width: 1280px) 1120px, 1280px"
               className="w-auto h-[280px] sm:h-[350px] md:h-[480px] lg:h-[560px] xl:h-[640px] max-w-[600px] sm:max-w-[720px] md:max-w-[960px] lg:max-w-[1120px] xl:max-w-[1280px] mx-auto logo-quality-enhance"
               style={{
-                filter: 'url(#sharpen-logo) drop-shadow(0 4px 20px rgba(0, 0, 0, 0.5)) contrast(1.15) brightness(1.08)',
+                filter: 'drop-shadow(0 4px 18px rgba(0, 0, 0, 0.4)) contrast(1.05) brightness(1.02)',
                 imageRendering: 'high-quality',
-                transform: 'translateZ(0) scale(1.0001)',
+                transform: 'translateZ(0)',
               }}
-              quality={100}
+              quality={95}
               priority
               unoptimized={false}
             />
