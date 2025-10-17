@@ -169,7 +169,7 @@ export default function CFLegalPage() {
 
   if (showLogo) {
     return (
-      <div className={`fixed inset-0 z-50 flex items-center justify-center bg-[#CDD4D8] transition-opacity duration-[1500ms] ease-in-out ${
+      <div className={`fixed inset-0 z-50 flex items-center justify-center bg-[#CDD4D8] transition-opacity duration-1000 ease-in-out ${
         logoFading ? 'opacity-0' : logoVisible ? 'opacity-100' : 'opacity-0'
       }`}>
         <div className="px-6 sm:px-8">

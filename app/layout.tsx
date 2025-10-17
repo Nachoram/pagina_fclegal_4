@@ -1,7 +1,7 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
 import { Raleway } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
+// import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import "./globals.css"
 
@@ -22,9 +22,6 @@ export const metadata: Metadata = {
     statusBarStyle: "default",
     title: "CF Legal",
   },
-  mobileWebApp: {
-    capable: true,
-  },
 }
 
 export const viewport: Viewport = {
@@ -32,7 +29,10 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
-  themeColor: "#0F1822",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#0F1822" },
+    { media: "(prefers-color-scheme: dark)", color: "#0F1822" }
+  ],
 }
 
 export default function RootLayout({
@@ -44,7 +44,7 @@ export default function RootLayout({
     <html lang="es" className={`${raleway.variable}`}>
       <body className="font-sans">
         <Suspense fallback={null}>{children}</Suspense>
-        <Analytics />
+        {/* <Analytics /> */}
       </body>
     </html>
   )
