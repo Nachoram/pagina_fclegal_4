@@ -178,8 +178,8 @@ export default function CFLegalPage() {
             alt="CF Legal"
             width={400}
             height={120}
-            className={`w-auto h-[4px] xs:h-[5px] sm:h-[9px] md:h-[15px] lg:h-[21px] max-w-[50vw] transition-all duration-[1500ms] ease-in-out ${
-              logoFading ? 'opacity-0 scale-90' : logoVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+            className={`w-auto h-[4px] xs:h-[5px] sm:h-[9px] md:h-[15px] lg:h-[21px] max-w-[50vw] ${
+              logoFading ? 'opacity-0 scale-90' : logoVisible ? 'animate-logo-entrance' : 'opacity-0 scale-95'
             }`}
             priority
           />
@@ -343,6 +343,7 @@ export default function CFLegalPage() {
             src="/modern-corporate-office-building-professional.jpg"
             alt="CF Legal Hero"
             fill
+            sizes="100vw"
             className="object-cover object-center"
             priority
           />
@@ -418,16 +419,16 @@ export default function CFLegalPage() {
                         <IconComponent className="w-8 h-8 sm:w-10 sm:h-10 text-brand-bordeaux" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h3 className="font-bold text-xl sm:text-2xl md:text-2xl text-brand-light mb-2 leading-tight tracking-tight group-hover:text-brand-bordeaux transition-colors">
+                        <h3 className="font-bold text-xl sm:text-2xl md:text-2xl text-gray-900 mb-2 leading-tight tracking-tight group-hover:text-brand-bordeaux transition-colors">
                           {area.name}
                         </h3>
-                        <p className="font-normal text-sm sm:text-base text-brand-light/80 leading-relaxed">
+                        <p className="font-normal text-sm sm:text-base text-gray-700 leading-relaxed">
                           {area.description}
                         </p>
                       </div>
                     </div>
 
-                    <p className="font-normal text-[13px] sm:text-sm text-brand-light leading-relaxed pl-[76px] opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-40 transition-all duration-500 overflow-hidden">
+                    <p className="font-normal text-[13px] sm:text-sm text-gray-700 leading-relaxed pl-[76px] opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-40 transition-all duration-500 overflow-hidden">
                       {area.details}
                     </p>
 
@@ -484,23 +485,11 @@ export default function CFLegalPage() {
                         src={member.photo || "/placeholder.svg"}
                         alt={member.name}
                         fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className={`object-cover transition-all duration-500 ${
                           hoveredMember === member.id ? "grayscale-0 scale-110" : "grayscale scale-100"
                         }`}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-cf-burgundy/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      
-                      {/* View icon */}
-                      <div className={`absolute inset-0 flex items-center justify-center transition-all duration-300 ${
-                        hoveredMember === member.id ? "opacity-100" : "opacity-0"
-                      }`}>
-                        <div className="bg-white rounded-xl p-3 shadow-lg transform scale-0 group-hover:scale-100 transition-transform duration-300">
-                          <svg className="w-6 h-6 text-cf-burgundy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                          </svg>
-                        </div>
-                      </div>
                     </div>
                     
                     <div className="text-center">
@@ -542,7 +531,8 @@ export default function CFLegalPage() {
 
       {/* Team Member Modal */}
       <Dialog open={!!selectedMember} onOpenChange={() => setSelectedMember(null)}>
-        <DialogContent className="max-w-[96vw] sm:max-w-[90vw] md:max-w-2xl lg:max-w-3xl max-h-[85vh] sm:max-h-[90vh] overflow-y-auto">
+        <div className="fixed inset-0 z-50 bg-gray-100">
+          <DialogContent className="max-w-[96vw] sm:max-w-[90vw] md:max-w-2xl lg:max-w-3xl max-h-[85vh] sm:max-h-[90vh] overflow-y-auto bg-gray-100 border-0 shadow-none">
           {selectedMember && (
             <div className="space-y-3 sm:space-y-4 md:space-y-6">
               <DialogHeader>
@@ -555,21 +545,22 @@ export default function CFLegalPage() {
                       src={selectedMember.photoColor || "/placeholder.svg"}
                       alt={selectedMember.name}
                       fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                       className="object-cover"
                     />
                   </div>
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h3 className="font-bold text-xl sm:text-2xl md:text-3xl text-[#0F1822] mb-1 sm:mb-1.5 md:mb-2 leading-tight tracking-tight">
+                  <h3 className="font-bold text-xl sm:text-2xl md:text-3xl text-gray-900 mb-1 sm:mb-1.5 md:mb-2 leading-tight tracking-tight">
                     {selectedMember.name}
                   </h3>
-                  <p className="font-normal text-sm sm:text-base md:text-lg text-cf-gray mb-3 sm:mb-4 md:mb-6">
+                  <p className="font-normal text-sm sm:text-base md:text-lg text-gray-700 mb-3 sm:mb-4 md:mb-6">
                     {selectedMember.title}
                   </p>
 
                   <div className="space-y-3 sm:space-y-4 md:space-y-6">
                     <div>
-                      <h4 className="font-medium text-base sm:text-lg md:text-xl text-[#0F1822] mb-2 sm:mb-2.5 md:mb-3 flex items-center gap-2 tracking-tight">
+                      <h4 className="font-medium text-base sm:text-lg md:text-xl text-gray-900 mb-2 sm:mb-2.5 md:mb-3 flex items-center gap-2 tracking-tight">
                         <svg className="w-4 h-4 sm:w-5 sm:h-5 text-cf-burgundy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                         </svg>
@@ -577,7 +568,7 @@ export default function CFLegalPage() {
                       </h4>
                       <ul className="space-y-1.5 sm:space-y-2">
                         {selectedMember.education.map((edu, index) => (
-                          <li key={index} className="font-normal text-[13px] sm:text-sm md:text-base text-cf-gray leading-relaxed pl-2">
+                          <li key={index} className="font-normal text-[13px] sm:text-sm md:text-base text-gray-700 leading-relaxed pl-2">
                             • {edu}
                           </li>
                         ))}
@@ -585,7 +576,7 @@ export default function CFLegalPage() {
                     </div>
 
                     <div>
-                      <h4 className="font-medium text-base sm:text-lg md:text-xl text-[#0F1822] mb-2 sm:mb-2.5 md:mb-3 flex items-center gap-2 tracking-tight">
+                      <h4 className="font-medium text-base sm:text-lg md:text-xl text-gray-900 mb-2 sm:mb-2.5 md:mb-3 flex items-center gap-2 tracking-tight">
                         <svg className="w-4 h-4 sm:w-5 sm:h-5 text-cf-burgundy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
@@ -593,7 +584,7 @@ export default function CFLegalPage() {
                       </h4>
                       <ul className="space-y-1.5 sm:space-y-2">
                         {selectedMember.experience.map((exp, index) => (
-                          <li key={index} className="font-normal text-[13px] sm:text-sm md:text-base text-cf-gray leading-relaxed pl-2">
+                          <li key={index} className="font-normal text-[13px] sm:text-sm md:text-base text-gray-700 leading-relaxed pl-2">
                             • {exp}
                           </li>
                         ))}
@@ -624,6 +615,7 @@ export default function CFLegalPage() {
             </div>
           )}
         </DialogContent>
+        </div>
       </Dialog>
 
       {/* Contacto Section */}
