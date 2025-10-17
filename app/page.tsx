@@ -531,8 +531,7 @@ export default function CFLegalPage() {
 
       {/* Team Member Modal */}
       <Dialog open={!!selectedMember} onOpenChange={() => setSelectedMember(null)}>
-        <div className="fixed inset-0 z-50 bg-gray-100">
-          <DialogContent className="max-w-[96vw] sm:max-w-[90vw] md:max-w-2xl lg:max-w-3xl max-h-[85vh] sm:max-h-[90vh] overflow-y-auto bg-gray-100 border-0 shadow-none">
+        <DialogContent className="max-w-[96vw] sm:max-w-[90vw] md:max-w-2xl lg:max-w-3xl max-h-[85vh] sm:max-h-[90vh] overflow-y-auto bg-white border-0 shadow-lg">
           {selectedMember && (
             <div className="space-y-3 sm:space-y-4 md:space-y-6">
               <DialogHeader>
@@ -615,7 +614,6 @@ export default function CFLegalPage() {
             </div>
           )}
         </DialogContent>
-        </div>
       </Dialog>
 
       {/* Contacto Section */}
