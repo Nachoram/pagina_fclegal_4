@@ -203,7 +203,7 @@ export default function CFLegalPage() {
               width={216}
               height={60}
               className={`h-[1px] sm:h-[2px] md:h-[77px] w-auto origin-left transition-all duration-500 ${
-                scrolled ? "scale-100 sm:scale-105 md:scale-[1.95] opacity-100" : "scale-0 opacity-0"
+                scrolled ? "scale-100 sm:scale-105 md:scale-[2.2] opacity-100" : "scale-0 opacity-0"
               }`}
               priority
             />
@@ -223,7 +223,7 @@ export default function CFLegalPage() {
                       .replace(/[\u0300-\u036f]/g, ""),
                   )
                 }
-                className={`font-medium text-sm transition-colors duration-300 uppercase tracking-wider ${
+                className={`font-medium text-base transition-colors duration-300 uppercase tracking-wider ${
                   scrolled ? "text-[#0F1822] hover:text-cf-burgundy" : "text-white hover:text-cf-burgundy"
                 }`}
               >
@@ -338,6 +338,17 @@ export default function CFLegalPage() {
       </header>
 
       <section className="relative h-[75vh] min-h-[600px] md:h-[85vh] flex items-center justify-center overflow-hidden">
+        {/* SVG Filter para nitidez del logo */}
+        <svg className="absolute w-0 h-0">
+          <defs>
+            <filter id="sharpen-logo">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="0.5" result="blur" />
+              <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 9 0" result="goo" />
+              <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+            </filter>
+          </defs>
+        </svg>
+        
         <div className="absolute inset-0 z-0">
           <Image
             src="/modern-corporate-office-building-professional.jpg"
@@ -354,10 +365,18 @@ export default function CFLegalPage() {
             <Image
               src="/cf-legal-slash-logo.png"
               alt="CF Legal"
-              width={240}
-              height={360}
-              className="w-auto h-[280px] sm:h-[350px] md:h-[480px] lg:h-[560px] xl:h-[640px] max-w-[600px] sm:max-w-[720px] md:max-w-[960px] lg:max-w-[1120px] xl:max-w-[1280px] mx-auto opacity-95"
+              width={960}
+              height={1440}
+              sizes="(max-width: 640px) 600px, (max-width: 768px) 720px, (max-width: 1024px) 960px, (max-width: 1280px) 1120px, 1280px"
+              className="w-auto h-[280px] sm:h-[350px] md:h-[480px] lg:h-[560px] xl:h-[640px] max-w-[600px] sm:max-w-[720px] md:max-w-[960px] lg:max-w-[1120px] xl:max-w-[1280px] mx-auto logo-quality-enhance"
+              style={{
+                filter: 'url(#sharpen-logo) drop-shadow(0 4px 20px rgba(0, 0, 0, 0.5)) contrast(1.15) brightness(1.08)',
+                imageRendering: 'high-quality',
+                transform: 'translateZ(0) scale(1.0001)',
+              }}
+              quality={100}
               priority
+              unoptimized={false}
             />
           </div>
         </div>
