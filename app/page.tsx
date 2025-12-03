@@ -109,6 +109,7 @@ export default function CFLegalPage() {
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null)
   const [hoveredMember, setHoveredMember] = useState<string | null>(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [expandedBoxes, setExpandedBoxes] = useState<Set<number>>(new Set())
 
   useEffect(() => {
     // Fade in
@@ -167,6 +168,16 @@ export default function CFLegalPage() {
     }
   }
 
+  const toggleBoxExpansion = (boxIndex: number) => {
+    const newExpandedBoxes = new Set(expandedBoxes)
+    if (newExpandedBoxes.has(boxIndex)) {
+      newExpandedBoxes.delete(boxIndex)
+    } else {
+      newExpandedBoxes.add(boxIndex)
+    }
+    setExpandedBoxes(newExpandedBoxes)
+  }
+
   if (showLogo) {
     return (
       <div className={`fixed inset-0 z-50 flex items-center justify-center bg-[#CDD4D8] transition-opacity duration-1000 ease-in-out ${
@@ -211,7 +222,7 @@ export default function CFLegalPage() {
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-4 ml-auto mr-[1cm]">
-            {["Nosotros", "Áreas de Práctica", "Equipo", "Contacto"].map((item) => (
+            {["Nosotros", "Nuestra Motivación", "Áreas de Práctica", "Equipo", "Contacto"].map((item) => (
               <button
                 key={item}
                 onClick={() =>
@@ -276,6 +287,7 @@ export default function CFLegalPage() {
                 <nav className="flex flex-col gap-2 flex-1">
                   {[
                     { name: "Nosotros", icon: "M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" },
+                    { name: "Nuestra Motivación", icon: "M13 10V3L4 14h7v7l9-11h-7z" },
                     { name: "Áreas de Práctica", icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" },
                     { name: "Equipo", icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" },
                     { name: "Contacto", icon: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" },
@@ -340,14 +352,14 @@ export default function CFLegalPage() {
       <section className="relative h-[75vh] min-h-[600px] md:h-[85vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/modern-corporate-office-building-professional.jpg"
+            src="/hola (5).svg"
             alt="CF Legal Hero"
             fill
             sizes="100vw"
             className="object-cover object-center"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-cf-dark-gray/80 via-cf-blue/70 to-cf-burgundy/40" />
+          <div className="absolute inset-0 bg-gradient-to-br from-cf-dark-gray/80 via-cf-blue/70" />
         </div>
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 sm:px-8 w-full max-w-4xl mx-auto">
           <div className="mb-8 md:mb-10 animate-in fade-in slide-in-from-bottom-4 duration-700">
@@ -372,27 +384,130 @@ export default function CFLegalPage() {
       </section>
 
       {/* Nosotros Section */}
-      <section id="nosotros" className="py-10 sm:py-14 md:py-20 lg:py-24 bg-white">
-        <div className="container mx-auto px-5 sm:px-6 max-w-7xl">
-          <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-brand-dark text-center mb-6 sm:mb-10 md:mb-14 lg:mb-16 leading-tight tracking-tight">
-            Nosotros
-          </h2>
-          <div className="grid md:grid-cols-2 gap-5 sm:gap-6 md:gap-10 lg:gap-12 max-w-6xl mx-auto">
-            <div className="space-y-4">
-              <p className="font-normal text-[15px] sm:text-base md:text-lg text-cf-gray leading-relaxed text-justify sm:text-left">
-                En CF Legal, nos comprometemos a brindar una asesoría de excelencia, eficiente e innovadora. Nuestro
-                equipo de profesionales altamente calificados trabaja de manera cercana con cada cliente, entendiendo
-                sus necesidades específicas y ofreciendo soluciones jurídicas personalizadas que generan valor real para
-                sus negocios y patrimonios.
-              </p>
+      <section id="nosotros" className="py-16 sm:py-20 md:py-24 lg:py-28 bg-gray-50 relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute top-0 right-0 w-72 h-72 bg-brand-bordeaux/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-bordeaux/5 rounded-full blur-3xl" />
+
+        <div className="container mx-auto px-5 sm:px-6 max-w-7xl relative z-10">
+          <div className="text-center mb-12 sm:mb-16 md:mb-20">
+            <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-brand-dark mb-4 leading-tight tracking-tight">
+              Nosotros
+            </h2>
+            <div className="w-20 h-1 bg-brand-bordeaux mx-auto rounded-full mb-6" />
+            <p className="font-normal text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+              Somos un grupo humano y de abogados dispuesto a ayudarte en tus negocios, atender tus preocupaciones y inquietudes
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Nuestra Motivación Section */}
+      <section id="nuestra-motivacion" className="py-16 sm:py-20 md:py-24 lg:py-28 bg-white relative overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/Diseño sin título (2).svg"
+            alt="Nuestra Motivación"
+            fill
+            sizes="100vw"
+            className="object-cover object-center opacity-100"
+            priority={false}
+          />
+        </div>
+
+        <div className="container mx-auto px-5 sm:px-6 max-w-7xl relative z-10">
+          <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start md:items-start">
+            {/* Left side - Title */}
+            <div className="text-center md:text-left md:mt-8">
+              <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight tracking-tight drop-shadow-lg">
+                <span className="block">Nuestra</span>
+                <span className="block">Motivación</span>
+              </h2>
+              <div className="w-20 h-1 bg-white md:mr-auto rounded-full mt-4" />
             </div>
-            <div className="space-y-4">
-              <p className="font-normal text-[15px] sm:text-base md:text-lg text-cf-gray leading-relaxed text-justify sm:text-left">
-                Nos destacamos por nuestra experiencia como asesores in-house, lo que nos permite comprender
-                profundamente las operaciones empresariales y optimizar procesos legales. Esta perspectiva única nos
-                posiciona como socios estratégicos capaces de anticipar desafíos y proponer soluciones prácticas y
-                efectivas.
-              </p>
+
+            {/* Right side - Numbered boxes */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 md:mt-16">
+              {/* Box 1 */}
+              <div className="group relative bg-white/30 backdrop-blur-sm border border-brand-gray hover:border-brand-bordeaux rounded-2xl p-6 transition-all duration-300 hover:shadow-lg hover:shadow-brand-bordeaux/20 cursor-pointer" onClick={() => toggleBoxExpansion(0)}>
+                <div className="flex items-start gap-4 mb-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-brand-bordeaux text-white rounded-full flex items-center justify-center font-bold text-xl">
+                    1
+                  </div>
+                  <h3 className="font-bold text-2xl text-black group-hover:text-brand-bordeaux transition-colors">
+                    Excelencia Profesional
+                  </h3>
+                </div>
+                <div className={`transition-all duration-300 overflow-hidden ${expandedBoxes.has(0) ? 'max-h-32 opacity-100' : 'max-h-0 opacity-0'}`}>
+                  <p className="text-xl text-black leading-relaxed mb-3">
+                    Comprometidos con los más altos estándares de calidad en cada servicio que ofrecemos.
+                  </p>
+                  <p className="text-sm text-black leading-relaxed">
+                    Nuestra experiencia de más de 15 años nos permite anticipar desafíos y ofrecer soluciones innovadoras.
+                  </p>
+                </div>
+              </div>
+
+              {/* Box 2 */}
+              <div className="group relative bg-white/30 backdrop-blur-sm border border-brand-gray hover:border-brand-bordeaux rounded-2xl p-6 transition-all duration-300 hover:shadow-lg hover:shadow-brand-bordeaux/20 cursor-pointer" onClick={() => toggleBoxExpansion(1)}>
+                <div className="flex items-start gap-4 mb-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-brand-bordeaux text-white rounded-full flex items-center justify-center font-bold text-xl">
+                    2
+                  </div>
+                  <h3 className="font-bold text-2xl text-black group-hover:text-brand-bordeaux transition-colors">
+                    Confianza y Transparencia
+                  </h3>
+                </div>
+                <div className={`transition-all duration-300 overflow-hidden ${expandedBoxes.has(1) ? 'max-h-32 opacity-100' : 'max-h-0 opacity-0'}`}>
+                  <p className="text-xl text-black leading-relaxed mb-3">
+                    Construimos relaciones duraderas basadas en la honestidad y la comunicación clara.
+                  </p>
+                  <p className="text-sm text-black leading-relaxed">
+                    Mantenemos una comunicación constante con nuestros clientes, informándoles sobre cada paso del proceso.
+                  </p>
+                </div>
+              </div>
+
+              {/* Box 3 */}
+              <div className="group relative bg-white/30 backdrop-blur-sm border border-brand-gray hover:border-brand-bordeaux rounded-2xl p-6 transition-all duration-300 hover:shadow-lg hover:shadow-brand-bordeaux/20 cursor-pointer" onClick={() => toggleBoxExpansion(2)}>
+                <div className="flex items-start gap-4 mb-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-brand-bordeaux text-white rounded-full flex items-center justify-center font-bold text-xl">
+                    3
+                  </div>
+                  <h3 className="font-bold text-2xl text-black group-hover:text-brand-bordeaux transition-colors">
+                    Innovación Continua
+                  </h3>
+                </div>
+                <div className={`transition-all duration-300 overflow-hidden ${expandedBoxes.has(2) ? 'max-h-32 opacity-100' : 'max-h-0 opacity-0'}`}>
+                  <p className="text-xl text-black leading-relaxed mb-3">
+                    Adoptamos las últimas tecnologías y metodologías para optimizar nuestros servicios.
+                  </p>
+                  <p className="text-sm text-black leading-relaxed">
+                    Utilizamos herramientas digitales avanzadas para agilizar procesos y mejorar la experiencia del cliente.
+                  </p>
+                </div>
+              </div>
+
+              {/* Box 4 */}
+              <div className="group relative bg-white/30 backdrop-blur-sm border border-brand-gray hover:border-brand-bordeaux rounded-2xl p-6 transition-all duration-300 hover:shadow-lg hover:shadow-brand-bordeaux/20 cursor-pointer" onClick={() => toggleBoxExpansion(3)}>
+                <div className="flex items-start gap-4 mb-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-brand-bordeaux text-white rounded-full flex items-center justify-center font-bold text-xl">
+                    4
+                  </div>
+                  <h3 className="font-bold text-2xl text-black group-hover:text-brand-bordeaux transition-colors">
+                    Compromiso Social
+                  </h3>
+                </div>
+                <div className={`transition-all duration-300 overflow-hidden ${expandedBoxes.has(3) ? 'max-h-32 opacity-100' : 'max-h-0 opacity-0'}`}>
+                  <p className="text-xl text-black leading-relaxed mb-3">
+                    Contribuimos activamente al desarrollo de nuestra comunidad y sociedad.
+                  </p>
+                  <p className="text-sm text-black leading-relaxed">
+                    Participamos en iniciativas pro bono y colaboramos con organizaciones que promueven el desarrollo sostenible.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -415,28 +530,22 @@ export default function CFLegalPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 md:gap-8 max-w-5xl mx-auto">
             {practiceAreas.map((area, index) => {
-              const IconComponent = area.icon
               return (
                 <div
                   key={index}
                   className="group relative bg-white border border-brand-gray hover:border-brand-bordeaux transition-all duration-300 rounded-3xl overflow-hidden"
                 >
                   <div className="relative p-6 sm:p-8 md:p-10">
-                    <div className="flex items-start gap-5 mb-4">
-                      <div className="flex-shrink-0">
-                        <IconComponent className="w-8 h-8 sm:w-10 sm:h-10 text-brand-bordeaux" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="font-bold text-xl sm:text-2xl md:text-2xl text-gray-900 mb-2 leading-tight tracking-tight group-hover:text-brand-bordeaux transition-colors">
-                          {area.name}
-                        </h3>
-                        <p className="font-normal text-sm sm:text-base text-gray-700 leading-relaxed">
-                          {area.description}
-                        </p>
-                      </div>
+                    <div className="mb-4">
+                      <h3 className="font-bold text-xl sm:text-2xl md:text-2xl text-gray-900 mb-2 leading-tight tracking-tight group-hover:text-brand-bordeaux transition-colors">
+                        {area.name}
+                      </h3>
+                      <p className="font-normal text-sm sm:text-base text-gray-700 leading-relaxed">
+                        {area.description}
+                      </p>
                     </div>
 
-                    <p className="font-normal text-[13px] sm:text-sm text-gray-700 leading-relaxed pl-[76px] opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-40 transition-all duration-500 overflow-hidden">
+                    <p className="font-normal text-[13px] sm:text-sm text-gray-700 leading-relaxed opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-40 transition-all duration-500 overflow-hidden">
                       {area.details}
                     </p>
 
@@ -484,11 +593,9 @@ export default function CFLegalPage() {
                 style={{ animationDelay: `${idx * 100}ms` }}
               >
                 <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-white/10 hover:border-cf-burgundy/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cf-burgundy/20">
-                  {/* Decorative corner */}
-                  <div className="absolute top-0 right-0 w-20 h-20 bg-cf-burgundy/20 rounded-bl-[60px] rounded-tr-3xl" />
                   
                   <div className="relative">
-                    <div className="relative w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-6 rounded-2xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-105 group-hover:rotate-2">
+                    <div className="relative w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-6 rounded-2xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-105">
                       <Image
                         src={member.photo || "/placeholder.svg"}
                         alt={member.name}
@@ -744,7 +851,7 @@ export default function CFLegalPage() {
             <div className="text-center">
               <h4 className="font-medium text-white text-sm sm:text-base mb-4 tracking-tight">Enlaces Rápidos</h4>
               <div className="flex flex-col gap-2">
-                {["Nosotros", "Áreas de Práctica", "Equipo", "Contacto"].map((item) => (
+                {["Nosotros", "Nuestra Motivación", "Áreas de Práctica", "Equipo", "Contacto"].map((item) => (
                   <button
                     key={item}
                     onClick={() => scrollToSection(
