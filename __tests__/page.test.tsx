@@ -52,7 +52,7 @@ describe('CF Legal Landing Page', () => {
 
     // Check if team members are displayed
     expect(screen.getByText('Pedro Urrestarazu')).toBeInTheDocument()
-    expect(screen.getByText('Mauro Inserrato')).toBeInTheDocument()
+    expect(screen.getByText('Felipe Moreno')).toBeInTheDocument()
   })
 
   it('shows practice areas after loading', async () => {
