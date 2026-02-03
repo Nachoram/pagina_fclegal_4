@@ -87,6 +87,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -97,6 +98,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -106,9 +108,11 @@
   0% {
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
@@ -119,6 +123,7 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -126,9 +131,12 @@
 }
 
 @keyframes pulse-slow {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0.5;
   }
@@ -137,11 +145,14 @@
 @keyframes logo-entrance {
   from {
     opacity: 0;
-    transform: scale(0.95);
+    transform: scale(0.98);
+    filter: blur(4px);
   }
+
   to {
     opacity: 1;
-    transform: scale(33.75);
+    transform: scale(1);
+    filter: blur(0);
   }
 }
 
@@ -158,7 +169,7 @@
 }
 
 .animate-logo-entrance {
-  animation: logo-entrance 1.5s ease-in-out forwards;
+  animation: logo-entrance 2.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
 }
 
 /* Backdrop blur support */
@@ -187,46 +198,48 @@ body {
 
 /* Mobile optimizations */
 @media (max-width: 768px) {
+
   /* Prevent horizontal scrolling */
   body {
     overflow-x: hidden;
     width: 100%;
   }
-  
+
   /* Improve touch targets */
-  button:not([aria-label="Toggle menu"]):not([data-slot="dialog-close"]), 
+  button:not([aria-label="Toggle menu"]):not([data-slot="dialog-close"]),
   a:not([href^="mailto"]):not([href^="tel"]) {
     min-height: 44px;
   }
-  
+
   /* Better text rendering on mobile */
   body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
   }
-  
+
   /* Optimize images for mobile */
   img {
     max-width: 100%;
     height: auto;
   }
-  
+
   /* Improve scroll performance */
   * {
     -webkit-overflow-scrolling: touch;
   }
-  
+
   /* Disable pull-to-refresh in some browsers */
   body {
     overscroll-behavior-y: contain;
   }
-  
+
   /* Enhance tap highlighting */
-  button, a {
+  button,
+  a {
     -webkit-tap-highlight-color: rgba(142, 25, 39, 0.15);
   }
-  
+
   /* Smooth momentum scrolling */
   section {
     scroll-behavior: smooth;
@@ -271,7 +284,8 @@ body {
 }
 
 /* Force high DPI rendering */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
   img {
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;

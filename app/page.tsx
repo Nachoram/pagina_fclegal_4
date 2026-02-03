@@ -180,18 +180,16 @@ export default function CFLegalPage() {
 
   if (showLogo) {
     return (
-      <div className={`fixed inset-0 z-50 flex items-center justify-center bg-[#CDD4D8] transition-opacity duration-1000 ease-in-out ${
-        logoFading ? 'opacity-0' : logoVisible ? 'opacity-100' : 'opacity-0'
-      }`}>
+      <div className={`fixed inset-0 z-50 flex items-center justify-center bg-[#CDD4D8] transition-opacity duration-1000 ease-in-out ${logoFading ? 'opacity-0' : logoVisible ? 'opacity-100' : 'opacity-0'
+        }`}>
         <div className="px-6 sm:px-8">
           <Image
             src="/cf-legal-logo-horizontal.png"
             alt="CF Legal"
             width={400}
             height={120}
-            className={`w-auto h-[4px] xs:h-[5px] sm:h-[9px] md:h-[15px] lg:h-[21px] max-w-[50vw] ${
-              logoFading ? 'opacity-0 scale-90' : logoVisible ? 'animate-logo-entrance' : 'opacity-0 scale-95'
-            }`}
+            className={`w-auto h-[240px] xs:h-[300px] sm:h-[360px] md:h-[440px] lg:h-[560px] max-w-[95vw] ${logoFading ? 'opacity-0 scale-90' : logoVisible ? 'animate-logo-entrance' : 'opacity-0 scale-95'
+              }`}
             priority
           />
         </div>
@@ -202,9 +200,8 @@ export default function CFLegalPage() {
   return (
     <div className="min-h-screen bg-white font-sans">
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-          scrolled ? "bg-white shadow-md" : "bg-transparent"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${scrolled ? "bg-white shadow-md" : "bg-transparent"
+          }`}
       >
         <div className="w-full md:w-[80%] mx-auto px-4 sm:px-6 md:px-4 py-0.5 sm:py-1 md:py-[5px] flex items-center justify-between max-w-[100vw]">
           <div className="flex items-center min-w-0 flex-shrink">
@@ -213,13 +210,12 @@ export default function CFLegalPage() {
               alt="CF Legal"
               width={216}
               height={60}
-              className={`h-[1px] sm:h-[2px] md:h-[77px] w-auto origin-left transition-all duration-500 ${
-                scrolled ? "scale-100 sm:scale-105 md:scale-[2.2] opacity-100" : "scale-0 opacity-0"
-              }`}
+              className={`h-[40px] sm:h-[50px] md:h-[60px] w-auto origin-left transition-all duration-500 ${scrolled ? "scale-100 opacity-100" : "scale-0 opacity-0"
+                }`}
               priority
             />
           </div>
-          
+
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-4 ml-auto mr-[1cm]">
             {["Nosotros", "Nuestra Motivación", "Áreas de Práctica", "Equipo", "Contacto"].map((item) => (
@@ -234,9 +230,8 @@ export default function CFLegalPage() {
                       .replace(/[\u0300-\u036f]/g, ""),
                   )
                 }
-                className={`font-medium text-base transition-colors duration-300 uppercase tracking-wider ${
-                  scrolled ? "text-[#0F1822] hover:text-cf-burgundy" : "text-white hover:text-cf-burgundy"
-                }`}
+                className={`font-medium text-base transition-colors duration-300 uppercase tracking-wider ${scrolled ? "text-[#0F1822] hover:text-cf-burgundy" : "text-white hover:text-cf-burgundy"
+                  }`}
               >
                 {item}
               </button>
@@ -260,7 +255,7 @@ export default function CFLegalPage() {
         {/* Mobile Menu Drawer */}
         {mobileMenuOpen && (
           <>
-            <div 
+            <div
               className="md:hidden fixed inset-0 bg-black/60 backdrop-blur-md z-30 animate-in fade-in duration-300"
               onClick={() => setMobileMenuOpen(false)}
             />
@@ -282,7 +277,7 @@ export default function CFLegalPage() {
                     <X className="w-6 h-6 text-white" />
                   </button>
                 </div>
-                
+
                 {/* Navigation */}
                 <nav className="flex flex-col gap-2 flex-1">
                   {[
@@ -316,7 +311,7 @@ export default function CFLegalPage() {
                     </button>
                   ))}
                 </nav>
-                
+
                 {/* Drawer Footer */}
                 <div className="pt-6 mt-auto border-t border-white/10">
                   <p className="text-white/60 text-xs font-normal mb-3">Síguenos</p>
@@ -372,7 +367,6 @@ export default function CFLegalPage() {
               className="w-auto h-[280px] sm:h-[350px] md:h-[480px] lg:h-[560px] xl:h-[640px] max-w-[600px] sm:max-w-[720px] md:max-w-[960px] lg:max-w-[1120px] xl:max-w-[1280px] mx-auto logo-quality-enhance"
               style={{
                 filter: 'drop-shadow(0 4px 18px rgba(0, 0, 0, 0.4)) contrast(1.05) brightness(1.02)',
-                imageRendering: 'high-quality',
                 transform: 'translateZ(0)',
               }}
               quality={95}
@@ -407,11 +401,12 @@ export default function CFLegalPage() {
         {/* Background image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/Diseño sin título (2).svg"
+            src="/motivacion-original-hq.jpg"
             alt="Nuestra Motivación"
             fill
             sizes="100vw"
             className="object-cover object-center opacity-100"
+            quality={100}
             priority={false}
           />
         </div>
@@ -419,7 +414,7 @@ export default function CFLegalPage() {
         <div className="container mx-auto px-5 sm:px-6 max-w-7xl relative z-10">
           <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start md:items-start">
             {/* Left side - Title */}
-            <div className="text-center md:text-left md:mt-8">
+            <div className="text-center md:text-left md:mt-8 md:w-1/3 lg:w-1/4 flex-shrink-0">
               <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight tracking-tight drop-shadow-lg">
                 <span className="block">Nuestra</span>
                 <span className="block">Motivación</span>
@@ -428,82 +423,82 @@ export default function CFLegalPage() {
             </div>
 
             {/* Right side - Numbered boxes */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 md:mt-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 md:mt-16 flex-1 w-full">
               {/* Box 1 */}
-              <div className="group relative bg-white/30 backdrop-blur-sm border border-brand-gray hover:border-brand-bordeaux rounded-2xl p-6 transition-all duration-300 hover:shadow-lg hover:shadow-brand-bordeaux/20 cursor-pointer" onClick={() => toggleBoxExpansion(0)}>
-                <div className="flex items-start gap-4 mb-3">
-                  <div className="flex-shrink-0 w-8 h-8 bg-brand-bordeaux text-white rounded-full flex items-center justify-center font-bold text-xl">
+              <div className="group relative bg-white/30 backdrop-blur-sm border border-brand-gray hover:border-brand-bordeaux rounded-2xl p-5 sm:p-6 transition-all duration-300 hover:shadow-lg hover:shadow-brand-bordeaux/20 cursor-pointer" onClick={() => toggleBoxExpansion(0)}>
+                <div className="flex items-start gap-3 sm:gap-4 mb-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-brand-bordeaux text-white rounded-full flex items-center justify-center font-bold text-lg">
                     1
                   </div>
-                  <h3 className="font-bold text-2xl text-black group-hover:text-brand-bordeaux transition-colors">
+                  <h3 className="font-bold text-lg xl:text-xl text-black group-hover:text-brand-bordeaux transition-colors break-words leading-tight">
                     Excelencia Profesional
                   </h3>
                 </div>
-                <div className={`transition-all duration-300 overflow-hidden ${expandedBoxes.has(0) ? 'max-h-32 opacity-100' : 'max-h-0 opacity-0'}`}>
-                  <p className="text-xl text-black leading-relaxed mb-3">
+                <div className={`transition-all duration-300 overflow-hidden ${expandedBoxes.has(0) ? 'max-h-60 opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
+                  <p className="text-base sm:text-lg text-black/80 leading-relaxed mb-3">
                     Comprometidos con los más altos estándares de calidad en cada servicio que ofrecemos.
                   </p>
-                  <p className="text-sm text-black leading-relaxed">
+                  <p className="text-xs sm:text-sm text-black/60 leading-relaxed">
                     Nuestra experiencia de más de 15 años nos permite anticipar desafíos y ofrecer soluciones innovadoras.
                   </p>
                 </div>
               </div>
 
               {/* Box 2 */}
-              <div className="group relative bg-white/30 backdrop-blur-sm border border-brand-gray hover:border-brand-bordeaux rounded-2xl p-6 transition-all duration-300 hover:shadow-lg hover:shadow-brand-bordeaux/20 cursor-pointer" onClick={() => toggleBoxExpansion(1)}>
-                <div className="flex items-start gap-4 mb-3">
-                  <div className="flex-shrink-0 w-8 h-8 bg-brand-bordeaux text-white rounded-full flex items-center justify-center font-bold text-xl">
+              <div className="group relative bg-white/30 backdrop-blur-sm border border-brand-gray hover:border-brand-bordeaux rounded-2xl p-5 sm:p-6 transition-all duration-300 hover:shadow-lg hover:shadow-brand-bordeaux/20 cursor-pointer" onClick={() => toggleBoxExpansion(1)}>
+                <div className="flex items-start gap-3 sm:gap-4 mb-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-brand-bordeaux text-white rounded-full flex items-center justify-center font-bold text-lg">
                     2
                   </div>
-                  <h3 className="font-bold text-2xl text-black group-hover:text-brand-bordeaux transition-colors">
+                  <h3 className="font-bold text-lg xl:text-xl text-black group-hover:text-brand-bordeaux transition-colors break-words leading-tight">
                     Confianza y Transparencia
                   </h3>
                 </div>
-                <div className={`transition-all duration-300 overflow-hidden ${expandedBoxes.has(1) ? 'max-h-32 opacity-100' : 'max-h-0 opacity-0'}`}>
-                  <p className="text-xl text-black leading-relaxed mb-3">
+                <div className={`transition-all duration-300 overflow-hidden ${expandedBoxes.has(1) ? 'max-h-60 opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
+                  <p className="text-base sm:text-lg text-black/80 leading-relaxed mb-3">
                     Construimos relaciones duraderas basadas en la honestidad y la comunicación clara.
                   </p>
-                  <p className="text-sm text-black leading-relaxed">
+                  <p className="text-xs sm:text-sm text-black/60 leading-relaxed">
                     Mantenemos una comunicación constante con nuestros clientes, informándoles sobre cada paso del proceso.
                   </p>
                 </div>
               </div>
 
               {/* Box 3 */}
-              <div className="group relative bg-white/30 backdrop-blur-sm border border-brand-gray hover:border-brand-bordeaux rounded-2xl p-6 transition-all duration-300 hover:shadow-lg hover:shadow-brand-bordeaux/20 cursor-pointer" onClick={() => toggleBoxExpansion(2)}>
-                <div className="flex items-start gap-4 mb-3">
-                  <div className="flex-shrink-0 w-8 h-8 bg-brand-bordeaux text-white rounded-full flex items-center justify-center font-bold text-xl">
+              <div className="group relative bg-white/30 backdrop-blur-sm border border-brand-gray hover:border-brand-bordeaux rounded-2xl p-5 sm:p-6 transition-all duration-300 hover:shadow-lg hover:shadow-brand-bordeaux/20 cursor-pointer" onClick={() => toggleBoxExpansion(2)}>
+                <div className="flex items-start gap-3 sm:gap-4 mb-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-brand-bordeaux text-white rounded-full flex items-center justify-center font-bold text-lg">
                     3
                   </div>
-                  <h3 className="font-bold text-2xl text-black group-hover:text-brand-bordeaux transition-colors">
+                  <h3 className="font-bold text-lg xl:text-xl text-black group-hover:text-brand-bordeaux transition-colors break-words leading-tight">
                     Innovación Continua
                   </h3>
                 </div>
-                <div className={`transition-all duration-300 overflow-hidden ${expandedBoxes.has(2) ? 'max-h-32 opacity-100' : 'max-h-0 opacity-0'}`}>
-                  <p className="text-xl text-black leading-relaxed mb-3">
+                <div className={`transition-all duration-300 overflow-hidden ${expandedBoxes.has(2) ? 'max-h-60 opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
+                  <p className="text-base sm:text-lg text-black/80 leading-relaxed mb-3">
                     Adoptamos las últimas tecnologías y metodologías para optimizar nuestros servicios.
                   </p>
-                  <p className="text-sm text-black leading-relaxed">
+                  <p className="text-xs sm:text-sm text-black/60 leading-relaxed">
                     Utilizamos herramientas digitales avanzadas para agilizar procesos y mejorar la experiencia del cliente.
                   </p>
                 </div>
               </div>
 
               {/* Box 4 */}
-              <div className="group relative bg-white/30 backdrop-blur-sm border border-brand-gray hover:border-brand-bordeaux rounded-2xl p-6 transition-all duration-300 hover:shadow-lg hover:shadow-brand-bordeaux/20 cursor-pointer" onClick={() => toggleBoxExpansion(3)}>
-                <div className="flex items-start gap-4 mb-3">
-                  <div className="flex-shrink-0 w-8 h-8 bg-brand-bordeaux text-white rounded-full flex items-center justify-center font-bold text-xl">
+              <div className="group relative bg-white/30 backdrop-blur-sm border border-brand-gray hover:border-brand-bordeaux rounded-2xl p-5 sm:p-6 transition-all duration-300 hover:shadow-lg hover:shadow-brand-bordeaux/20 cursor-pointer" onClick={() => toggleBoxExpansion(3)}>
+                <div className="flex items-start gap-3 sm:gap-4 mb-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-brand-bordeaux text-white rounded-full flex items-center justify-center font-bold text-lg">
                     4
                   </div>
-                  <h3 className="font-bold text-2xl text-black group-hover:text-brand-bordeaux transition-colors">
+                  <h3 className="font-bold text-lg xl:text-xl text-black group-hover:text-brand-bordeaux transition-colors break-words leading-tight">
                     Compromiso Social
                   </h3>
                 </div>
-                <div className={`transition-all duration-300 overflow-hidden ${expandedBoxes.has(3) ? 'max-h-32 opacity-100' : 'max-h-0 opacity-0'}`}>
-                  <p className="text-xl text-black leading-relaxed mb-3">
+                <div className={`transition-all duration-300 overflow-hidden ${expandedBoxes.has(3) ? 'max-h-60 opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
+                  <p className="text-base sm:text-lg text-black/80 leading-relaxed mb-3">
                     Contribuimos activamente al desarrollo de nuestra comunidad y sociedad.
                   </p>
-                  <p className="text-sm text-black leading-relaxed">
+                  <p className="text-xs sm:text-sm text-black/60 leading-relaxed">
                     Participamos en iniciativas pro bono y colaboramos con organizaciones que promueven el desarrollo sostenible.
                   </p>
                 </div>
@@ -572,7 +567,7 @@ export default function CFLegalPage() {
           <div className="absolute bottom-20 right-20 w-60 h-60 border border-white rounded-full" />
           <div className="absolute top-1/2 left-1/4 w-32 h-32 border border-white rounded-full" />
         </div>
-        
+
         <div className="container mx-auto px-5 sm:px-6 max-w-7xl relative z-10">
           <div className="text-center mb-12 sm:mb-16 md:mb-20">
             <p className="font-medium text-sm sm:text-base text-cf-burgundy mb-3 tracking-wider uppercase">Profesionales</p>
@@ -581,7 +576,7 @@ export default function CFLegalPage() {
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-cf-burgundy to-white mx-auto rounded-full" />
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 max-w-6xl mx-auto">
             {teamMembers.map((member, idx) => (
               <div
@@ -593,7 +588,7 @@ export default function CFLegalPage() {
                 style={{ animationDelay: `${idx * 100}ms` }}
               >
                 <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-white/10 hover:border-cf-burgundy/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cf-burgundy/20">
-                  
+
                   <div className="relative">
                     <div className="relative w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-6 rounded-2xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-105">
                       <Image
@@ -601,20 +596,18 @@ export default function CFLegalPage() {
                         alt={member.name}
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        className={`object-cover transition-all duration-500 ${
-                          hoveredMember === member.id ? "grayscale-0 scale-110" : "grayscale scale-100"
-                        }`}
+                        className={`object-cover transition-all duration-500 ${hoveredMember === member.id ? "grayscale-0 scale-110" : "grayscale scale-100"
+                          }`}
                       />
                     </div>
-                    
+
                     <div className="text-center">
-                      <h3 className={`font-bold text-xl sm:text-2xl mb-2 transition-colors duration-300 leading-tight tracking-tight ${
-                        hoveredMember === member.id ? "text-cf-burgundy" : "text-white"
-                      }`}>
+                      <h3 className={`font-bold text-xl sm:text-2xl mb-2 transition-colors duration-300 leading-tight tracking-tight ${hoveredMember === member.id ? "text-cf-burgundy" : "text-white"
+                        }`}>
                         {member.name}
                       </h3>
                       <p className="font-normal text-sm sm:text-base text-white/70 mb-4">{member.title}</p>
-                      
+
                       <div className="flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-all duration-300">
                         <a
                           href={`mailto:${member.email}`}
@@ -633,7 +626,7 @@ export default function CFLegalPage() {
                           <Linkedin className="w-4 h-4 text-white" />
                         </a>
                       </div>
-                      
+
                       <p className="font-medium text-xs text-cf-burgundy/80 mt-4 md:hidden tracking-wider">Toca para ver perfil completo</p>
                     </div>
                   </div>
@@ -835,18 +828,18 @@ export default function CFLegalPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             {/* Logo and tagline */}
             <div className="text-center md:text-left">
-              <Image 
-                src="/cf-legal-logo-horizontal.png" 
-                alt="CF Legal" 
-                width={150} 
-                height={45} 
-                className="w-auto h-8 sm:h-9 brightness-0 invert mx-auto md:mx-0 mb-3" 
+              <Image
+                src="/cf-legal-logo-horizontal.png"
+                alt="CF Legal"
+                width={150}
+                height={45}
+                className="w-auto h-8 sm:h-9 brightness-0 invert mx-auto md:mx-0 mb-3"
               />
               <p className="font-normal text-white/60 text-xs sm:text-sm leading-relaxed max-w-xs mx-auto md:mx-0">
                 Asesoría legal de excelencia para tu empresa y patrimonio
               </p>
             </div>
-            
+
             {/* Quick links */}
             <div className="text-center">
               <h4 className="font-medium text-white text-sm sm:text-base mb-4 tracking-tight">Enlaces Rápidos</h4>
@@ -864,7 +857,7 @@ export default function CFLegalPage() {
                 ))}
               </div>
             </div>
-            
+
             {/* Social */}
             <div className="text-center md:text-right">
               <h4 className="font-medium text-white text-sm sm:text-base mb-4 tracking-tight">Síguenos</h4>
@@ -892,7 +885,7 @@ export default function CFLegalPage() {
               </div>
             </div>
           </div>
-          
+
           <div className="border-t border-white/10 pt-6 text-center">
             <p className="font-normal text-white/50 text-xs sm:text-sm">
               © {new Date().getFullYear()} CF Legal. Todos los derechos reservados.
