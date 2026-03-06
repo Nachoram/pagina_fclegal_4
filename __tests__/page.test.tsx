@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom'
-import { render, screen, waitFor } from '@testing-library/react'
+import { render, screen, waitFor, act } from '@testing-library/react'
 import CFLegalPage from '../app/page'
 
 // Mock setTimeout and clearTimeout for controlling timing in tests
@@ -26,7 +26,9 @@ describe('CF Legal Landing Page', () => {
     expect(screen.getByAltText('CF Legal')).toBeInTheDocument()
 
     // Fast-forward through all timers to complete the loading animation
-    jest.runAllTimers()
+    await act(async () => {
+      jest.runAllTimers()
+    })
 
     // Wait for the main content section heading to appear (not the navigation button)
     await waitFor(() => {
@@ -45,7 +47,9 @@ describe('CF Legal Landing Page', () => {
     render(<CFLegalPage />)
 
     // Fast-forward through loading animation
-    jest.runAllTimers()
+    await act(async () => {
+      jest.runAllTimers()
+    })
 
     // Wait for content to load
     await waitFor(() => {
@@ -61,7 +65,9 @@ describe('CF Legal Landing Page', () => {
     render(<CFLegalPage />)
 
     // Fast-forward through loading animation
-    jest.runAllTimers()
+    await act(async () => {
+      jest.runAllTimers()
+    })
 
     // Wait for content to load
     await waitFor(() => {
@@ -79,7 +85,9 @@ describe('CF Legal Landing Page', () => {
     render(<CFLegalPage />)
 
     // Fast-forward through loading animation
-    jest.runAllTimers()
+    await act(async () => {
+      jest.runAllTimers()
+    })
 
     // Wait for content to load
     await waitFor(() => {
