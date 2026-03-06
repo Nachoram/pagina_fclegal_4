@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
-import { Mail, Phone, Linkedin, Scale, Home, Briefcase, TrendingUp, Menu, X } from "lucide-react"
+import { Mail, Phone, Linkedin, Scale, Home, Briefcase, TrendingUp, Menu, X, Building2, Gavel } from "lucide-react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 
 interface TeamMember {
@@ -22,71 +22,63 @@ const teamMembers: TeamMember[] = [
     id: "1",
     name: "Sebastián Cuesta",
     title: "Socio",
-    photo: "/professional-male-lawyer.png",
-    photoColor: "/professional-lawyer-portrait-male-color.jpg",
+    photo: "/sebastian-cuesta-avatar.png",
+    photoColor: "/sebastian-cuesta-avatar.png",
     education: [
-      "Licenciado en Derecho, Universidad de Chile",
-      "Magíster en Derecho Tributario, Universidad Adolfo Ibáñez",
+      "Abogado, Universidad Diego Portales (2007 - 2013)",
+      "MBA, Pontificia Universidad Católica de Chile (2020 - 2022)",
+      "Intercambio Académico, Tilburg University (2011 - 2012)",
     ],
     experience: [
-      "Socio Fundador, CF Legal (2024 - Presente)",
-      "Asociado Senior, Estudio Jurídico Internacional (2018 - 2024)",
-      "Asesor Legal, Ministerio de Hacienda (2015 - 2018)",
+      "Socio, CF Legal (2025 - Presente)",
+      "Socio, ARH Abogados - Aldunate Ramírez Horwitz (2020 - 2025)",
+      "Abogado, ARH Abogados - Aldunate Ramírez Horwitz (2018 - 2025)",
+      "Abogado Asociado, Aldunate & Cía. (2013 - 2018)",
     ],
     email: "scuesta@cflegal.cl",
-    linkedin: "https://linkedin.com/in/sebastiancuesta",
+    linkedin: "https://www.linkedin.com/in/sebastian-cuesta/",
   },
   {
     id: "2",
     name: "Pedro Urrestarazu",
-    title: "Socio",
-    photo: "/professional-lawyer-portrait-male-senior.jpg",
-    photoColor: "/professional-lawyer-portrait-male-senior-color.jpg",
+    title: "Abogado",
+    photo: "/pedro-urrestarazu-avatar.png",
+    photoColor: "/pedro-urrestarazu-avatar.png",
     education: [
-      "Licenciado en Derecho, Universidad de Chile",
-      "MBA, Universidad Adolfo Ibáñez",
+      "Licenciado en Ciencias Sociales, Pontificia Universidad Católica de Chile (2012 - 2016)",
+      "Licenciado en Derecho, Pontificia Universidad Católica de Chile",
     ],
     experience: [
-      "Socio Fundador, CF Legal (2024 - Presente)",
-      "Gerente Legal, Corporación Multinacional (2017 - 2024)",
-      "Asociado Senior, Estudio Tributario (2012 - 2017)",
+      "Abogado, CF Legal (2025 - Presente)",
+      "Secondment Gerencia Legal Corporativa, Bupa Chile (2025 - Presente)",
+      "Abogado, ARH Abogados - Aldunate Ramírez Horwitz (2022 - 2025)",
+      "Abogado, ICUADRA (2020 - 2022)",
     ],
     email: "purrestarazu@cflegal.cl",
-    linkedin: "https://linkedin.com/in/pedrourrestarazu",
+    linkedin: "https://linkedin.com/in/pedro-urrestarazu-gonzález-77043b158",
   },
   {
     id: "3",
-    name: "Felipe Moreno",
+    name: "Felipe Moreno Maturana",
     title: "Socio",
-    photo: "/professional-male-lawyer.png",
-    photoColor: "/professional-lawyer-portrait-male-color.jpg",
+    photo: "/felipe-moreno-avatar.png",
+    photoColor: "/felipe-moreno-avatar.png",
     education: [
-      "Licenciado en Derecho, Pontificia Universidad Católica",
-      "Diplomado en Derecho Corporativo, Universidad de los Andes",
+      "Licenciado en Ciencias Jurídicas y Sociales, Universidad del Desarrollo (2014)",
+      "Curso Regulación de la Industria Acuícola y Medioambiente, Universidad del Desarrollo (2024)",
+      "Curso Contabilidad para Abogados, Universidad del Desarrollo (2018)",
     ],
     experience: [
-      "Socio Fundador, CF Legal (2024 - Presente)",
-      "Asociado, Estudio Corporativo (2019 - 2024)",
-      "Abogado Junior, Firma Internacional (2016 - 2019)",
+      "Socio, CF Legal (2025 - Presente)",
+      "Abogado Corporativo, Profesional Independiente (2025 - Presente)",
+      "Abogado, SACYR (2018 - 2024)",
     ],
     email: "fmoreno@cflegal.cl",
-    linkedin: "https://linkedin.com/in/felipemoreno",
+    linkedin: "https://linkedin.com/in/felipe-moreno-maturana",
   },
 ]
 
 const practiceAreas = [
-  {
-    name: "Derecho Tributario",
-    icon: Scale,
-    description: "Asesoría integral en materia tributaria y fiscal",
-    details: "Planificación tributaria, defensa ante el SII, estructuración de inversiones, compliance fiscal y optimización de carga tributaria para personas y empresas."
-  },
-  {
-    name: "Gestión de Patrimonio",
-    icon: TrendingUp,
-    description: "Planificación y protección patrimonial estratégica",
-    details: "Estructuración patrimonial, sucesiones, fideicomisos, planificación hereditaria y estrategias de protección de activos para familias y empresas."
-  },
   {
     name: "Derecho Corporativo",
     icon: Briefcase,
@@ -94,10 +86,22 @@ const practiceAreas = [
     details: "Constitución de sociedades, fusiones y adquisiciones, reestructuraciones corporativas, gobierno corporativo y asesoría en operaciones comerciales complejas."
   },
   {
-    name: "Derecho Inmobiliario",
+    name: "Derecho Inmobiliario y de la Construcción",
     icon: Home,
-    description: "Asesoría especializada en transacciones inmobiliarias",
-    details: "Compraventa de propiedades, due diligence inmobiliario, contratos de arriendo, desarrollo de proyectos y resolución de conflictos en materia inmobiliaria."
+    description: "Asesoría especializada en transacciones y desarrollos",
+    details: "Compraventa de propiedades, due diligence inmobiliario, contratos de arriendo, desarrollo de proyectos, normas urbanísticas y regulación del sector construcción."
+  },
+  {
+    name: "Proyectos e Infraestructura",
+    icon: Building2,
+    description: "Estructuración y desarrollo de grandes proyectos",
+    details: "Asesoría integral en el desarrollo, financiamiento y ejecución de proyectos de infraestructura pública y privada, concesiones y obras a gran escala."
+  },
+  {
+    name: "Juicios y Arbitrajes",
+    icon: Gavel,
+    description: "Resolución estratégica de controversias",
+    details: "Representación en litigios civiles, comerciales y contencioso-administrativos, mediación y arbitrajes nacionales e internacionales."
   }
 ]
 
@@ -389,99 +393,14 @@ export default function CFLegalPage() {
             </h2>
             <div className="w-20 h-1 bg-brand-bordeaux mx-auto rounded-full mb-6" />
             <p className="font-normal text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Somos un grupo humano y de abogados dispuesto a ayudarte en tus negocios, atender tus preocupaciones y inquietudes
+              Somos un equipo altamente comprometido con la comprensión del negocio, la cultura organizacional y las necesidades particulares de nuestros clientes.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Nuestra Motivación Section */}
-      <section id="nuestra-motivacion" className="py-16 sm:py-20 md:py-24 lg:py-28 bg-white relative overflow-hidden">
-        {/* Background image */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/motivacion-original-hq.jpg"
-            alt="Nuestra Motivación"
-            fill
-            sizes="100vw"
-            className="object-cover object-center opacity-100"
-            quality={100}
-            priority={false}
-          />
-        </div>
 
-        <div className="container mx-auto px-5 sm:px-8 max-w-7xl relative z-10">
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
-            {/* Left side - Title */}
-            <div className="text-center lg:text-left lg:mt-8 lg:w-1/4 flex-shrink-0 w-full lg:max-w-[280px]">
-              <h2 className="font-bold text-4xl sm:text-5xl lg:text-5xl xl:text-6xl text-white leading-tight tracking-tight drop-shadow-md">
-                <span className="block">Nuestra</span>
-                <span className="block">Motivación</span>
-              </h2>
-              <div className="w-20 h-1 bg-brand-bordeaux lg:mr-auto mx-auto rounded-full mt-4" />
-            </div>
 
-            {/* Right side - Boxes */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 min-[1600px]:grid-cols-4 gap-6 lg:mt-8 flex-1 w-full">
-              {/* Box 1 */}
-              <div className="group relative bg-white/30 backdrop-blur-sm border border-brand-gray hover:border-brand-bordeaux rounded-2xl p-4 sm:p-5 transition-all duration-300 hover:shadow-lg hover:shadow-brand-bordeaux/20 cursor-pointer flex flex-col h-full" onClick={() => toggleBoxExpansion(0)}>
-                <div className="flex flex-col items-start gap-2 mb-4">
-                  <h3 className="font-bold text-base sm:text-lg lg:text-xl xl:text-lg 2xl:text-xl text-black group-hover:text-brand-bordeaux transition-colors leading-tight">
-                    Excelencia Profesional
-                  </h3>
-                </div>
-                <div className={`transition-all duration-300 overflow-hidden ${expandedBoxes.has(0) ? 'max-h-60 opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
-                  <p className="text-base sm:text-lg text-black/80 leading-relaxed mb-3">
-                    Comprometidos con los más altos estándares de calidad en cada servicio que ofrecemos.
-                  </p>
-                </div>
-              </div>
-
-              {/* Box 2 */}
-              <div className="group relative bg-white/30 backdrop-blur-sm border border-brand-gray hover:border-brand-bordeaux rounded-2xl p-4 sm:p-5 transition-all duration-300 hover:shadow-lg hover:shadow-brand-bordeaux/20 cursor-pointer flex flex-col h-full" onClick={() => toggleBoxExpansion(1)}>
-                <div className="flex flex-col items-start gap-2 mb-4">
-                  <h3 className="font-bold text-base sm:text-lg lg:text-xl xl:text-lg 2xl:text-xl text-black group-hover:text-brand-bordeaux transition-colors leading-tight">
-                    Confianza y Transparencia
-                  </h3>
-                </div>
-                <div className={`transition-all duration-300 overflow-hidden ${expandedBoxes.has(1) ? 'max-h-60 opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
-                  <p className="text-base sm:text-lg text-black/80 leading-relaxed mb-3">
-                    Construimos relaciones duraderas basadas en la honestidad y la comunicación clara.
-                  </p>
-                </div>
-              </div>
-
-              {/* Box 3 */}
-              <div className="group relative bg-white/30 backdrop-blur-sm border border-brand-gray hover:border-brand-bordeaux rounded-2xl p-4 sm:p-5 transition-all duration-300 hover:shadow-lg hover:shadow-brand-bordeaux/20 cursor-pointer flex flex-col h-full" onClick={() => toggleBoxExpansion(2)}>
-                <div className="flex flex-col items-start gap-2 mb-4">
-                  <h3 className="font-bold text-base sm:text-lg lg:text-xl xl:text-lg 2xl:text-xl text-black group-hover:text-brand-bordeaux transition-colors leading-tight">
-                    Innovación Continua
-                  </h3>
-                </div>
-                <div className={`transition-all duration-300 overflow-hidden ${expandedBoxes.has(2) ? 'max-h-60 opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
-                  <p className="text-base sm:text-lg text-black/80 leading-relaxed mb-3">
-                    Adoptamos las últimas tecnologías y metodologías para optimizar nuestros servicios.
-                  </p>
-                </div>
-              </div>
-
-              {/* Box 4 */}
-              <div className="group relative bg-white/30 backdrop-blur-sm border border-brand-gray hover:border-brand-bordeaux rounded-2xl p-4 sm:p-5 transition-all duration-300 hover:shadow-lg hover:shadow-brand-bordeaux/20 cursor-pointer flex flex-col h-full" onClick={() => toggleBoxExpansion(3)}>
-                <div className="flex flex-col items-start gap-2 mb-4">
-                  <h3 className="font-bold text-base sm:text-lg lg:text-xl xl:text-lg 2xl:text-xl text-black group-hover:text-brand-bordeaux transition-colors leading-tight">
-                    Compromiso Social
-                  </h3>
-                </div>
-                <div className={`transition-all duration-300 overflow-hidden ${expandedBoxes.has(3) ? 'max-h-60 opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
-                  <p className="text-base sm:text-lg text-black/80 leading-relaxed mb-3">
-                    Contribuimos activamente al desarrollo de nuestra comunidad y sociedad.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Áreas de Práctica Section */}
       <section id="areas-de-practica" className="py-16 sm:py-20 md:py-24 lg:py-28 bg-gray-50 relative overflow-hidden">
@@ -491,7 +410,7 @@ export default function CFLegalPage() {
 
         <div className="container mx-auto px-5 sm:px-6 max-w-7xl relative z-10">
           <div className="text-center mb-12 sm:mb-16 md:mb-20">
-            <p className="font-medium text-sm sm:text-base text-brand-bordeaux mb-3 tracking-wider uppercase">Especialidades</p>
+
             <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-brand-dark mb-4 leading-tight tracking-tight">
               Áreas de Práctica
             </h2>
@@ -503,7 +422,7 @@ export default function CFLegalPage() {
               return (
                 <div
                   key={index}
-                  className="group relative bg-white border border-brand-gray hover:border-brand-bordeaux transition-all duration-300 rounded-3xl overflow-hidden"
+                  className="group relative bg-white border border-brand-gray hover:border-brand-bordeaux transition-all duration-300 rounded-md overflow-hidden"
                 >
                   <div className="relative p-6 sm:p-8 md:p-10">
                     <div className="mb-4">
@@ -534,6 +453,66 @@ export default function CFLegalPage() {
         </div>
       </section>
 
+      {/* Áreas de Práctica - Opción 2 (con fondo de Nuestra Motivación) */}
+      <section id="areas-de-practica-alt" className="py-16 sm:py-20 md:py-24 lg:py-28 relative overflow-hidden">
+        {/* Background image - same as Nuestra Motivación */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/motivacion-original-hq.jpg"
+            alt="Áreas de Práctica"
+            fill
+            sizes="100vw"
+            className="object-cover object-center opacity-100"
+            quality={100}
+            priority={false}
+          />
+        </div>
+
+        <div className="container mx-auto px-5 sm:px-6 max-w-7xl relative z-10">
+          <div className="text-center mb-12 sm:mb-16 md:mb-20">
+
+            <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-4 leading-tight tracking-tight drop-shadow-md">
+              Áreas de Práctica
+            </h2>
+            <div className="w-20 h-1 bg-brand-bordeaux mx-auto rounded-full" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 md:gap-8 max-w-5xl mx-auto">
+            {practiceAreas.map((area, index) => {
+              return (
+                <div
+                  key={index}
+                  className="group relative bg-white/30 backdrop-blur-sm border border-brand-gray hover:border-brand-bordeaux transition-all duration-300 rounded-lg overflow-hidden"
+                >
+                  <div className="relative p-6 sm:p-8 md:p-10">
+                    <div className="mb-4">
+                      <h3 className="font-bold text-xl sm:text-2xl md:text-2xl text-white mb-2 leading-tight tracking-tight group-hover:text-brand-bordeaux transition-colors drop-shadow-sm">
+                        {area.name}
+                      </h3>
+                      <p className="font-medium text-sm sm:text-base text-white/90 leading-relaxed drop-shadow-sm">
+                        {area.description}
+                      </p>
+                    </div>
+
+                    <p className="font-medium text-[13px] sm:text-sm text-white/85 leading-relaxed opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-40 transition-all duration-500 overflow-hidden drop-shadow-sm">
+                      {area.details}
+                    </p>
+
+                    {/* Arrow indicator on mobile */}
+                    <div className="md:hidden flex items-center justify-center mt-4 text-brand-bordeaux text-xs font-medium tracking-wider">
+                      <span>Toca para más info</span>
+                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Equipo Section */}
       <section id="equipo" className="py-16 sm:py-20 md:py-24 lg:py-28 bg-gradient-to-br from-cf-dark-gray via-cf-blue to-cf-dark-gray relative overflow-hidden">
         {/* Background pattern */}
@@ -545,7 +524,7 @@ export default function CFLegalPage() {
 
         <div className="container mx-auto px-5 sm:px-6 max-w-7xl relative z-10">
           <div className="text-center mb-12 sm:mb-16 md:mb-20">
-            <p className="font-medium text-sm sm:text-base text-cf-burgundy mb-3 tracking-wider uppercase">Profesionales</p>
+
             <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-4 leading-tight tracking-tight">
               Nuestro Equipo
             </h2>
@@ -562,10 +541,10 @@ export default function CFLegalPage() {
                 onClick={() => setSelectedMember(member)}
                 style={{ animationDelay: `${idx * 100}ms` }}
               >
-                <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-white/10 hover:border-cf-burgundy/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cf-burgundy/20">
+                <div className="relative rounded-lg p-6 sm:p-8 transition-all duration-500 hover:shadow-2xl hover:shadow-cf-burgundy/20">
 
                   <div className="relative">
-                    <div className="relative w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-6 rounded-2xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-105">
+                    <div className="relative w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-6 rounded-md overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-105">
                       <Image
                         src={member.photo || "/placeholder.svg"}
                         alt={member.name}
@@ -622,7 +601,7 @@ export default function CFLegalPage() {
               </DialogHeader>
               <div className="flex flex-col md:flex-row gap-4 sm:gap-5 md:gap-8">
                 <div className="flex-shrink-0 mx-auto md:mx-0">
-                  <div className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 lg:w-48 lg:h-48 rounded-xl overflow-hidden shadow-lg border-2 border-cf-light-gray">
+                  <div className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 lg:w-48 lg:h-48 rounded-md overflow-hidden shadow-lg border-2 border-cf-light-gray">
                     <Image
                       src={selectedMember.photoColor || "/placeholder.svg"}
                       alt={selectedMember.name}
@@ -707,31 +686,24 @@ export default function CFLegalPage() {
 
         <div className="container mx-auto px-6 sm:px-8 max-w-5xl relative z-10">
           <div className="text-center mb-20 sm:mb-24 md:mb-28">
-            {/* Subtítulo con Raleway Medium, tracking amplio y color burdeo */}
-            <p className="font-medium text-sm sm:text-base text-[#8E1927] mb-6 tracking-wider uppercase">
-              Hablemos
-            </p>
+
             {/* Título principal con Raleway Bold */}
             <h2 className="font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#0F1822] mb-8 leading-tight tracking-tight">
-              Contacta con Nosotros
+              Sigamos en Contacto
             </h2>
             {/* Línea decorativa sutil */}
-            <div className="w-20 h-0.5 bg-[#8E1927] mx-auto rounded-full mb-10" />
-            {/* Párrafo con Raleway Regular */}
-            <p className="font-raleway font-normal text-base sm:text-lg text-[#808184] max-w-2xl mx-auto leading-relaxed">
-              Estamos listos para ayudarte con tus necesidades legales. Contáctanos hoy mismo.
-            </p>
+            <div className="w-20 h-0.5 bg-[#8E1927] mx-auto rounded-full" />
           </div>
 
           <div className="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto mb-20">
             {/* Email Card - Diseño premium y sutil */}
             <a
               href="mailto:administracion@cflegal.cl"
-              className="group relative bg-[#CDD4D8]/20 hover:bg-[#CDD4D8]/25 rounded-2xl p-10 border border-[#CDD4D8]/40 hover:border-[#8E1927]/60 transition-all duration-500 shadow-sm hover:shadow-md backdrop-blur-sm"
+              className="group relative bg-[#CDD4D8]/20 hover:bg-[#CDD4D8]/25 rounded-lg p-10 border border-[#CDD4D8]/40 hover:border-[#8E1927]/60 transition-all duration-500 shadow-sm hover:shadow-md backdrop-blur-sm"
             >
               <div className="flex items-start gap-8">
                 {/* Icono con fondo sutil y color burdeo */}
-                <div className="flex-shrink-0 p-4 bg-transparent border border-[#8E1927]/20 rounded-xl group-hover:bg-[#8E1927]/5 transition-colors duration-500">
+                <div className="flex-shrink-0 p-4 bg-transparent border border-[#8E1927]/20 rounded-lg group-hover:bg-[#8E1927]/5 transition-colors duration-500">
                   <Mail className="w-7 h-7 text-[#8E1927]" />
                 </div>
                 <div className="flex-1 min-w-0">
@@ -754,11 +726,11 @@ export default function CFLegalPage() {
             {/* Phone Card - Diseño premium y sutil */}
             <a
               href="tel:+56912345678"
-              className="group relative bg-[#CDD4D8]/20 hover:bg-[#CDD4D8]/25 rounded-2xl p-10 border border-[#CDD4D8]/40 hover:border-[#8E1927]/60 transition-all duration-500 shadow-sm hover:shadow-md backdrop-blur-sm"
+              className="group relative bg-[#CDD4D8]/20 hover:bg-[#CDD4D8]/25 rounded-lg p-10 border border-[#CDD4D8]/40 hover:border-[#8E1927]/60 transition-all duration-500 shadow-sm hover:shadow-md backdrop-blur-sm"
             >
               <div className="flex items-start gap-8">
                 {/* Icono con fondo sutil y color burdeo */}
-                <div className="flex-shrink-0 p-4 bg-transparent border border-[#8E1927]/20 rounded-xl group-hover:bg-[#8E1927]/5 transition-colors duration-500">
+                <div className="flex-shrink-0 p-4 bg-transparent border border-[#8E1927]/20 rounded-lg group-hover:bg-[#8E1927]/5 transition-colors duration-500">
                   <Phone className="w-7 h-7 text-[#8E1927]" />
                 </div>
                 <div className="flex-1 min-w-0">
@@ -785,7 +757,7 @@ export default function CFLegalPage() {
               href="https://linkedin.com/company/cflegal"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-5 px-12 py-5 bg-[#042A3D] hover:bg-[#0F1822] rounded-xl transition-all duration-500 font-medium text-base text-white shadow-sm hover:shadow-lg hover:scale-[1.02] w-full sm:w-auto max-w-sm tracking-tight"
+              className="group inline-flex items-center justify-center gap-5 px-12 py-5 bg-[#042A3D] hover:bg-[#0F1822] rounded-md transition-all duration-500 font-medium text-base text-white shadow-sm hover:shadow-lg hover:scale-[1.02] w-full sm:w-auto max-w-sm tracking-tight"
             >
               <Linkedin className="w-6 h-6 group-hover:scale-110 transition-transform duration-500" />
               <span>Síguenos en LinkedIn</span>
@@ -819,7 +791,7 @@ export default function CFLegalPage() {
             <div className="text-center">
               <h4 className="font-medium text-white text-base sm:text-lg mb-4 tracking-tight">Enlaces Rápidos</h4>
               <div className="flex flex-col gap-2">
-                {["Nosotros", "Nuestra Motivación", "Áreas de Práctica", "Equipo", "Contacto"].map((item) => (
+                {["Nosotros", "Áreas de Práctica", "Equipo", "Contacto"].map((item) => (
                   <button
                     key={item}
                     onClick={() => scrollToSection(

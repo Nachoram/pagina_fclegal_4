@@ -1,3 +1,4 @@
+import '@testing-library/jest-dom'
 import { render, screen, waitFor } from '@testing-library/react'
 import CFLegalPage from '../app/page'
 
@@ -34,9 +35,10 @@ describe('CF Legal Landing Page', () => {
     })
 
     // Now check that main content is visible - look for specific section headings
-    expect(screen.getByRole('heading', { name: /áreas de práctica/i, level: 2 })).toBeInTheDocument()
+    const areasHeadings = screen.getAllByRole('heading', { name: /áreas de práctica/i, level: 2 })
+    expect(areasHeadings.length).toBeGreaterThan(0)
     expect(screen.getByRole('heading', { name: /nuestro equipo/i, level: 2 })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: /contacta con nosotros/i, level: 2 })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /sigamos en contacto/i, level: 2 })).toBeInTheDocument()
   })
 
   it('displays team member names after loading', async () => {
@@ -52,7 +54,7 @@ describe('CF Legal Landing Page', () => {
 
     // Check if team members are displayed
     expect(screen.getByText('Pedro Urrestarazu')).toBeInTheDocument()
-    expect(screen.getByText('Felipe Moreno')).toBeInTheDocument()
+    expect(screen.getByText('Felipe Moreno Maturana')).toBeInTheDocument()
   })
 
   it('shows practice areas after loading', async () => {
@@ -63,13 +65,14 @@ describe('CF Legal Landing Page', () => {
 
     // Wait for content to load
     await waitFor(() => {
-      expect(screen.getByText('Derecho Tributario')).toBeInTheDocument()
+      const el = screen.getAllByText('Derecho Corporativo')
+      expect(el.length).toBeGreaterThan(0)
     })
 
     // Check if practice areas are displayed
-    expect(screen.getByText('Gestión de Patrimonio')).toBeInTheDocument()
-    expect(screen.getByText('Derecho Corporativo')).toBeInTheDocument()
-    expect(screen.getByText('Derecho Inmobiliario')).toBeInTheDocument()
+    expect(screen.getAllByText('Derecho Inmobiliario y de la Construcción').length).toBeGreaterThan(0)
+    expect(screen.getAllByText('Proyectos e Infraestructura').length).toBeGreaterThan(0)
+    expect(screen.getAllByText('Juicios y Arbitrajes').length).toBeGreaterThan(0)
   })
 
   it('displays contact information after loading', async () => {
@@ -80,10 +83,10 @@ describe('CF Legal Landing Page', () => {
 
     // Wait for content to load
     await waitFor(() => {
-      expect(screen.getByText('administracion@cflegal.cl')).toBeInTheDocument()
+      expect(screen.getAllByText('administracion@cflegal.cl').length).toBeGreaterThan(0)
     })
 
     // Check contact information
-    expect(screen.getByText('+56 9 1234 5678')).toBeInTheDocument()
+    expect(screen.getAllByText('+56 9 1234 5678').length).toBeGreaterThan(0)
   })
 })
