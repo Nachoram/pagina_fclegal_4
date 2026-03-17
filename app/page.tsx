@@ -22,8 +22,8 @@ const teamMembers: TeamMember[] = [
     id: "1",
     name: "Sebastián Cuesta",
     title: "Socio",
-    photo: "/sebastian-cuesta-avatar.png",
-    photoColor: "/sebastian-cuesta-avatar.png",
+    photo: "/default-avatar.svg",
+    photoColor: "/default-avatar.svg",
     education: [
       "Abogado, Universidad Diego Portales (2007 - 2013)",
       "MBA, Pontificia Universidad Católica de Chile (2020 - 2022)",
@@ -42,15 +42,14 @@ const teamMembers: TeamMember[] = [
     id: "2",
     name: "Pedro Urrestarazu",
     title: "Abogado",
-    photo: "/pedro-urrestarazu-avatar.png",
-    photoColor: "/pedro-urrestarazu-avatar.png",
+    photo: "/default-avatar.svg",
+    photoColor: "/default-avatar.svg",
     education: [
       "Licenciado en Ciencias Sociales, Pontificia Universidad Católica de Chile (2012 - 2016)",
       "Licenciado en Derecho, Pontificia Universidad Católica de Chile",
     ],
     experience: [
       "Abogado, CF Legal (2025 - Presente)",
-      "Secondment Gerencia Legal Corporativa, Bupa Chile (2025 - Presente)",
       "Abogado, ARH Abogados - Aldunate Ramírez Horwitz (2022 - 2025)",
       "Abogado, ICUADRA (2020 - 2022)",
     ],
@@ -60,16 +59,15 @@ const teamMembers: TeamMember[] = [
   {
     id: "3",
     name: "Felipe Moreno Maturana",
-    title: "Socio",
-    photo: "/felipe-moreno-avatar.png",
-    photoColor: "/felipe-moreno-avatar.png",
+    title: "Abogado",
+    photo: "/default-avatar.svg",
+    photoColor: "/default-avatar.svg",
     education: [
       "Licenciado en Ciencias Jurídicas y Sociales, Universidad del Desarrollo (2014)",
       "Curso Regulación de la Industria Acuícola y Medioambiente, Universidad del Desarrollo (2024)",
       "Curso Contabilidad para Abogados, Universidad del Desarrollo (2018)",
     ],
     experience: [
-      "Socio, CF Legal (2025 - Presente)",
       "Abogado Corporativo, Profesional Independiente (2025 - Presente)",
       "Abogado, SACYR (2018 - 2024)",
     ],
@@ -388,12 +386,16 @@ export default function CFLegalPage() {
 
         <div className="container mx-auto px-5 sm:px-6 max-w-7xl relative z-10">
           <div className="text-center mb-12 sm:mb-16 md:mb-20">
-            <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-brand-dark mb-4 leading-tight tracking-tight">
-              Nosotros
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#0F1822] mb-6 leading-tight tracking-[0.2em] uppercase">
+              <span className="font-bold">NOSOTROS</span>
             </h2>
-            <div className="w-20 h-1 bg-brand-bordeaux mx-auto rounded-full mb-6" />
+            <div className="flex justify-center mb-6">
+              <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#8E1927]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
             <p className="font-normal text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Somos un equipo altamente comprometido con la comprensión del negocio, la cultura organizacional y las necesidades particulares de nuestros clientes.
+              Somos un equipo altamente <span className="font-bold text-[#0F1822]">comprometido</span> con la comprensión del negocio, la cultura organizacional y las <span className="font-bold text-[#0F1822]">necesidades particulares</span> de nuestros clientes.
             </p>
           </div>
         </div>
@@ -403,115 +405,76 @@ export default function CFLegalPage() {
 
 
       {/* Áreas de Práctica Section */}
-      <section id="areas-de-practica" className="py-16 sm:py-20 md:py-24 lg:py-28 bg-gray-50 relative overflow-hidden">
-        {/* Background decoration */}
-        <div className="absolute top-0 right-0 w-72 h-72 bg-brand-bordeaux/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-bordeaux/5 rounded-full blur-3xl" />
-
-        <div className="container mx-auto px-5 sm:px-6 max-w-7xl relative z-10">
-          <div className="text-center mb-12 sm:mb-16 md:mb-20">
-
-            <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-brand-dark mb-4 leading-tight tracking-tight">
-              Áreas de Práctica
-            </h2>
-            <div className="w-20 h-1 bg-brand-bordeaux mx-auto rounded-full" />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 md:gap-8 max-w-5xl mx-auto">
-            {practiceAreas.map((area, index) => {
-              return (
-                <div
-                  key={index}
-                  className="group relative bg-white border border-brand-gray hover:border-brand-bordeaux transition-all duration-300 rounded-md overflow-hidden"
-                >
-                  <div className="relative p-6 sm:p-8 md:p-10">
-                    <div className="mb-4">
-                      <h3 className="font-bold text-xl sm:text-2xl md:text-2xl text-gray-900 mb-2 leading-tight tracking-tight group-hover:text-brand-bordeaux transition-colors">
-                        {area.name}
-                      </h3>
-                      <p className="font-normal text-sm sm:text-base text-gray-700 leading-relaxed">
-                        {area.description}
-                      </p>
-                    </div>
-
-                    <p className="font-normal text-[13px] sm:text-sm text-gray-700 leading-relaxed opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-40 transition-all duration-500 overflow-hidden">
-                      {area.details}
-                    </p>
-
-                    {/* Arrow indicator on mobile */}
-                    <div className="md:hidden flex items-center justify-center mt-4 text-brand-bordeaux text-xs font-medium tracking-wider">
-                      <span>Toca para más info</span>
-                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Áreas de Práctica - Opción 2 (con fondo de Nuestra Motivación) */}
-      <section id="areas-de-practica-alt" className="py-16 sm:py-20 md:py-24 lg:py-28 relative overflow-hidden">
-        {/* Background image - same as Nuestra Motivación */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/motivacion-original-hq.jpg"
-            alt="Áreas de Práctica"
-            fill
-            sizes="100vw"
-            className="object-cover object-center opacity-100"
-            quality={100}
-            priority={false}
+      <section id="areas-de-practica" className="py-20 sm:py-24 md:py-32 lg:py-40 bg-white relative overflow-hidden">
+        {/* Decorative diagonal slashes inspired by CF Legal "/" logo */}
+        <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+          {/* Primary slash — thick */}
+          <div
+            className="absolute right-[20px] sm:right-[40px] md:right-[60px] lg:right-[80px] top-1/2 w-[50px] sm:w-[60px] md:w-[70px] lg:w-[80px] h-[130%] bg-[#8E1927] opacity-[0.85] rounded-sm"
+            style={{ transform: 'translateY(-50%) rotate(-15deg)' }}
+          />
+          {/* Secondary slash — thinner, slightly left */}
+          <div
+            className="absolute right-[90px] sm:right-[120px] md:right-[155px] lg:right-[190px] top-1/2 w-[16px] sm:w-[20px] md:w-[24px] lg:w-[28px] h-[130%] bg-[#8E1927] opacity-[0.30] rounded-sm"
+            style={{ transform: 'translateY(-50%) rotate(-15deg)' }}
           />
         </div>
 
-        <div className="container mx-auto px-5 sm:px-6 max-w-7xl relative z-10">
+        <div className="container mx-auto px-5 sm:px-6 max-w-5xl relative z-10">
+          {/* Title */}
           <div className="text-center mb-12 sm:mb-16 md:mb-20">
-
-            <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-4 leading-tight tracking-tight drop-shadow-md">
-              Áreas de Práctica
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#0F1822] mb-6 leading-tight tracking-[0.2em] uppercase">
+              ÁREAS DE <span className="font-bold">PRÁCTICA</span>
             </h2>
-            <div className="w-20 h-1 bg-brand-bordeaux mx-auto rounded-full" />
+            {/* Chevron arrow */}
+            <div className="flex justify-center">
+              <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#8E1927]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 md:gap-8 max-w-5xl mx-auto">
-            {practiceAreas.map((area, index) => {
-              return (
-                <div
-                  key={index}
-                  className="group relative bg-white/30 backdrop-blur-sm border border-brand-gray hover:border-brand-bordeaux transition-all duration-300 rounded-lg overflow-hidden"
-                >
-                  <div className="relative p-6 sm:p-8 md:p-10">
-                    <div className="mb-4">
-                      <h3 className="font-bold text-xl sm:text-2xl md:text-2xl text-white mb-2 leading-tight tracking-tight group-hover:text-brand-bordeaux transition-colors drop-shadow-sm">
-                        {area.name}
-                      </h3>
-                      <p className="font-medium text-sm sm:text-base text-white/90 leading-relaxed drop-shadow-sm">
-                        {area.description}
-                      </p>
-                    </div>
+          {/* Practice areas list */}
+          <div className="flex flex-col items-center gap-6 sm:gap-8 md:gap-10">
+            {practiceAreas.map((area, index) => (
+              <div
+                key={index}
+                className="group cursor-pointer text-center w-full max-w-2xl"
+                onClick={() => toggleBoxExpansion(index)}
+              >
+                {/* Area name with bold keyword */}
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#042A3D] tracking-[0.15em] uppercase transition-colors duration-300 group-hover:text-[#8E1927]">
+                  {area.name.split(' ').map((word, i) => {
+                    const boldWords = ['CORPORATIVO', 'INMOBILIARIO', 'CONSTRUCCIÓN', 'INFRAESTRUCTURA', 'ARBITRAJES']
+                    const isBold = boldWords.includes(word.toUpperCase().replace(/[^A-ZÁÉÍÓÚÑ]/g, ''))
+                    return (
+                      <span key={i} className={isBold ? 'font-bold' : 'font-light'}>
+                        {word}{i < area.name.split(' ').length - 1 ? ' ' : ''}
+                      </span>
+                    )
+                  })}
+                </h3>
 
-                    <p className="font-medium text-[13px] sm:text-sm text-white/85 leading-relaxed opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-40 transition-all duration-500 overflow-hidden drop-shadow-sm">
-                      {area.details}
-                    </p>
-
-                    {/* Arrow indicator on mobile */}
-                    <div className="md:hidden flex items-center justify-center mt-4 text-brand-bordeaux text-xs font-medium tracking-wider">
-                      <span>Toca para más info</span>
-                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </div>
-                  </div>
+                {/* Expandable details */}
+                <div className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedBoxes.has(index) ? 'max-h-60 opacity-100 mt-3 sm:mt-4' : 'max-h-0 opacity-0 mt-0'}`}>
+                  <p className="text-sm sm:text-base text-[#808184] leading-relaxed max-w-xl mx-auto font-light">
+                    {area.description}
+                  </p>
+                  <p className="text-xs sm:text-sm text-[#808184]/80 leading-relaxed max-w-xl mx-auto mt-2 font-light">
+                    {area.details}
+                  </p>
                 </div>
-              )
-            })}
+
+                {/* Subtle divider between items */}
+                {index < practiceAreas.length - 1 && (
+                  <div className={`w-12 h-px bg-[#CDD4D8] mx-auto transition-all duration-500 ${expandedBoxes.has(index) ? 'mt-6 sm:mt-8' : 'mt-6 sm:mt-8'}`} />
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
+
 
       {/* Equipo Section */}
       <section id="equipo" className="py-16 sm:py-20 md:py-24 lg:py-28 bg-gradient-to-br from-cf-dark-gray via-cf-blue to-cf-dark-gray relative overflow-hidden">
@@ -525,10 +488,14 @@ export default function CFLegalPage() {
         <div className="container mx-auto px-5 sm:px-6 max-w-7xl relative z-10">
           <div className="text-center mb-12 sm:mb-16 md:mb-20">
 
-            <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-4 leading-tight tracking-tight">
-              Nuestro Equipo
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white mb-6 leading-tight tracking-[0.2em] uppercase">
+              NUESTRO <span className="font-bold">EQUIPO</span>
             </h2>
-            <div className="w-20 h-1 bg-cf-burgundy mx-auto rounded-full" />
+            <div className="flex justify-center">
+              <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#8E1927]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 max-w-6xl mx-auto">
@@ -544,14 +511,13 @@ export default function CFLegalPage() {
                 <div className="relative rounded-lg p-6 sm:p-8 transition-all duration-500 hover:shadow-2xl hover:shadow-cf-burgundy/20">
 
                   <div className="relative">
-                    <div className="relative w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-6 rounded-md overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-105">
+                    <div className="relative w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-6 rounded-full overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-105">
                       <Image
                         src={member.photo || "/placeholder.svg"}
                         alt={member.name}
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        className={`object-cover transition-all duration-500 ${hoveredMember === member.id ? "grayscale-0 scale-110" : "grayscale scale-100"
-                          }`}
+                        className="object-cover transition-all duration-500"
                       />
                     </div>
 
@@ -601,7 +567,7 @@ export default function CFLegalPage() {
               </DialogHeader>
               <div className="flex flex-col md:flex-row gap-4 sm:gap-5 md:gap-8">
                 <div className="flex-shrink-0 mx-auto md:mx-0">
-                  <div className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 lg:w-48 lg:h-48 rounded-md overflow-hidden shadow-lg border-2 border-cf-light-gray">
+                  <div className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 lg:w-48 lg:h-48 rounded-full overflow-hidden shadow-lg border-2 border-cf-light-gray">
                     <Image
                       src={selectedMember.photoColor || "/placeholder.svg"}
                       alt={selectedMember.name}

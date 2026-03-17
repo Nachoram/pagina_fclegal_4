@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="100" fill="#b0b0b0"/>
+  <!-- Inner shadow/depth circle -->
+  <circle cx="100" cy="100" r="100" fill="url(#grad)"/>
+  <!-- Head -->
+  <circle cx="100" cy="78" r="32" fill="#d0d0d0" opacity="0.9"/>
+  <!-- Body/shoulders -->
+  <ellipse cx="100" cy="176" rx="55" ry="52" fill="#d0d0d0" opacity="0.9"/>
+  <defs>
+    <radialGradient id="grad" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#c8c8c8" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#888888" stop-opacity="0.2"/>
+    </radialGradient>
+  </defs>
+</svg>
