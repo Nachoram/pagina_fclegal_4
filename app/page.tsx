@@ -385,7 +385,7 @@ export default function CFLegalPage() {
       </section>
 
       {/* Nosotros Section */}
-      <section id="nosotros" className="py-16 sm:py-20 md:py-24 lg:py-28 bg-gray-50 relative overflow-hidden">
+      <section id="nosotros" className="py-16 sm:py-20 md:py-24 lg:py-28 bg-white relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute top-0 right-0 w-72 h-72 bg-brand-bordeaux/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-bordeaux/5 rounded-full blur-3xl" />
@@ -400,8 +400,8 @@ export default function CFLegalPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
-            <p className="font-normal text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Somos un equipo altamente <span className="font-bold text-[#0F1822]">comprometido</span> con la comprensión del negocio, la cultura organizacional y las <span className="font-bold text-[#0F1822]">necesidades particulares</span> de nuestros clientes.
+            <p className="font-light text-xl sm:text-2xl md:text-3xl text-[#808184] max-w-5xl mx-auto leading-relaxed">
+              Somos un equipo altamente <span className="font-bold text-[#0F1822] text-[1.1em] sm:text-[1.2em]">comprometido</span> con la comprensión del negocio, la <span className="font-bold text-[#0F1822] text-[1.1em] sm:text-[1.2em]">cultura organizacional</span> y las <span className="font-bold text-[#0F1822] text-[1.1em] sm:text-[1.2em]">necesidades particulares</span> de nuestros clientes.
             </p>
           </div>
         </div>
@@ -657,85 +657,69 @@ export default function CFLegalPage() {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#808184]/8 rounded-full blur-3xl" />
 
         <div className="container mx-auto px-6 sm:px-8 max-w-5xl relative z-10">
-          <div className="text-center mb-20 sm:mb-24 md:mb-28">
+          <div className="text-center mb-12 sm:mb-16 md:mb-20">
 
-            {/* Título principal con Raleway Bold */}
-            <h2 className="font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#0F1822] mb-8 leading-tight tracking-tight">
-              Sigamos en Contacto
+            {/* Título principal al estilo de las otras secciones */}
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#0F1822] mb-6 leading-tight tracking-[0.2em] uppercase">
+              SIGAMOS EN <span className="font-bold">CONTACTO</span>
             </h2>
-            {/* Línea decorativa sutil */}
-            <div className="w-20 h-0.5 bg-[#8E1927] mx-auto rounded-full" />
+            {/* Flecha chevron para consistencia */}
+            <div className="flex justify-center">
+              <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#8E1927]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto mb-20">
-            {/* Email Card - Diseño premium y sutil */}
+          <div className="flex flex-col md:flex-row justify-center items-center gap-16 md:gap-24 lg:gap-32 max-w-5xl mx-auto">
+            {/* Email */}
             <a
               href="mailto:administracion@cflegal.cl"
-              className="group relative bg-[#CDD4D8]/20 hover:bg-[#CDD4D8]/25 rounded-lg p-10 border border-[#CDD4D8]/40 hover:border-[#8E1927]/60 transition-all duration-500 shadow-sm hover:shadow-md backdrop-blur-sm"
+              className="group flex flex-col items-center text-center transition-all duration-500"
             >
-              <div className="flex items-start gap-8">
-                {/* Icono con fondo sutil y color burdeo */}
-                <div className="flex-shrink-0 p-4 bg-transparent border border-[#8E1927]/20 rounded-lg group-hover:bg-[#8E1927]/5 transition-colors duration-500">
-                  <Mail className="w-7 h-7 text-[#8E1927]" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  {/* Título de tarjeta con Raleway Medium */}
-                  <h3 className="font-medium text-xl text-[#0F1822] mb-3 group-hover:text-[#042A3D] transition-colors duration-500 tracking-tight">
-                    Email
-                  </h3>
-                  {/* Texto con Raleway Regular */}
-                  <p className="font-raleway font-normal text-sm text-[#808184] break-all leading-relaxed">
-                    administracion@cflegal.cl
-                  </p>
-                </div>
-                {/* Flecha sutil */}
-                <svg className="w-5 h-5 text-[#808184] group-hover:text-[#0F1822] group-hover:translate-x-1 transition-all duration-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
-                </svg>
+              <div className="mb-5 flex items-center justify-center transition-transform duration-500 group-hover:-translate-y-1">
+                <Mail className="w-10 h-10 text-[#8E1927]" strokeWidth={1} />
               </div>
+              <h3 className="font-medium text-xl text-[#0F1822] mb-2 group-hover:text-[#8E1927] transition-colors duration-500 tracking-widest uppercase">
+                Email
+              </h3>
+              <p className="font-raleway font-light text-base text-[#808184] group-hover:text-[#0F1822] transition-colors duration-500">
+                administracion@cflegal.cl
+              </p>
             </a>
 
-            {/* Phone Card - Diseño premium y sutil */}
+            {/* Teléfono */}
             <a
               href="tel:+56912345678"
-              className="group relative bg-[#CDD4D8]/20 hover:bg-[#CDD4D8]/25 rounded-lg p-10 border border-[#CDD4D8]/40 hover:border-[#8E1927]/60 transition-all duration-500 shadow-sm hover:shadow-md backdrop-blur-sm"
+              className="group flex flex-col items-center text-center transition-all duration-500"
             >
-              <div className="flex items-start gap-8">
-                {/* Icono con fondo sutil y color burdeo */}
-                <div className="flex-shrink-0 p-4 bg-transparent border border-[#8E1927]/20 rounded-lg group-hover:bg-[#8E1927]/5 transition-colors duration-500">
-                  <Phone className="w-7 h-7 text-[#8E1927]" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  {/* Título de tarjeta con Raleway Medium */}
-                  <h3 className="font-medium text-xl text-[#0F1822] mb-3 group-hover:text-[#042A3D] transition-colors duration-500 tracking-tight">
-                    Teléfono
-                  </h3>
-                  {/* Texto con Raleway Regular */}
-                  <p className="font-raleway font-normal text-sm text-[#808184] leading-relaxed">
-                    +56 9 1234 5678
-                  </p>
-                </div>
-                {/* Flecha sutil */}
-                <svg className="w-5 h-5 text-[#808184] group-hover:text-[#0F1822] group-hover:translate-x-1 transition-all duration-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
-                </svg>
+              <div className="mb-5 flex items-center justify-center transition-transform duration-500 group-hover:-translate-y-1">
+                <Phone className="w-10 h-10 text-[#8E1927]" strokeWidth={1} />
               </div>
+              <h3 className="font-medium text-xl text-[#0F1822] mb-2 group-hover:text-[#8E1927] transition-colors duration-500 tracking-widest uppercase">
+                Teléfono
+              </h3>
+              <p className="font-raleway font-light text-base text-[#808184] group-hover:text-[#0F1822] transition-colors duration-500">
+                +56 9 1234 5678
+              </p>
             </a>
-          </div>
 
-          {/* LinkedIn CTA - Opción A: Botón sólido premium */}
-          <div className="text-center">
+            {/* LinkedIn */}
             <a
               href="https://linkedin.com/company/cflegal"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-5 px-12 py-5 bg-[#042A3D] hover:bg-[#0F1822] rounded-md transition-all duration-500 font-medium text-base text-white shadow-sm hover:shadow-lg hover:scale-[1.02] w-full sm:w-auto max-w-sm tracking-tight"
+              className="group flex flex-col items-center text-center transition-all duration-500"
             >
-              <Linkedin className="w-6 h-6 group-hover:scale-110 transition-transform duration-500" />
-              <span>Síguenos en LinkedIn</span>
-              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+              <div className="mb-5 flex items-center justify-center transition-transform duration-500 group-hover:-translate-y-1">
+                <Linkedin className="w-10 h-10 text-[#8E1927]" strokeWidth={1} />
+              </div>
+              <h3 className="font-medium text-xl text-[#0F1822] mb-2 group-hover:text-[#8E1927] transition-colors duration-500 tracking-widest uppercase">
+                LinkedIn
+              </h3>
+              <p className="font-raleway font-light text-base text-[#808184] group-hover:text-[#0F1822] transition-colors duration-500 flex items-center gap-1.5">
+                Síguenos <span className="transform group-hover:translate-x-1 transition-transform inline-block">→</span>
+              </p>
             </a>
           </div>
         </div>
