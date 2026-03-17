@@ -22,6 +22,19 @@ export const metadata: Metadata = {
     statusBarStyle: "default",
     title: "CF Legal",
   },
+  keywords: ["Estudio Jurídico", "Abogados", "Asesoría Legal", "Derecho Corporativo", "Chile", "CF Legal"],
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: "CF Legal - Estudio Jurídico",
+    description: "Asesoría legal de excelencia para empresas y patrimonios",
+    url: "https://cflegal.cl",
+    siteName: "CF Legal",
+    locale: "es_CL",
+    type: "website",
+  },
 }
 
 export const viewport: Viewport = {

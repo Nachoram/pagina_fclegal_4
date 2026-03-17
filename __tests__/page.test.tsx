@@ -69,16 +69,26 @@ describe('CF Legal Landing Page', () => {
       jest.runAllTimers()
     })
 
+    // Helper function to match text across multiple elements
+    const matchTextAcrossElements = (content: string, element: Element | null): boolean => {
+      const hasText = (node: Element) => Boolean(node.textContent?.toLowerCase().includes(content.toLowerCase()))
+      const elementHasText = Boolean(element && hasText(element))
+      const childrenDontHaveText = Array.from(element?.children || []).every(
+        child => !hasText(child)
+      )
+      return elementHasText && childrenDontHaveText
+    }
+
     // Wait for content to load
     await waitFor(() => {
-      const el = screen.getAllByText('Derecho Corporativo')
+      const el = screen.getAllByText((content, element) => matchTextAcrossElements('Derecho Corporativo', element))
       expect(el.length).toBeGreaterThan(0)
     })
 
     // Check if practice areas are displayed
-    expect(screen.getAllByText('Derecho Inmobiliario y de la Construcción').length).toBeGreaterThan(0)
-    expect(screen.getAllByText('Proyectos e Infraestructura').length).toBeGreaterThan(0)
-    expect(screen.getAllByText('Juicios y Arbitrajes').length).toBeGreaterThan(0)
+    expect(screen.getAllByText((content, element) => matchTextAcrossElements('Derecho Inmobiliario y de la Construcción', element)).length).toBeGreaterThan(0)
+    expect(screen.getAllByText((content, element) => matchTextAcrossElements('Proyectos e Infraestructura', element)).length).toBeGreaterThan(0)
+    expect(screen.getAllByText((content, element) => matchTextAcrossElements('Juicios y Arbitrajes', element)).length).toBeGreaterThan(0)
   })
 
   it('displays contact information after loading', async () => {

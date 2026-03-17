@@ -1,8 +1,8 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 import Image from "next/image"
-import { Mail, Phone, Linkedin, Scale, Home, Briefcase, TrendingUp, Menu, X, Building2, Gavel } from "lucide-react"
+import { Mail, Phone, Linkedin, Home, Briefcase, Menu, X, Building2, Gavel } from "lucide-react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 
 interface TeamMember {
@@ -102,6 +102,7 @@ const practiceAreas = [
     details: "Representación en litigios civiles, comerciales y contencioso-administrativos, mediación y arbitrajes nacionales e internacionales."
   }
 ]
+const currentYear = new Date().getFullYear();
 
 export default function CFLegalPage() {
   const [showLogo, setShowLogo] = useState(true)
@@ -131,14 +132,21 @@ export default function CFLegalPage() {
 
     const handleScroll = () => {
       setScrolled(window.scrollY > 100)
-      // Close mobile menu on scroll
-      if (mobileMenuOpen) {
-        setMobileMenuOpen(false)
-      }
+      // Close mobile menu on scroll if open
+      setMobileMenuOpen(prev => prev ? false : prev)
     }
 
     window.addEventListener("scroll", handleScroll, { passive: true })
 
+    return () => {
+      clearTimeout(showTimer)
+      clearTimeout(fadeTimer)
+      clearTimeout(hideTimer)
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, []) // Empty dependency array prevents restart on mobilemenu toggle
+
+  useEffect(() => {
     // Prevent body scroll when mobile menu is open
     if (mobileMenuOpen) {
       document.body.style.overflow = 'hidden'
@@ -147,15 +155,11 @@ export default function CFLegalPage() {
     }
 
     return () => {
-      clearTimeout(showTimer)
-      clearTimeout(fadeTimer)
-      clearTimeout(hideTimer)
-      window.removeEventListener("scroll", handleScroll)
       document.body.style.overflow = 'unset'
     }
   }, [mobileMenuOpen])
 
-  const scrollToSection = (id: string) => {
+  const scrollToSection = useCallback((id: string) => {
     const element = document.getElementById(id)
     if (element) {
       const offset = 80
@@ -168,17 +172,19 @@ export default function CFLegalPage() {
       })
       setMobileMenuOpen(false)
     }
-  }
+  }, [])
 
-  const toggleBoxExpansion = (boxIndex: number) => {
-    const newExpandedBoxes = new Set(expandedBoxes)
-    if (newExpandedBoxes.has(boxIndex)) {
-      newExpandedBoxes.delete(boxIndex)
-    } else {
-      newExpandedBoxes.add(boxIndex)
-    }
-    setExpandedBoxes(newExpandedBoxes)
-  }
+  const toggleBoxExpansion = useCallback((boxIndex: number) => {
+    setExpandedBoxes(prev => {
+      const newExpandedBoxes = new Set(prev)
+      if (newExpandedBoxes.has(boxIndex)) {
+        newExpandedBoxes.delete(boxIndex)
+      } else {
+        newExpandedBoxes.add(boxIndex)
+      }
+      return newExpandedBoxes
+    })
+  }, [])
 
   if (showLogo) {
     return (
@@ -801,7 +807,7 @@ export default function CFLegalPage() {
 
           <div className="border-t border-white/10 pt-6 text-center">
             <p className="font-normal text-white/50 text-xs sm:text-sm">
-              © {new Date().getFullYear()} CF Legal. Todos los derechos reservados.
+              © {currentYear} CF Legal. Todos los derechos reservados.
             </p>
           </div>
         </div>
