@@ -58,7 +58,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     id: "3",
-    name: "Felipe Moreno Maturana",
+    name: "Felipe Moreno",
     title: "Abogado",
     photo: "/default-avatar.svg",
     photoColor: "/default-avatar.svg",
@@ -445,8 +445,7 @@ export default function CFLegalPage() {
             {practiceAreas.map((area, index) => (
               <div
                 key={index}
-                className="group cursor-pointer text-center w-full max-w-2xl"
-                onClick={() => toggleBoxExpansion(index)}
+                className="group text-center w-full max-w-2xl"
               >
                 {/* Area name with bold keyword */}
                 <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#042A3D] tracking-[0.15em] uppercase transition-colors duration-300 group-hover:text-[#8E1927]">
@@ -460,16 +459,6 @@ export default function CFLegalPage() {
                     )
                   })}
                 </h3>
-
-                {/* Expandable details */}
-                <div className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedBoxes.has(index) ? 'max-h-60 opacity-100 mt-3 sm:mt-4' : 'max-h-0 opacity-0 mt-0'}`}>
-                  <p className="text-sm sm:text-base text-[#808184] leading-relaxed max-w-xl mx-auto font-light">
-                    {area.description}
-                  </p>
-                  <p className="text-xs sm:text-sm text-[#808184]/80 leading-relaxed max-w-xl mx-auto mt-2 font-light">
-                    {area.details}
-                  </p>
-                </div>
 
                 {/* Subtle divider between items */}
                 {index < practiceAreas.length - 1 && (
