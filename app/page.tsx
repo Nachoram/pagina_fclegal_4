@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react"
 import Image from "next/image"
-import { Mail, Phone, Linkedin, Home, Briefcase, Menu, X, Building2, Gavel } from "lucide-react"
+import { Mail, Linkedin, Home, Briefcase, Menu, X, Building2, Gavel } from "lucide-react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 
 interface TeamMember {
@@ -337,12 +337,6 @@ export default function CFLegalPage() {
                     >
                       <Mail className="w-5 h-5 text-white" />
                     </a>
-                    <a
-                      href="tel:+56912345678"
-                      className="p-3 bg-white/10 hover:bg-cf-burgundy rounded-lg transition-colors"
-                    >
-                      <Phone className="w-5 h-5 text-white" />
-                    </a>
                   </div>
                 </div>
               </div>
@@ -506,15 +500,6 @@ export default function CFLegalPage() {
                 <div className="relative rounded-lg p-6 sm:p-8 transition-all duration-500 hover:shadow-2xl hover:shadow-cf-burgundy/20">
 
                   <div className="relative">
-                    <div className="relative w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-6 rounded-full overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-105">
-                      <Image
-                        src={member.photo || "/placeholder.svg"}
-                        alt={member.name}
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        className="object-cover transition-all duration-500"
-                      />
-                    </div>
 
                     <div className="text-center">
                       <h3 className={`font-bold text-xl sm:text-2xl mb-2 transition-colors duration-300 leading-tight tracking-tight ${hoveredMember === member.id ? "text-cf-burgundy" : "text-white"
@@ -561,17 +546,6 @@ export default function CFLegalPage() {
                 <DialogTitle className="sr-only">{selectedMember.name}</DialogTitle>
               </DialogHeader>
               <div className="flex flex-col md:flex-row gap-4 sm:gap-5 md:gap-8">
-                <div className="flex-shrink-0 mx-auto md:mx-0">
-                  <div className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 lg:w-48 lg:h-48 rounded-full overflow-hidden shadow-lg border-2 border-cf-light-gray">
-                    <Image
-                      src={selectedMember.photoColor || "/placeholder.svg"}
-                      alt={selectedMember.name}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
-                      className="object-cover"
-                    />
-                  </div>
-                </div>
                 <div className="flex-1 min-w-0">
                   <h3 className="font-bold text-xl sm:text-2xl md:text-3xl text-gray-900 mb-1 sm:mb-1.5 md:mb-2 leading-tight tracking-tight">
                     {selectedMember.name}
@@ -677,21 +651,6 @@ export default function CFLegalPage() {
               </p>
             </a>
 
-            {/* Teléfono */}
-            <a
-              href="tel:+56912345678"
-              className="group flex flex-col items-center text-center transition-all duration-500"
-            >
-              <div className="mb-5 flex items-center justify-center transition-transform duration-500 group-hover:-translate-y-1">
-                <Phone className="w-10 h-10 text-[#8E1927]" strokeWidth={1} />
-              </div>
-              <h3 className="font-medium text-xl text-[#0F1822] mb-2 group-hover:text-[#8E1927] transition-colors duration-500 tracking-widest uppercase">
-                Teléfono
-              </h3>
-              <p className="font-raleway font-light text-base text-[#808184] group-hover:text-[#0F1822] transition-colors duration-500">
-                +56 9 1234 5678
-              </p>
-            </a>
 
             {/* LinkedIn */}
             <a
@@ -767,12 +726,6 @@ export default function CFLegalPage() {
                   className="p-3 bg-white/10 hover:bg-cf-burgundy rounded-lg transition-all duration-300 hover:scale-110"
                 >
                   <Mail className="w-6 h-6 text-white" />
-                </a>
-                <a
-                  href="tel:+56912345678"
-                  className="p-3 bg-white/10 hover:bg-cf-burgundy rounded-lg transition-all duration-300 hover:scale-110"
-                >
-                  <Phone className="w-6 h-6 text-white" />
                 </a>
               </div>
             </div>
