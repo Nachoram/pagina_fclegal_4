@@ -68,6 +68,7 @@ const teamMembers: TeamMember[] = [
       "Curso Contabilidad para Abogados, Universidad del Desarrollo (2018)",
     ],
     experience: [
+      "Abogado, CF Legal (2025 - Presente)",
       "Abogado Corporativo, Profesional Independiente (2025 - Presente)",
       "Abogado, SACYR (2018 - 2024)",
     ],
