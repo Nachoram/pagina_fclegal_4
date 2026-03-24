@@ -507,7 +507,7 @@ export default function CFLegalPage() {
                         {member.name}
                       </h3>
                       <p className="font-normal text-sm sm:text-base text-white/70 mb-4">{member.title}</p>
-
+                      
                       <div className="flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-all duration-300">
                         <a
                           href={`mailto:${member.email}`}
@@ -526,13 +526,17 @@ export default function CFLegalPage() {
                           <Linkedin className="w-4 h-4 text-white" />
                         </a>
                       </div>
-
-                      <p className="font-medium text-xs text-cf-burgundy/80 mt-4 md:hidden tracking-wider">Toca para ver perfil completo</p>
                     </div>
                   </div>
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-12 text-center animate-in fade-in duration-1000 slide-in-from-bottom-4">
+            <p className="font-light text-xs sm:text-sm text-white/40 tracking-[0.3em] uppercase">
+              Toca para ver perfil completo
+            </p>
           </div>
         </div>
       </section>
@@ -686,9 +690,6 @@ export default function CFLegalPage() {
                 height={140}
                 className="w-auto h-24 sm:h-28 md:h-32 brightness-0 invert mx-auto md:mx-0 mb-6"
               />
-              <p className="font-normal text-white/70 text-base sm:text-lg leading-relaxed max-w-sm mx-auto md:mx-0">
-                Asesoría legal de excelencia para tu empresa y patrimonio
-              </p>
             </div>
 
             {/* Quick links */}
