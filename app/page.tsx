@@ -69,7 +69,7 @@ const teamMembers: TeamMember[] = [
     ],
     experience: [
       "Abogado, CF Legal (2025 - Presente)",
-      "Abogado Corporativo, Profesional Independiente (2025 - Presente)",
+      "Abogado Corporativo, Profesional Independiente (2025)",
       "Abogado, SACYR (2018 - 2024)",
     ],
     email: "fmoreno@cflegal.cl",
