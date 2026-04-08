@@ -441,6 +441,11 @@ export default function CFLegalPage() {
                 key={index}
                 className="group text-center w-full max-w-2xl"
               >
+                {/* Icon */}
+                <div className="mb-4 flex justify-center">
+                  <area.icon className="w-8 h-8 sm:w-10 sm:h-10 text-[#8E1927] opacity-60 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110" strokeWidth={1.5} />
+                </div>
+
                 {/* Area name with bold keyword */}
                 <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#042A3D] tracking-[0.15em] uppercase transition-colors duration-300 group-hover:text-[#8E1927]">
                   {area.name.split(' ').map((word, i) => {
@@ -454,9 +459,29 @@ export default function CFLegalPage() {
                   })}
                 </h3>
 
+                {/* Subheader (Bajada) */}
+                <p className="font-light text-sm sm:text-base text-[#808184] mt-3 group-hover:text-[#0F1822] transition-colors duration-300 max-w-lg mx-auto leading-relaxed">
+                  {area.description}
+                </p>
+
+                {/* Expansion button/indicator if we want to show details */}
+                <button
+                  onClick={() => toggleBoxExpansion(index)}
+                  className="mt-4 text-[#8E1927] hover:bg-[#8E1927]/5 px-4 py-1 rounded-full text-xs font-medium uppercase tracking-widest transition-all"
+                >
+                  {expandedBoxes.has(index) ? "Ver menos" : "Ver más"}
+                </button>
+
+                {/* Details (Expansion) */}
+                <div className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedBoxes.has(index) ? 'max-h-40 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
+                  <p className="font-normal text-sm sm:text-base text-[#0F1822]/80 max-w-lg mx-auto leading-relaxed">
+                    {area.details}
+                  </p>
+                </div>
+
                 {/* Subtle divider between items */}
                 {index < practiceAreas.length - 1 && (
-                  <div className={`w-12 h-px bg-[#CDD4D8] mx-auto transition-all duration-500 ${expandedBoxes.has(index) ? 'mt-6 sm:mt-8' : 'mt-6 sm:mt-8'}`} />
+                  <div className={`w-12 h-px bg-[#CDD4D8] mx-auto transition-all duration-500 ${expandedBoxes.has(index) ? 'mt-8 sm:mt-10' : 'mt-6 sm:mt-8'}`} />
                 )}
               </div>
             ))}
