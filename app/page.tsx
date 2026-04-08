@@ -459,24 +459,32 @@ export default function CFLegalPage() {
                   })}
                 </h3>
 
-                {/* Subheader (Bajada) */}
-                <p className="font-light text-sm sm:text-base text-[#808184] mt-3 group-hover:text-[#0F1822] transition-colors duration-300 max-w-lg mx-auto leading-relaxed">
-                  {area.description}
-                </p>
-
-                {/* Expansion button/indicator if we want to show details */}
+                {/* Expansion button */}
                 <button
                   onClick={() => toggleBoxExpansion(index)}
-                  className="mt-4 text-[#8E1927] hover:bg-[#8E1927]/5 px-4 py-1 rounded-full text-xs font-medium uppercase tracking-widest transition-all"
+                  className="mt-6 text-[#8E1927] hover:bg-[#8E1927]/5 px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-widest transition-all border border-[#8E1927]/20 hover:border-[#8E1927] flex items-center gap-2 mx-auto"
                 >
-                  {expandedBoxes.has(index) ? "Ver menos" : "Ver más"}
+                  {expandedBoxes.has(index) ? "Cerrar" : "Ver más"}
+                  <svg 
+                    className={`w-3 h-3 transition-transform duration-300 ${expandedBoxes.has(index) ? 'rotate-180' : ''}`} 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 9l-7 7-7-7" />
+                  </svg>
                 </button>
 
                 {/* Details (Expansion) */}
-                <div className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedBoxes.has(index) ? 'max-h-40 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
-                  <p className="font-normal text-sm sm:text-base text-[#0F1822]/80 max-w-lg mx-auto leading-relaxed">
-                    {area.details}
-                  </p>
+                <div className={`overflow-hidden transition-all duration-700 ease-in-out ${expandedBoxes.has(index) ? 'max-h-[500px] opacity-100 mt-6' : 'max-h-0 opacity-0'}`}>
+                  <div className="space-y-4 px-4">
+                    <p className="font-semibold text-sm sm:text-base text-[#0F1822] leading-relaxed">
+                      {area.description}
+                    </p>
+                    <p className="font-light text-sm sm:text-base text-[#0F1822]/80 max-w-lg mx-auto leading-relaxed border-t border-[#CDD4D8] pt-4">
+                      {area.details}
+                    </p>
+                  </div>
                 </div>
 
                 {/* Subtle divider between items */}
