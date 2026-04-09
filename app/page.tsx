@@ -80,26 +80,26 @@ const practiceAreas = [
   {
     name: "Derecho Corporativo",
     icon: Briefcase,
-    description: "Soluciones legales para empresas y sociedades",
-    details: "Constitución de sociedades, fusiones y adquisiciones, reestructuraciones corporativas, gobierno corporativo y asesoría en operaciones comerciales complejas."
-  },
-  {
-    name: "Derecho Inmobiliario y de la Construcción",
-    icon: Home,
-    description: "Asesoría especializada en transacciones y desarrollos",
-    details: "Compraventa de propiedades, due diligence inmobiliario, contratos de arriendo, desarrollo de proyectos, normas urbanísticas y regulación del sector construcción."
+    description: "Asesoría propia de la operación de empresas.",
+    details: "Gobierno Corporativo, diseño y estandarización de procesos de contratación, gestión integral de contratos: negociación, preparación y cierre."
   },
   {
     name: "Proyectos e Infraestructura",
     icon: Building2,
-    description: "Estructuración y desarrollo de grandes proyectos",
-    details: "Asesoría integral en el desarrollo, financiamiento y ejecución de proyectos de infraestructura pública y privada, concesiones y obras a gran escala."
+    description: "Asesoría durante toda la vida de los proyectos.",
+    details: "Etapas de diseño y estudio, su adjudicación, ejecución y cierre."
+  },
+  {
+    name: "Derecho Inmobiliario",
+    icon: Home,
+    description: "Desarrollo de proyectos inmobiliarios.",
+    details: "Asesoría en la negociación, due diligence, escrituración y cierre de proyectos inmobiliarios."
   },
   {
     name: "Juicios y Arbitrajes",
     icon: Gavel,
-    description: "Resolución estratégica de controversias",
-    details: "Representación en litigios civiles, comerciales y contencioso-administrativos, mediación y arbitrajes nacionales e internacionales."
+    description: "Resolución de controversias.",
+    details: "Representación en litigios civiles y comerciales en sede ordinaria y arbitral."
   }
 ]
 const currentYear = new Date().getFullYear();
@@ -379,21 +379,17 @@ export default function CFLegalPage() {
       </section>
 
       {/* Nosotros Section */}
-      <section id="nosotros" className="py-16 sm:py-20 md:py-24 lg:py-28 bg-white relative overflow-hidden">
+      <section id="nosotros" className="py-24 sm:py-28 md:py-32 bg-white relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute top-0 right-0 w-72 h-72 bg-brand-bordeaux/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-bordeaux/5 rounded-full blur-3xl" />
 
-        <div className="container mx-auto px-5 sm:px-6 max-w-7xl relative z-10">
+        <div className="container mx-auto px-8 sm:px-12 max-w-5xl relative z-10">
           <div className="text-center mb-12 sm:mb-16 md:mb-20">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#0F1822] mb-6 leading-tight tracking-[0.2em] uppercase">
-              <span className="font-bold">NOSOTROS</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#0F1822] mb-6 leading-tight tracking-[0.2em] uppercase font-bold">
+              NOSOTROS
             </h2>
-            <div className="flex justify-center mb-6">
-              <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#8E1927]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
-            </div>
+
             <p className="font-light text-xl sm:text-2xl md:text-3xl text-[#808184] max-w-5xl mx-auto leading-relaxed">
               Somos un equipo altamente <span className="font-bold text-[#0F1822] text-[1.1em] sm:text-[1.2em]">comprometido</span> con la comprensión del negocio, la <span className="font-bold text-[#0F1822] text-[1.1em] sm:text-[1.2em]">cultura organizacional</span> y las <span className="font-bold text-[#0F1822] text-[1.1em] sm:text-[1.2em]">necesidades particulares</span> de nuestros clientes.
             </p>
@@ -405,33 +401,14 @@ export default function CFLegalPage() {
 
 
       {/* Áreas de Práctica Section */}
-      <section id="areas-de-practica" className="py-20 sm:py-24 md:py-32 lg:py-40 bg-white relative overflow-hidden">
-        {/* Decorative diagonal slashes inspired by CF Legal "/" logo */}
-        <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
-          {/* Primary slash — thick */}
-          <div
-            className="absolute right-[20px] sm:right-[40px] md:right-[60px] lg:right-[80px] top-1/2 w-[50px] sm:w-[60px] md:w-[70px] lg:w-[80px] h-[130%] bg-[#8E1927] opacity-[0.85] rounded-sm"
-            style={{ transform: 'translateY(-50%) rotate(-15deg)' }}
-          />
-          {/* Secondary slash — thinner, slightly left */}
-          <div
-            className="absolute right-[90px] sm:right-[120px] md:right-[155px] lg:right-[190px] top-1/2 w-[16px] sm:w-[20px] md:w-[24px] lg:w-[28px] h-[130%] bg-[#8E1927] opacity-[0.30] rounded-sm"
-            style={{ transform: 'translateY(-50%) rotate(-15deg)' }}
-          />
-        </div>
-
-        <div className="container mx-auto px-5 sm:px-6 max-w-5xl relative z-10">
+      <section id="areas-de-practica" className="py-32 sm:py-40 md:py-48 bg-white relative overflow-hidden">
+        <div className="container mx-auto px-8 sm:px-12 max-w-4xl relative z-10">
           {/* Title */}
           <div className="text-center mb-12 sm:mb-16 md:mb-20">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#0F1822] mb-6 leading-tight tracking-[0.2em] uppercase">
-              ÁREAS DE <span className="font-bold">PRÁCTICA</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#0F1822] mb-6 leading-tight tracking-[0.2em] uppercase font-bold">
+              ÁREAS DE PRÁCTICA
             </h2>
-            {/* Chevron arrow */}
-            <div className="flex justify-center">
-              <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#8E1927]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
-            </div>
+
           </div>
 
           {/* Practice areas list */}
@@ -449,7 +426,7 @@ export default function CFLegalPage() {
                 {/* Area name with bold keyword */}
                 <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#042A3D] tracking-[0.15em] uppercase transition-colors duration-300 group-hover:text-[#8E1927]">
                   {area.name.split(' ').map((word, i) => {
-                    const boldWords = ['CORPORATIVO', 'INMOBILIARIO', 'CONSTRUCCIÓN', 'INFRAESTRUCTURA', 'ARBITRAJES']
+                    const boldWords = ['CORPORATIVO', 'PROYECTOS', 'E', 'INFRAESTRUCTURA', 'INMOBILIARIO', 'ARBITRAJES']
                     const isBold = boldWords.includes(word.toUpperCase().replace(/[^A-ZÁÉÍÓÚÑ]/g, ''))
                     return (
                       <span key={i} className={isBold ? 'font-bold' : 'font-light'}>
@@ -499,7 +476,7 @@ export default function CFLegalPage() {
 
 
       {/* Equipo Section */}
-      <section id="equipo" className="py-16 sm:py-20 md:py-24 lg:py-28 bg-gradient-to-br from-cf-dark-gray via-cf-blue to-cf-dark-gray relative overflow-hidden">
+      <section id="equipo" className="py-24 sm:py-32 md:py-40 bg-gradient-to-br from-cf-dark-gray via-cf-blue to-cf-dark-gray relative overflow-hidden">
         {/* Background pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-10 left-10 w-40 h-40 border border-white rounded-full" />
@@ -507,20 +484,16 @@ export default function CFLegalPage() {
           <div className="absolute top-1/2 left-1/4 w-32 h-32 border border-white rounded-full" />
         </div>
 
-        <div className="container mx-auto px-5 sm:px-6 max-w-7xl relative z-10">
+        <div className="container mx-auto px-8 sm:px-12 max-w-6xl relative z-10">
           <div className="text-center mb-12 sm:mb-16 md:mb-20">
 
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white mb-6 leading-tight tracking-[0.2em] uppercase">
-              NUESTRO <span className="font-bold">EQUIPO</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white mb-6 leading-tight tracking-[0.2em] uppercase font-bold">
+              EQUIPO
             </h2>
-            <div className="flex justify-center">
-              <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#8E1927]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
-            </div>
+
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 max-w-5xl mx-auto">
             {teamMembers.map((member, idx) => (
               <div
                 key={member.id}
@@ -651,24 +624,19 @@ export default function CFLegalPage() {
       </Dialog>
 
       {/* Contacto Section */}
-      <section id="contacto" className="py-24 sm:py-28 md:py-32 lg:py-36 bg-white relative overflow-hidden">
+      <section id="contacto" className="py-32 sm:py-40 md:py-48 bg-white relative overflow-hidden">
         {/* Background decoration - More subtle and premium */}
         <div className="absolute top-0 left-0 w-96 h-96 bg-[#CDD4D8]/15 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#808184]/8 rounded-full blur-3xl" />
 
-        <div className="container mx-auto px-6 sm:px-8 max-w-5xl relative z-10">
+        <div className="container mx-auto px-8 sm:px-12 max-w-4xl relative z-10">
           <div className="text-center mb-12 sm:mb-16 md:mb-20">
 
             {/* Título principal al estilo de las otras secciones */}
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#0F1822] mb-6 leading-tight tracking-[0.2em] uppercase">
-              SIGAMOS EN <span className="font-bold">CONTACTO</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#0F1822] mb-6 leading-tight tracking-[0.2em] uppercase font-bold">
+              CONTACTO
             </h2>
-            {/* Flecha chevron para consistencia */}
-            <div className="flex justify-center">
-              <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#8E1927]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
-            </div>
+
           </div>
 
           <div className="flex flex-col md:flex-row justify-center items-center gap-16 md:gap-24 lg:gap-32 max-w-5xl mx-auto">
