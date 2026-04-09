@@ -386,9 +386,10 @@ export default function CFLegalPage() {
 
         <div className="container mx-auto px-5 sm:px-6 max-w-7xl relative z-10">
           <div className="text-center mb-12 sm:mb-16 md:mb-20">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#0F1822] mb-6 leading-tight tracking-[0.2em] uppercase">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#0F1822] mb-4 leading-tight tracking-[0.2em] uppercase">
               <span className="font-bold">NOSOTROS</span>
             </h2>
+            <div className="w-20 h-px bg-[#8E1927] mx-auto mb-10" />
 
             <p className="font-light text-xl sm:text-2xl md:text-3xl text-[#808184] max-w-5xl mx-auto leading-relaxed">
               Somos un equipo altamente <span className="font-bold text-[#0F1822] text-[1.1em] sm:text-[1.2em]">comprometido</span> con la comprensión del negocio, la <span className="font-bold text-[#0F1822] text-[1.1em] sm:text-[1.2em]">cultura organizacional</span> y las <span className="font-bold text-[#0F1822] text-[1.1em] sm:text-[1.2em]">necesidades particulares</span> de nuestros clientes.
@@ -407,9 +408,10 @@ export default function CFLegalPage() {
         <div className="container mx-auto px-5 sm:px-6 max-w-5xl relative z-10">
           {/* Title */}
           <div className="text-center mb-12 sm:mb-16 md:mb-20">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#0F1822] mb-6 leading-tight tracking-[0.2em] uppercase">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#0F1822] mb-4 leading-tight tracking-[0.2em] uppercase">
               ÁREAS DE <span className="font-bold">PRÁCTICA</span>
             </h2>
+            <div className="w-20 h-px bg-[#8E1927] mx-auto mb-10" />
 
           </div>
 
@@ -489,9 +491,10 @@ export default function CFLegalPage() {
         <div className="container mx-auto px-5 sm:px-6 max-w-7xl relative z-10">
           <div className="text-center mb-12 sm:mb-16 md:mb-20">
 
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white mb-6 leading-tight tracking-[0.2em] uppercase">
-              NUESTRO <span className="font-bold">EQUIPO</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white mb-4 leading-tight tracking-[0.2em] uppercase">
+              <span className="font-bold">EQUIPO</span>
             </h2>
+            <div className="w-20 h-px bg-[#8E1927] mx-auto mb-10" />
 
           </div>
 
@@ -635,9 +638,10 @@ export default function CFLegalPage() {
           <div className="text-center mb-12 sm:mb-16 md:mb-20">
 
             {/* Título principal al estilo de las otras secciones */}
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#0F1822] mb-6 leading-tight tracking-[0.2em] uppercase">
-              SIGAMOS EN <span className="font-bold">CONTACTO</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#0F1822] mb-4 leading-tight tracking-[0.2em] uppercase">
+              <span className="font-bold">CONTACTO</span>
             </h2>
+            <div className="w-20 h-px bg-[#8E1927] mx-auto mb-10" />
 
           </div>
 
