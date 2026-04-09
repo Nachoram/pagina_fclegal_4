@@ -355,7 +355,7 @@ export default function CFLegalPage() {
           <div className="absolute inset-0 bg-gradient-to-br from-cf-dark-gray/80 via-cf-blue/70" />
         </div>
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 sm:px-8 w-full max-w-4xl mx-auto">
-          <div className="mb-8 md:mb-10 animate-in fade-in slide-in-from-bottom-4 duration-700">
+          <div className={`mb-8 md:mb-10 transition-all duration-[1200ms] ease-out ${!logoFading ? 'opacity-0 translate-y-8' : 'opacity-100 translate-y-0'}`}>
             <Image
               src="/cf-legal-slash-logo.png"
               alt="CF Legal"
