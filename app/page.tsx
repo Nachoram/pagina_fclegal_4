@@ -379,15 +379,15 @@ export default function CFLegalPage() {
       </section>
 
       {/* Nosotros Section */}
-      <section id="nosotros" className="py-24 sm:py-28 md:py-32 bg-white relative overflow-hidden">
+      <section id="nosotros" className="py-16 sm:py-20 md:py-24 lg:py-28 bg-white relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute top-0 right-0 w-72 h-72 bg-brand-bordeaux/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-bordeaux/5 rounded-full blur-3xl" />
 
-        <div className="container mx-auto px-8 sm:px-12 max-w-5xl relative z-10">
+        <div className="container mx-auto px-5 sm:px-6 max-w-7xl relative z-10">
           <div className="text-center mb-12 sm:mb-16 md:mb-20">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#0F1822] mb-6 leading-tight tracking-[0.2em] uppercase font-bold">
-              NOSOTROS
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#0F1822] mb-6 leading-tight tracking-[0.2em] uppercase">
+              <span className="font-bold">NOSOTROS</span>
             </h2>
 
             <p className="font-light text-xl sm:text-2xl md:text-3xl text-[#808184] max-w-5xl mx-auto leading-relaxed">
@@ -401,12 +401,26 @@ export default function CFLegalPage() {
 
 
       {/* Áreas de Práctica Section */}
-      <section id="areas-de-practica" className="py-32 sm:py-40 md:py-48 bg-white relative overflow-hidden">
-        <div className="container mx-auto px-8 sm:px-12 max-w-4xl relative z-10">
+      <section id="areas-de-practica" className="py-20 sm:py-24 md:py-32 lg:py-40 bg-white relative overflow-hidden">
+        {/* Decorative diagonal slashes inspired by CF Legal "/" logo */}
+        <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+          {/* Primary slash — thick */}
+          <div
+            className="absolute right-[20px] sm:right-[40px] md:right-[60px] lg:right-[80px] top-1/2 w-[50px] sm:w-[60px] md:w-[70px] lg:w-[80px] h-[130%] bg-[#8E1927] opacity-[0.85] rounded-sm"
+            style={{ transform: 'translateY(-50%) rotate(-15deg)' }}
+          />
+          {/* Secondary slash — thinner, slightly left */}
+          <div
+            className="absolute right-[90px] sm:right-[120px] md:right-[155px] lg:right-[190px] top-1/2 w-[16px] sm:w-[20px] md:w-[24px] lg:w-[28px] h-[130%] bg-[#8E1927] opacity-[0.30] rounded-sm"
+            style={{ transform: 'translateY(-50%) rotate(-15deg)' }}
+          />
+        </div>
+
+        <div className="container mx-auto px-5 sm:px-6 max-w-5xl relative z-10">
           {/* Title */}
           <div className="text-center mb-12 sm:mb-16 md:mb-20">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#0F1822] mb-6 leading-tight tracking-[0.2em] uppercase font-bold">
-              ÁREAS DE PRÁCTICA
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#0F1822] mb-6 leading-tight tracking-[0.2em] uppercase">
+              ÁREAS DE <span className="font-bold">PRÁCTICA</span>
             </h2>
 
           </div>
@@ -476,19 +490,24 @@ export default function CFLegalPage() {
 
 
       {/* Equipo Section */}
-      <section id="equipo" className="py-24 sm:py-32 md:py-40 bg-gradient-to-br from-cf-dark-gray via-cf-blue to-cf-dark-gray relative overflow-hidden">
+      <section id="equipo" className="py-16 sm:py-20 md:py-24 lg:py-28 bg-gradient-to-br from-cf-dark-gray via-cf-blue to-cf-dark-gray relative overflow-hidden">
+        {/* Background pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 left-10 w-40 h-40 border border-white rounded-full" />
+          <div className="absolute bottom-20 right-20 w-60 h-60 border border-white rounded-full" />
+          <div className="absolute top-1/2 left-1/4 w-32 h-32 border border-white rounded-full" />
+        </div>
 
-
-        <div className="container mx-auto px-8 sm:px-12 max-w-6xl relative z-10">
+        <div className="container mx-auto px-5 sm:px-6 max-w-7xl relative z-10">
           <div className="text-center mb-12 sm:mb-16 md:mb-20">
 
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white mb-6 leading-tight tracking-[0.2em] uppercase font-bold">
-              EQUIPO
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white mb-6 leading-tight tracking-[0.2em] uppercase">
+              NUESTRO <span className="font-bold">EQUIPO</span>
             </h2>
 
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 max-w-6xl mx-auto">
             {teamMembers.map((member, idx) => (
               <div
                 key={member.id}
@@ -619,17 +638,17 @@ export default function CFLegalPage() {
       </Dialog>
 
       {/* Contacto Section */}
-      <section id="contacto" className="py-32 sm:py-40 md:py-48 bg-white relative overflow-hidden">
+      <section id="contacto" className="py-24 sm:py-28 md:py-32 lg:py-36 bg-white relative overflow-hidden">
         {/* Background decoration - More subtle and premium */}
         <div className="absolute top-0 left-0 w-96 h-96 bg-[#CDD4D8]/15 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#808184]/8 rounded-full blur-3xl" />
 
-        <div className="container mx-auto px-8 sm:px-12 max-w-4xl relative z-10">
+        <div className="container mx-auto px-6 sm:px-8 max-w-5xl relative z-10">
           <div className="text-center mb-12 sm:mb-16 md:mb-20">
 
             {/* Título principal al estilo de las otras secciones */}
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#0F1822] mb-6 leading-tight tracking-[0.2em] uppercase font-bold">
-              CONTACTO
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#0F1822] mb-6 leading-tight tracking-[0.2em] uppercase">
+              SIGAMOS EN <span className="font-bold">CONTACTO</span>
             </h2>
 
           </div>
