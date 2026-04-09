@@ -402,19 +402,7 @@ export default function CFLegalPage() {
 
       {/* Áreas de Práctica Section */}
       <section id="areas-de-practica" className="py-20 sm:py-24 md:py-32 lg:py-40 bg-white relative overflow-hidden">
-        {/* Decorative diagonal slashes inspired by CF Legal "/" logo */}
-        <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
-          {/* Primary slash — thick */}
-          <div
-            className="absolute right-[20px] sm:right-[40px] md:right-[60px] lg:right-[80px] top-1/2 w-[50px] sm:w-[60px] md:w-[70px] lg:w-[80px] h-[130%] bg-[#8E1927] opacity-[0.85] rounded-sm"
-            style={{ transform: 'translateY(-50%) rotate(-15deg)' }}
-          />
-          {/* Secondary slash — thinner, slightly left */}
-          <div
-            className="absolute right-[90px] sm:right-[120px] md:right-[155px] lg:right-[190px] top-1/2 w-[16px] sm:w-[20px] md:w-[24px] lg:w-[28px] h-[130%] bg-[#8E1927] opacity-[0.30] rounded-sm"
-            style={{ transform: 'translateY(-50%) rotate(-15deg)' }}
-          />
-        </div>
+
 
         <div className="container mx-auto px-5 sm:px-6 max-w-5xl relative z-10">
           {/* Title */}
