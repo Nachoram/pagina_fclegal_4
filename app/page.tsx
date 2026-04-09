@@ -186,27 +186,24 @@ export default function CFLegalPage() {
     })
   }, [])
 
-  if (showLogo) {
-    return (
-      <div className={`fixed inset-0 z-50 flex items-center justify-center bg-[#CDD4D8] transition-opacity duration-1000 ease-in-out ${logoFading ? 'opacity-0' : logoVisible ? 'opacity-100' : 'opacity-0'
-        }`}>
-        <div className="px-6 sm:px-8">
-          <Image
-            src="/cf-legal-logo-horizontal.png"
-            alt="CF Legal"
-            width={400}
-            height={120}
-            className={`w-auto h-[240px] xs:h-[300px] sm:h-[360px] md:h-[440px] lg:h-[560px] max-w-[95vw] ${logoFading ? 'opacity-0 scale-90' : logoVisible ? 'animate-logo-entrance' : 'opacity-0 scale-95'
-              }`}
-            priority
-          />
-        </div>
-      </div>
-    )
-  }
-
   return (
     <div className="min-h-screen bg-white font-sans">
+      {/* Loader de entrada con prioridad para pre-carga del contenido */}
+      {showLogo && (
+        <div className={`fixed inset-0 z-[100] flex items-center justify-center bg-[#CDD4D8] transition-opacity duration-1000 ease-in-out ${logoFading ? 'opacity-0' : logoVisible ? 'opacity-100' : 'opacity-0'}`}>
+          <div className="px-6 sm:px-8">
+            <Image
+              src="/cf-legal-logo-horizontal.png"
+              alt="CF Legal"
+              width={400}
+              height={120}
+              className={`w-auto h-[240px] xs:h-[300px] sm:h-[360px] md:h-[440px] lg:h-[560px] max-w-[95vw] ${logoFading ? 'opacity-0 scale-90' : logoVisible ? 'animate-logo-entrance' : 'opacity-0 scale-95'}`}
+              priority
+            />
+          </div>
+        </div>
+      )}
+
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${scrolled ? "bg-white shadow-md" : "bg-transparent"
           }`}
@@ -370,9 +367,8 @@ export default function CFLegalPage() {
                 filter: 'drop-shadow(0 4px 18px rgba(0, 0, 0, 0.4)) contrast(1.05) brightness(1.02)',
                 transform: 'translateZ(0)',
               }}
-              quality={95}
+              quality={80}
               priority
-              unoptimized={false}
             />
           </div>
         </div>
