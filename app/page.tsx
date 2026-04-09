@@ -404,8 +404,8 @@ export default function CFLegalPage() {
         <div className="container mx-auto px-5 sm:px-6 max-w-5xl relative z-10">
           {/* Title */}
           <div className="text-center mb-12 sm:mb-16 md:mb-20">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#0F1822] mb-4 leading-tight tracking-[0.2em] uppercase">
-              ÁREAS DE <span className="font-bold">PRÁCTICA</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#0F1822] font-bold mb-4 leading-tight tracking-[0.2em] uppercase">
+              ÁREAS DE PRÁCTICA
             </h2>
             <div className="w-20 h-px bg-[#8E1927] mx-auto mb-10" />
 
