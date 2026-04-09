@@ -190,7 +190,7 @@ export default function CFLegalPage() {
     <div className="min-h-screen bg-white font-sans">
       {/* Loader de entrada con prioridad para pre-carga del contenido */}
       {showLogo && (
-        <div className={`fixed inset-0 z-[100] flex items-center justify-center bg-[#CDD4D8] transition-opacity duration-1000 ease-in-out ${logoFading ? 'opacity-0' : logoVisible ? 'opacity-100' : 'opacity-0'}`}>
+        <div className={`fixed inset-0 z-[100] flex items-center justify-center bg-[#CDD4D8] transition-opacity duration-1000 ease-in-out ${logoFading ? 'opacity-0' : 'opacity-100'}`}>
           <div className="px-6 sm:px-8">
             <Image
               src="/cf-legal-logo-horizontal.png"
