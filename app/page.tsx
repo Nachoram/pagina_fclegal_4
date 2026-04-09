@@ -424,16 +424,8 @@ export default function CFLegalPage() {
                 </div>
 
                 {/* Area name with bold keyword */}
-                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl text-black tracking-[0.15em] uppercase transition-colors duration-300">
-                  {area.name.split(' ').map((word, i) => {
-                    const boldWords = ['CORPORATIVO', 'PROYECTOS', 'E', 'INFRAESTRUCTURA', 'INMOBILIARIO', 'ARBITRAJES']
-                    const isBold = boldWords.includes(word.toUpperCase().replace(/[^A-ZÁÉÍÓÚÑ]/g, ''))
-                    return (
-                      <span key={i} className={isBold ? 'font-bold' : 'font-light'}>
-                        {word}{i < area.name.split(' ').length - 1 ? ' ' : ''}
-                      </span>
-                    )
-                  })}
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl text-black font-bold tracking-[0.15em] uppercase transition-colors duration-300">
+                  {area.name}
                 </h3>
 
                 {/* Expansion button */}
