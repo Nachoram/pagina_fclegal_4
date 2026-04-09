@@ -375,13 +375,13 @@ export default function CFLegalPage() {
       </section>
 
       {/* Nosotros Section */}
-      <section id="nosotros" className="py-16 sm:py-20 md:py-24 lg:py-28 bg-white relative overflow-hidden">
+      <section id="nosotros" className="pt-16 sm:pt-20 md:pt-24 lg:pt-28 pb-8 sm:pb-12 md:pb-16 lg:pb-20 bg-white relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute top-0 right-0 w-72 h-72 bg-brand-bordeaux/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-bordeaux/5 rounded-full blur-3xl" />
 
         <div className="container mx-auto px-5 sm:px-6 max-w-7xl relative z-10">
-          <div className="text-center mb-12 sm:mb-16 md:mb-20">
+          <div className="text-center">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#0F1822] mb-4 leading-tight tracking-[0.2em] uppercase">
               <span className="font-bold">NOSOTROS</span>
             </h2>
@@ -398,7 +398,7 @@ export default function CFLegalPage() {
 
 
       {/* Áreas de Práctica Section */}
-      <section id="areas-de-practica" className="py-20 sm:py-24 md:py-32 lg:py-40 bg-white relative overflow-hidden">
+      <section id="areas-de-practica" className="pt-8 sm:pt-10 md:pt-12 lg:pt-16 pb-20 sm:pb-24 md:pb-32 lg:pb-40 bg-white relative overflow-hidden">
 
 
         <div className="container mx-auto px-5 sm:px-6 max-w-5xl relative z-10">
@@ -424,7 +424,7 @@ export default function CFLegalPage() {
                 </div>
 
                 {/* Area name with bold keyword */}
-                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#042A3D] tracking-[0.15em] uppercase transition-colors duration-300 group-hover:text-[#8E1927]">
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl text-black tracking-[0.15em] uppercase transition-colors duration-300">
                   {area.name.split(' ').map((word, i) => {
                     const boldWords = ['CORPORATIVO', 'PROYECTOS', 'E', 'INFRAESTRUCTURA', 'INMOBILIARIO', 'ARBITRAJES']
                     const isBold = boldWords.includes(word.toUpperCase().replace(/[^A-ZÁÉÍÓÚÑ]/g, ''))
