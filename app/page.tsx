@@ -477,12 +477,7 @@ export default function CFLegalPage() {
 
       {/* Equipo Section */}
       <section id="equipo" className="py-16 sm:py-20 md:py-24 lg:py-28 bg-gradient-to-br from-cf-dark-gray via-cf-blue to-cf-dark-gray relative overflow-hidden">
-        {/* Background pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 left-10 w-40 h-40 border border-white rounded-full" />
-          <div className="absolute bottom-20 right-20 w-60 h-60 border border-white rounded-full" />
-          <div className="absolute top-1/2 left-1/4 w-32 h-32 border border-white rounded-full" />
-        </div>
+
 
         <div className="container mx-auto px-5 sm:px-6 max-w-7xl relative z-10">
           <div className="text-center mb-12 sm:mb-16 md:mb-20">
