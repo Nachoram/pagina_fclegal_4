@@ -375,20 +375,20 @@ export default function CFLegalPage() {
       </section>
 
       {/* Nosotros Section */}
-      <section id="nosotros" className="py-16 sm:py-20 md:py-24 lg:py-28 bg-white relative overflow-hidden">
+      <section id="nosotros" className="py-12 sm:py-14 md:py-16 lg:py-20 bg-white relative overflow-hidden">
         {/* Background decoration */}
-        <div className="absolute top-0 right-0 w-72 h-72 bg-brand-bordeaux/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-bordeaux/5 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-52 h-52 bg-brand-bordeaux/5 rounded-full blur-2xl" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-bordeaux/5 rounded-full blur-2xl" />
 
-        <div className="container mx-auto px-5 sm:px-6 max-w-7xl relative z-10">
+        <div className="container mx-auto px-4 max-w-5xl relative z-10">
           <div className="text-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#0F1822] mb-4 leading-tight tracking-[0.2em] uppercase">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#0F1822] mb-3 leading-tight tracking-[0.2em] uppercase">
               <span className="font-bold">NOSOTROS</span>
             </h2>
-            <div className="w-20 h-px bg-[#8E1927] mx-auto mb-10" />
+            <div className="w-14 h-px bg-[#8E1927] mx-auto mb-7" />
 
-            <p className="font-light text-xl sm:text-2xl md:text-3xl text-[#808184] max-w-5xl mx-auto leading-relaxed">
-              Somos un equipo altamente <span className="font-bold text-[#0F1822] text-[1.1em] sm:text-[1.2em]">comprometido</span> con la comprensión del negocio, la <span className="font-bold text-[#0F1822] text-[1.1em] sm:text-[1.2em]">cultura organizacional</span> y las <span className="font-bold text-[#0F1822] text-[1.1em] sm:text-[1.2em]">necesidades particulares</span> de nuestros clientes.
+            <p className="font-light text-lg sm:text-xl md:text-2xl text-[#808184] max-w-4xl mx-auto leading-relaxed">
+              Somos un equipo altamente <span className="font-bold text-[#0F1822] text-[1.0em] sm:text-[1.1em]">comprometido</span> con la comprensión del negocio, la <span className="font-bold text-[#0F1822] text-[1.0em] sm:text-[1.1em]">cultura organizacional</span> y las <span className="font-bold text-[#0F1822] text-[1.0em] sm:text-[1.1em]">necesidades particulares</span> de nuestros clientes.
             </p>
           </div>
         </div>
@@ -398,44 +398,44 @@ export default function CFLegalPage() {
 
 
       {/* Áreas de Práctica Section */}
-      <section id="areas-de-practica" className="pt-8 sm:pt-12 md:pt-16 lg:pt-20 pb-20 sm:pb-24 md:pb-32 lg:pb-40 bg-white relative overflow-hidden">
+      <section id="areas-de-practica" className="pt-6 sm:pt-8 md:pt-12 lg:pt-14 pb-14 sm:pb-16 md:pb-22 lg:pb-28 bg-white relative overflow-hidden">
 
 
-        <div className="container mx-auto px-5 sm:px-6 max-w-5xl relative z-10">
+        <div className="container mx-auto px-4 max-w-4xl relative z-10">
           {/* Title */}
-          <div className="text-center mb-12 sm:mb-16 md:mb-20">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#0F1822] font-bold mb-4 leading-tight tracking-[0.2em] uppercase">
+          <div className="text-center mb-8 sm:mb-12 md:mb-16">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#0F1822] font-bold mb-3 leading-tight tracking-[0.2em] uppercase">
               ÁREAS DE PRÁCTICA
             </h2>
-            <div className="w-20 h-px bg-[#8E1927] mx-auto mb-10" />
+            <div className="w-14 h-px bg-[#8E1927] mx-auto mb-7" />
 
           </div>
 
           {/* Practice areas list */}
-          <div className="flex flex-col items-center gap-6 sm:gap-8 md:gap-10">
+          <div className="flex flex-col items-center gap-4 sm:gap-6 md:gap-7">
             {practiceAreas.map((area, index) => (
               <div
                 key={index}
-                className="group text-center w-full max-w-2xl"
+                className="group text-center w-full max-w-xl"
               >
                 {/* Icon */}
-                <div className="mb-4 flex justify-center">
-                  <area.icon className="w-8 h-8 sm:w-10 sm:h-10 text-[#8E1927] opacity-60 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110" strokeWidth={1.5} />
+                <div className="mb-3 flex justify-center">
+                  <area.icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#8E1927] opacity-60 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110" strokeWidth={1.5} />
                 </div>
 
                 {/* Area name with bold keyword */}
-                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl text-black font-bold tracking-[0.15em] uppercase transition-colors duration-300">
+                <h3 className="text-sm sm:text-base md:text-lg lg:text-xl text-black font-bold tracking-[0.15em] uppercase transition-colors duration-300">
                   {area.name}
                 </h3>
 
                 {/* Expansion button */}
                 <button
                   onClick={() => toggleBoxExpansion(index)}
-                  className="mt-6 text-[#8E1927] hover:text-[#0F1822] text-xs font-semibold uppercase tracking-widest transition-all flex items-center gap-2 mx-auto"
+                  className="mt-4 text-[#8E1927] hover:text-[#0F1822] text-[10px] sm:text-xs font-semibold uppercase tracking-widest transition-all flex items-center gap-1.5 mx-auto"
                 >
                   {expandedBoxes.has(index) ? "Cerrar" : "Ver más"}
                   <svg 
-                    className={`w-3.5 h-3.5 transition-transform duration-500 ${expandedBoxes.has(index) ? 'rotate-180' : ''}`} 
+                    className={`w-3 h-3 transition-transform duration-500 ${expandedBoxes.has(index) ? 'rotate-180' : ''}`} 
                     fill="none" 
                     stroke="currentColor" 
                     viewBox="0 0 24 24"
@@ -445,12 +445,12 @@ export default function CFLegalPage() {
                 </button>
 
                 {/* Details (Expansion) */}
-                <div className={`overflow-hidden transition-all duration-700 ease-in-out ${expandedBoxes.has(index) ? 'max-h-[500px] opacity-100 mt-6' : 'max-h-0 opacity-0'}`}>
-                  <div className="space-y-4 px-4">
-                    <p className="font-semibold text-sm sm:text-base text-[#0F1822] leading-relaxed">
+                <div className={`overflow-hidden transition-all duration-700 ease-in-out ${expandedBoxes.has(index) ? 'max-h-[500px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
+                  <div className="space-y-3 px-3">
+                    <p className="font-semibold text-xs sm:text-sm text-[#0F1822] leading-relaxed">
                       {area.description}
                     </p>
-                    <p className="font-light text-sm sm:text-base text-[#0F1822]/80 max-w-lg mx-auto leading-relaxed border-t border-[#CDD4D8] pt-4">
+                    <p className="font-light text-xs sm:text-sm text-[#0F1822]/80 max-w-md mx-auto leading-relaxed border-t border-[#CDD4D8] pt-3">
                       {area.details}
                     </p>
                   </div>
@@ -458,7 +458,7 @@ export default function CFLegalPage() {
 
                 {/* Subtle divider between items */}
                 {index < practiceAreas.length - 1 && (
-                  <div className={`w-12 h-px bg-[#CDD4D8] mx-auto transition-all duration-500 ${expandedBoxes.has(index) ? 'mt-8 sm:mt-10' : 'mt-6 sm:mt-8'}`} />
+                  <div className={`w-8 h-px bg-[#CDD4D8] mx-auto transition-all duration-500 ${expandedBoxes.has(index) ? 'mt-6 sm:mt-8' : 'mt-4 sm:mt-6'}`} />
                 )}
               </div>
             ))}
@@ -468,20 +468,20 @@ export default function CFLegalPage() {
 
 
       {/* Equipo Section */}
-      <section id="equipo" className="py-16 sm:py-20 md:py-24 lg:py-28 bg-gradient-to-br from-cf-dark-gray via-cf-blue to-cf-dark-gray relative overflow-hidden">
+      <section id="equipo" className="py-12 sm:py-14 md:py-16 lg:py-20 bg-gradient-to-br from-cf-dark-gray via-cf-blue to-cf-dark-gray relative overflow-hidden">
 
 
-        <div className="container mx-auto px-5 sm:px-6 max-w-7xl relative z-10">
-          <div className="text-center mb-12 sm:mb-16 md:mb-20">
+        <div className="container mx-auto px-4 max-w-5xl relative z-10">
+          <div className="text-center mb-8 sm:mb-12 md:mb-16">
 
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white mb-4 leading-tight tracking-[0.2em] uppercase">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white mb-3 leading-tight tracking-[0.2em] uppercase">
               <span className="font-bold">EQUIPO</span>
             </h2>
-            <div className="w-20 h-px bg-[#8E1927] mx-auto mb-10" />
+            <div className="w-14 h-px bg-[#8E1927] mx-auto mb-7" />
 
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-7 max-w-4xl mx-auto">
             {teamMembers.map((member, idx) => (
               <div
                 key={member.id}
@@ -491,33 +491,33 @@ export default function CFLegalPage() {
                 onClick={() => setSelectedMember(member)}
                 style={{ animationDelay: `${idx * 100}ms` }}
               >
-                <div className="relative rounded-lg p-6 sm:p-8 transition-all duration-500 hover:shadow-2xl hover:shadow-cf-burgundy/20">
+                <div className="relative rounded-lg p-4 sm:p-6 transition-all duration-500 hover:shadow-2xl hover:shadow-cf-burgundy/20">
 
                   <div className="relative">
 
                     <div className="text-center">
-                      <h3 className={`font-bold text-xl sm:text-2xl mb-2 transition-colors duration-300 leading-tight tracking-tight ${hoveredMember === member.id ? "text-cf-burgundy" : "text-white"
+                      <h3 className={`font-bold text-lg sm:text-xl mb-1.5 transition-colors duration-300 leading-tight tracking-tight ${hoveredMember === member.id ? "text-cf-burgundy" : "text-white"
                         }`}>
                         {member.name}
                       </h3>
-                      <p className="font-normal text-sm sm:text-base text-white/70 mb-4">{member.title}</p>
+                      <p className="font-normal text-xs sm:text-sm text-white/70 mb-3">{member.title}</p>
                       
-                      <div className="flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                      <div className="flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300">
                         <a
                           href={`mailto:${member.email}`}
                           onClick={(e) => e.stopPropagation()}
-                          className="p-2 bg-white/10 hover:bg-cf-burgundy rounded-lg transition-colors"
+                          className="p-1.5 bg-white/10 hover:bg-cf-burgundy rounded-md transition-colors"
                         >
-                          <Mail className="w-4 h-4 text-white" />
+                          <Mail className="w-3 h-3 text-white" />
                         </a>
                         <a
                           href={member.linkedin}
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={(e) => e.stopPropagation()}
-                          className="p-2 bg-white/10 hover:bg-cf-burgundy rounded-lg transition-colors"
+                          className="p-1.5 bg-white/10 hover:bg-cf-burgundy rounded-md transition-colors"
                         >
-                          <Linkedin className="w-4 h-4 text-white" />
+                          <Linkedin className="w-3 h-3 text-white" />
                         </a>
                       </div>
                     </div>
@@ -527,8 +527,8 @@ export default function CFLegalPage() {
             ))}
           </div>
 
-          <div className="mt-12 text-center animate-in fade-in duration-1000 slide-in-from-bottom-4">
-            <p className="font-light text-xs sm:text-sm text-white/40 tracking-[0.3em] uppercase">
+          <div className="mt-8 text-center animate-in fade-in duration-1000 slide-in-from-bottom-4">
+            <p className="font-light text-[10px] sm:text-xs text-white/40 tracking-[0.3em] uppercase">
               Toca para ver perfil completo
             </p>
           </div>
@@ -537,32 +537,32 @@ export default function CFLegalPage() {
 
       {/* Team Member Modal */}
       <Dialog open={!!selectedMember} onOpenChange={() => setSelectedMember(null)}>
-        <DialogContent className="max-w-[96vw] sm:max-w-[90vw] md:max-w-2xl lg:max-w-3xl max-h-[85vh] sm:max-h-[90vh] overflow-y-auto bg-white border-0 shadow-lg">
+        <DialogContent className="max-w-[90vw] sm:max-w-[85vw] md:max-w-xl lg:max-w-2xl max-h-[85vh] sm:max-h-[90vh] overflow-y-auto bg-white border-0 shadow-lg p-4 sm:p-6">
           {selectedMember && (
-            <div className="space-y-3 sm:space-y-4 md:space-y-6">
+            <div className="space-y-2 sm:space-y-3 md:space-y-5">
               <DialogHeader>
                 <DialogTitle className="sr-only">{selectedMember.name}</DialogTitle>
               </DialogHeader>
-              <div className="flex flex-col md:flex-row gap-4 sm:gap-5 md:gap-8">
+              <div className="flex flex-col md:flex-row gap-3 sm:gap-4 md:gap-6">
                 <div className="flex-1 min-w-0">
-                  <h3 className="font-bold text-xl sm:text-2xl md:text-3xl text-gray-900 mb-1 sm:mb-1.5 md:mb-2 leading-tight tracking-tight">
+                  <h3 className="font-bold text-lg sm:text-xl md:text-2xl text-gray-900 mb-1 sm:mb-1.5 md:mb-2 leading-tight tracking-tight">
                     {selectedMember.name}
                   </h3>
-                  <p className="font-normal text-sm sm:text-base md:text-lg text-gray-700 mb-3 sm:mb-4 md:mb-6">
+                  <p className="font-normal text-xs sm:text-sm md:text-base text-gray-700 mb-2 sm:mb-3 md:mb-5">
                     {selectedMember.title}
                   </p>
 
-                  <div className="space-y-3 sm:space-y-4 md:space-y-6">
+                  <div className="space-y-2 sm:space-y-3 md:space-y-5">
                     <div>
-                      <h4 className="font-medium text-base sm:text-lg md:text-xl text-gray-900 mb-2 sm:mb-2.5 md:mb-3 flex items-center gap-2 tracking-tight">
-                        <svg className="w-4 h-4 sm:w-5 sm:h-5 text-cf-burgundy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <h4 className="font-medium text-sm sm:text-base md:text-lg text-gray-900 mb-1.5 sm:mb-2 md:mb-2.5 flex items-center gap-1.5 tracking-tight">
+                        <svg className="w-3 h-3 sm:w-4 sm:h-4 text-cf-burgundy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                         </svg>
                         Educación
                       </h4>
-                      <ul className="space-y-1.5 sm:space-y-2">
+                      <ul className="space-y-1 sm:space-y-1.5">
                         {selectedMember.education.map((edu, index) => (
-                          <li key={index} className="font-normal text-[13px] sm:text-sm md:text-base text-gray-700 leading-relaxed pl-2">
+                          <li key={index} className="font-normal text-[11px] sm:text-xs md:text-sm text-gray-700 leading-relaxed pl-1.5">
                             • {edu}
                           </li>
                         ))}
@@ -570,36 +570,36 @@ export default function CFLegalPage() {
                     </div>
 
                     <div>
-                      <h4 className="font-medium text-base sm:text-lg md:text-xl text-gray-900 mb-2 sm:mb-2.5 md:mb-3 flex items-center gap-2 tracking-tight">
-                        <svg className="w-4 h-4 sm:w-5 sm:h-5 text-cf-burgundy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <h4 className="font-medium text-sm sm:text-base md:text-lg text-gray-900 mb-1.5 sm:mb-2 md:mb-2.5 flex items-center gap-1.5 tracking-tight">
+                        <svg className="w-3 h-3 sm:w-4 sm:h-4 text-cf-burgundy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                         Experiencia Profesional
                       </h4>
-                      <ul className="space-y-1.5 sm:space-y-2">
+                      <ul className="space-y-1 sm:space-y-1.5">
                         {selectedMember.experience.map((exp, index) => (
-                          <li key={index} className="font-normal text-[13px] sm:text-sm md:text-base text-gray-700 leading-relaxed pl-2">
+                          <li key={index} className="font-normal text-[11px] sm:text-xs md:text-sm text-gray-700 leading-relaxed pl-1.5">
                             • {exp}
                           </li>
                         ))}
                       </ul>
                     </div>
 
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 pt-3 sm:pt-4 border-t border-cf-light-gray">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 pt-2 sm:pt-3 border-t border-cf-light-gray">
                       <a
                         href={`mailto:${selectedMember.email}`}
-                        className="font-normal text-[13px] sm:text-sm md:text-base text-cf-blue hover:text-cf-burgundy transition-colors duration-200 break-all flex items-center gap-2"
+                        className="font-normal text-[11px] sm:text-xs md:text-sm text-cf-blue hover:text-cf-burgundy transition-colors duration-200 break-all flex items-center gap-1.5"
                       >
-                        <Mail className="w-4 h-4 flex-shrink-0" />
+                        <Mail className="w-3 h-3 flex-shrink-0" />
                         {selectedMember.email}
                       </a>
                       <a
                         href={selectedMember.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-cf-blue hover:text-cf-burgundy transition-colors duration-200 flex items-center gap-2 text-[13px] sm:text-sm"
+                        className="text-cf-blue hover:text-cf-burgundy transition-colors duration-200 flex items-center gap-1.5 text-[11px] sm:text-xs md:text-sm"
                       >
-                        <Linkedin className="w-4 h-4 flex-shrink-0" />
+                        <Linkedin className="w-3 h-3 flex-shrink-0" />
                         LinkedIn
                       </a>
                     </div>
@@ -612,35 +612,35 @@ export default function CFLegalPage() {
       </Dialog>
 
       {/* Contacto Section */}
-      <section id="contacto" className="py-24 sm:py-28 md:py-32 lg:py-36 bg-white relative overflow-hidden">
+      <section id="contacto" className="py-16 sm:py-20 md:py-22 lg:py-26 bg-white relative overflow-hidden">
         {/* Background decoration - More subtle and premium */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-[#CDD4D8]/15 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#808184]/8 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-0 w-64 h-64 bg-[#CDD4D8]/15 rounded-full blur-2xl" />
+        <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#808184]/8 rounded-full blur-2xl" />
 
-        <div className="container mx-auto px-6 sm:px-8 max-w-5xl relative z-10">
-          <div className="text-center mb-12 sm:mb-16 md:mb-20">
+        <div className="container mx-auto px-4 sm:px-6 max-w-4xl relative z-10">
+          <div className="text-center mb-8 sm:mb-12 md:mb-16">
 
             {/* Título principal al estilo de las otras secciones */}
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#0F1822] mb-4 leading-tight tracking-[0.2em] uppercase">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#0F1822] mb-3 leading-tight tracking-[0.2em] uppercase">
               <span className="font-bold">CONTACTO</span>
             </h2>
-            <div className="w-20 h-px bg-[#8E1927] mx-auto mb-10" />
+            <div className="w-14 h-px bg-[#8E1927] mx-auto mb-7" />
 
           </div>
 
-          <div className="flex flex-col md:flex-row justify-center items-center gap-16 md:gap-24 lg:gap-32 max-w-5xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-16 lg:gap-24 max-w-4xl mx-auto">
             {/* Email */}
             <a
               href="mailto:administracion@cflegal.cl"
               className="group flex flex-col items-center text-center transition-all duration-500"
             >
-              <div className="mb-5 flex items-center justify-center transition-transform duration-500 group-hover:-translate-y-1">
-                <Mail className="w-10 h-10 text-[#8E1927]" strokeWidth={1} />
+              <div className="mb-4 flex items-center justify-center transition-transform duration-500 group-hover:-translate-y-1">
+                <Mail className="w-7 h-7 text-[#8E1927]" strokeWidth={1} />
               </div>
-              <h3 className="font-medium text-xl text-[#0F1822] mb-2 group-hover:text-[#8E1927] transition-colors duration-500 tracking-widest uppercase">
+              <h3 className="font-medium text-lg text-[#0F1822] mb-1.5 group-hover:text-[#8E1927] transition-colors duration-500 tracking-widest uppercase">
                 Email
               </h3>
-              <p className="font-raleway font-light text-base text-[#808184] group-hover:text-[#0F1822] transition-colors duration-500">
+              <p className="font-raleway font-light text-sm text-[#808184] group-hover:text-[#0F1822] transition-colors duration-500">
                 administracion@cflegal.cl
               </p>
             </a>
@@ -653,13 +653,13 @@ export default function CFLegalPage() {
               rel="noopener noreferrer"
               className="group flex flex-col items-center text-center transition-all duration-500"
             >
-              <div className="mb-5 flex items-center justify-center transition-transform duration-500 group-hover:-translate-y-1">
-                <Linkedin className="w-10 h-10 text-[#8E1927]" strokeWidth={1} />
+              <div className="mb-4 flex items-center justify-center transition-transform duration-500 group-hover:-translate-y-1">
+                <Linkedin className="w-7 h-7 text-[#8E1927]" strokeWidth={1} />
               </div>
-              <h3 className="font-medium text-xl text-[#0F1822] mb-2 group-hover:text-[#8E1927] transition-colors duration-500 tracking-widest uppercase">
+              <h3 className="font-medium text-lg text-[#0F1822] mb-1.5 group-hover:text-[#8E1927] transition-colors duration-500 tracking-widest uppercase">
                 LinkedIn
               </h3>
-              <p className="font-raleway font-light text-base text-[#808184] group-hover:text-[#0F1822] transition-colors duration-500 flex items-center gap-1.5">
+              <p className="font-raleway font-light text-sm text-[#808184] group-hover:text-[#0F1822] transition-colors duration-500 flex items-center gap-1.5">
                 Síguenos <span className="transform group-hover:translate-x-1 transition-transform inline-block">→</span>
               </p>
             </a>
@@ -668,31 +668,31 @@ export default function CFLegalPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-br from-cf-dark-gray via-cf-blue to-cf-dark-gray border-t border-white/10 py-8 sm:py-10 md:py-12">
-        <div className="container mx-auto px-5 sm:px-6 max-w-7xl">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <footer className="bg-gradient-to-br from-cf-dark-gray via-cf-blue to-cf-dark-gray border-t border-white/10 py-6 sm:py-7 md:py-8">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
             {/* Logo and tagline */}
             <div className="text-center md:text-left">
               <Image
                 src="/cf-legal-logo-horizontal.png"
                 alt="CF Legal"
-                width={500}
-                height={140}
-                className="w-auto h-24 sm:h-28 md:h-32 brightness-0 invert mx-auto md:mx-0 mb-6"
+                width={350}
+                height={98}
+                className="w-auto h-16 sm:h-20 md:h-24 brightness-0 invert mx-auto md:mx-0 mb-4"
               />
             </div>
 
             {/* Quick links */}
             <div className="text-center">
-              <h4 className="font-medium text-white text-base sm:text-lg mb-4 tracking-tight">Enlaces Rápidos</h4>
-              <div className="flex flex-col gap-2">
+              <h4 className="font-medium text-white text-sm sm:text-base mb-3 tracking-tight">Enlaces Rápidos</h4>
+              <div className="flex flex-col gap-1.5">
                 {["Nosotros", "Áreas de Práctica", "Equipo", "Contacto"].map((item) => (
                   <button
                     key={item}
                     onClick={() => scrollToSection(
                       item.toLowerCase().replace(/\s+/g, "-").normalize("NFD").replace(/[\u0300-\u036f]/g, "")
                     )}
-                    className="font-normal text-white/70 hover:text-cf-burgundy text-sm sm:text-base transition-colors"
+                    className="font-normal text-white/70 hover:text-cf-burgundy text-xs sm:text-sm transition-colors"
                   >
                     {item}
                   </button>
@@ -702,28 +702,28 @@ export default function CFLegalPage() {
 
             {/* Social */}
             <div className="text-center md:text-right">
-              <h4 className="font-medium text-white text-base sm:text-lg mb-4 tracking-tight">Síguenos</h4>
-              <div className="flex gap-3 justify-center md:justify-end">
+              <h4 className="font-medium text-white text-sm sm:text-base mb-3 tracking-tight">Síguenos</h4>
+              <div className="flex gap-2 justify-center md:justify-end">
                 <a
                   href="https://linkedin.com/company/cflegal"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-white/10 hover:bg-cf-burgundy rounded-lg transition-all duration-300 hover:scale-110"
+                  className="p-2 bg-white/10 hover:bg-cf-burgundy rounded-lg transition-all duration-300 hover:scale-110"
                 >
-                  <Linkedin className="w-6 h-6 text-white" />
+                  <Linkedin className="w-4 h-4 text-white" />
                 </a>
                 <a
                   href="mailto:administracion@cflegal.cl"
-                  className="p-3 bg-white/10 hover:bg-cf-burgundy rounded-lg transition-all duration-300 hover:scale-110"
+                  className="p-2 bg-white/10 hover:bg-cf-burgundy rounded-lg transition-all duration-300 hover:scale-110"
                 >
-                  <Mail className="w-6 h-6 text-white" />
+                  <Mail className="w-4 h-4 text-white" />
                 </a>
               </div>
             </div>
           </div>
 
-          <div className="border-t border-white/10 pt-6 text-center">
-            <p className="font-normal text-white/50 text-xs sm:text-sm">
+          <div className="border-t border-white/10 pt-4 text-center">
+            <p className="font-normal text-white/50 text-[10px] sm:text-xs">
               © {currentYear} CF Legal. Todos los derechos reservados.
             </p>
           </div>
