@@ -636,7 +636,7 @@ export default function CFLegalPage() {
 
           </div>
 
-          <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-16 lg:gap-24 max-w-4xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-12 md:gap-16 lg:gap-24 max-w-4xl mx-auto">
             {/* Email */}
             <a
               href="mailto:administracion@cflegal.cl"
