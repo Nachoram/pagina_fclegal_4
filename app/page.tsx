@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react"
 import Image from "next/image"
-import { Mail, Linkedin, Home, Briefcase, Menu, X, Building2, Gavel } from "lucide-react"
+import { Mail, Linkedin, Home, Briefcase, Menu, X, Building2, Gavel, MapPin } from "lucide-react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 
 interface TeamMember {
@@ -334,6 +334,14 @@ export default function CFLegalPage() {
                     >
                       <Mail className="w-5 h-5 text-white" />
                     </a>
+                    <a
+                      href="https://www.google.com/maps/search/?api=1&query=Francisco+de+Aguirre+3720+Vitacura"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-3 bg-white/10 hover:bg-cf-burgundy rounded-lg transition-colors"
+                    >
+                      <MapPin className="w-5 h-5 text-white" />
+                    </a>
                   </div>
                 </div>
               </div>
@@ -644,6 +652,25 @@ export default function CFLegalPage() {
                 administracion@cflegal.cl
               </p>
             </a>
+            
+            {/* Address */}
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Francisco+de+Aguirre+3720+Vitacura"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center text-center transition-all duration-500"
+            >
+              <div className="mb-4 flex items-center justify-center transition-transform duration-500 group-hover:-translate-y-1">
+                <MapPin className="w-7 h-7 text-[#8E1927]" strokeWidth={1} />
+              </div>
+              <h3 className="font-medium text-lg text-[#0F1822] mb-1.5 group-hover:text-[#8E1927] transition-colors duration-500 tracking-widest uppercase">
+                Ubicación
+              </h3>
+              <p className="font-raleway font-light text-sm text-[#808184] group-hover:text-[#0F1822] transition-colors duration-500">
+                Francisco de Aguirre 3720, oficina 7<br />
+                Vitacura, Santiago
+              </p>
+            </a>
 
 
             {/* LinkedIn */}
@@ -680,6 +707,10 @@ export default function CFLegalPage() {
                 height={98}
                 className="w-auto h-16 sm:h-20 md:h-24 brightness-0 invert mx-auto md:mx-0 mb-4"
               />
+              <div className="text-white/60 text-xs sm:text-sm font-light leading-relaxed">
+                <p>Francisco de Aguirre 3720, oficina 7</p>
+                <p>Vitacura, Santiago</p>
+              </div>
             </div>
 
             {/* Quick links */}
