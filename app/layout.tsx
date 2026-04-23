@@ -13,7 +13,7 @@ const raleway = Raleway({
 })
 
 export const metadata: Metadata = {
-  title: "CF Legal - Estudio Jurídico",
+  title: "CF Legal",
   description: "Asesoría legal de excelencia para empresas y patrimonios",
   generator: "v0.app",
   manifest: "/manifest.json",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: "CF Legal - Estudio Jurídico",
+    title: "CF Legal",
     description: "Asesoría legal de excelencia para empresas y patrimonios",
     url: "https://cflegal.cl",
     siteName: "CF Legal",

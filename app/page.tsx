@@ -80,26 +80,26 @@ const practiceAreas = [
   {
     name: "Derecho Corporativo",
     icon: Briefcase,
-    description: "Asesoría propia de la operación de empresas.",
-    details: "Gobierno Corporativo, diseño y estandarización de procesos de contratación, gestión integral de contratos: negociación, preparación y cierre."
+    description: "Asesoría en la operación diaria de empresas",
+    details: "Asesoramos en materias de gobierno corporativo, en el diseño y estandarización de procesos de contratación, y en la gestión integral de contratos."
   },
   {
-    name: "Proyectos e Infraestructura",
+    name: "Construcción e Infraestructura",
     icon: Building2,
-    description: "Asesoría durante toda la vida de los proyectos.",
-    details: "Etapas de diseño y estudio, su adjudicación, ejecución y cierre."
+    description: "Asesoría en el estudio, ejecución y cierre de proyectos",
+    details: "Asesoramos durante todo el ciclo de vida de proyectos: desde su fase de diseño y estudio, adjudicación, ejecución y cierre."
   },
   {
     name: "Derecho Inmobiliario",
     icon: Home,
-    description: "Desarrollo de proyectos inmobiliarios.",
-    details: "Asesoría en la negociación, due diligence, escrituración y cierre de proyectos inmobiliarios."
+    description: "Desarrollo de proyectos inmobiliarios",
+    details: "Asesoramos en la negociación de terrenos y conformación de paños, due diligence, reglamentación, escrituración y cierre de proyecto."
   },
   {
-    name: "Juicios y Arbitrajes",
+    name: "Claims, Juicios y Arbitrajes",
     icon: Gavel,
-    description: "Resolución de controversias.",
-    details: "Representación en litigios civiles y comerciales en sede ordinaria y arbitral."
+    description: "Resolución de Controversias",
+    details: "Representamos a nuestros clientes en procesos de claims, en juicios civiles y comerciales, tanto en sede ordinaria y arbitral."
   }
 ]
 const currentYear = new Date().getFullYear();
@@ -329,7 +329,7 @@ export default function CFLegalPage() {
                       <Linkedin className="w-5 h-5 text-white" />
                     </a>
                     <a
-                      href="mailto:administracion@cflegal.cl"
+                      href="mailto:contacto@cflegal.cl"
                       className="p-3 bg-white/10 hover:bg-cf-burgundy rounded-lg transition-colors"
                     >
                       <Mail className="w-5 h-5 text-white" />
@@ -409,7 +409,7 @@ export default function CFLegalPage() {
       <section id="areas-de-practica" className="pt-6 sm:pt-8 md:pt-12 lg:pt-14 pb-14 sm:pb-16 md:pb-22 lg:pb-28 bg-white relative overflow-hidden">
 
 
-        <div className="container mx-auto px-4 max-w-4xl relative z-10">
+        <div className="container mx-auto px-4 max-w-6xl relative z-10">
           {/* Title */}
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#0F1822] font-bold mb-3 leading-tight tracking-[0.2em] uppercase">
@@ -420,11 +420,11 @@ export default function CFLegalPage() {
           </div>
 
           {/* Practice areas list */}
-          <div className="flex flex-col items-center gap-4 sm:gap-6 md:gap-7">
+          <div className="flex flex-col items-center gap-4 sm:gap-6 md:grid md:grid-cols-4 md:items-start md:gap-0">
             {practiceAreas.map((area, index) => (
               <div
                 key={index}
-                className="group text-center w-full max-w-xl"
+                className={`group text-center w-full max-w-xl md:max-w-none md:px-6 ${index < practiceAreas.length - 1 ? 'md:border-r md:border-[#CDD4D8]' : ''}`}
               >
                 {/* Icon */}
                 <div className="mb-3 flex justify-center">
@@ -432,7 +432,7 @@ export default function CFLegalPage() {
                 </div>
 
                 {/* Area name with bold keyword */}
-                <h3 className="text-sm sm:text-base md:text-lg lg:text-xl text-black font-bold tracking-[0.15em] uppercase transition-colors duration-300">
+                <h3 className="text-sm sm:text-base md:text-base lg:text-lg text-black font-bold tracking-[0.15em] uppercase transition-colors duration-300">
                   {area.name}
                 </h3>
 
@@ -442,10 +442,10 @@ export default function CFLegalPage() {
                   className="mt-4 text-[#8E1927] hover:text-[#0F1822] text-[10px] sm:text-xs font-semibold uppercase tracking-widest transition-all flex items-center gap-1.5 mx-auto"
                 >
                   {expandedBoxes.has(index) ? "Cerrar" : "Ver más"}
-                  <svg 
-                    className={`w-3 h-3 transition-transform duration-500 ${expandedBoxes.has(index) ? 'rotate-180' : ''}`} 
-                    fill="none" 
-                    stroke="currentColor" 
+                  <svg
+                    className={`w-3 h-3 transition-transform duration-500 ${expandedBoxes.has(index) ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
                     viewBox="0 0 24 24"
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
@@ -458,15 +458,15 @@ export default function CFLegalPage() {
                     <p className="font-semibold text-xs sm:text-sm text-[#0F1822] leading-relaxed">
                       {area.description}
                     </p>
-                    <p className="font-light text-xs sm:text-sm text-[#0F1822]/80 max-w-md mx-auto leading-relaxed border-t border-[#CDD4D8] pt-3">
+                    <p className="font-light text-xs sm:text-sm text-[#0F1822]/80 leading-relaxed border-t border-[#CDD4D8] pt-3">
                       {area.details}
                     </p>
                   </div>
                 </div>
 
-                {/* Subtle divider between items */}
+                {/* Subtle divider between items - only on mobile */}
                 {index < practiceAreas.length - 1 && (
-                  <div className={`w-8 h-px bg-[#CDD4D8] mx-auto transition-all duration-500 ${expandedBoxes.has(index) ? 'mt-6 sm:mt-8' : 'mt-4 sm:mt-6'}`} />
+                  <div className={`md:hidden w-8 h-px bg-[#CDD4D8] mx-auto transition-all duration-500 ${expandedBoxes.has(index) ? 'mt-6 sm:mt-8' : 'mt-4 sm:mt-6'}`} />
                 )}
               </div>
             ))}
@@ -636,11 +636,11 @@ export default function CFLegalPage() {
 
           </div>
 
-          <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-12 md:gap-16 lg:gap-24 max-w-4xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-16 lg:gap-24 w-full">
             {/* Email */}
             <a
-              href="mailto:administracion@cflegal.cl"
-              className="group flex flex-col items-center text-center transition-all duration-500"
+              href="mailto:contacto@cflegal.cl"
+              className="group flex flex-col items-center text-center transition-all duration-500 md:flex-1"
             >
               <div className="mb-4 flex items-center justify-center transition-transform duration-500 group-hover:-translate-y-1">
                 <Mail className="w-7 h-7 text-[#8E1927]" strokeWidth={1} />
@@ -649,7 +649,7 @@ export default function CFLegalPage() {
                 Email
               </h3>
               <p className="font-raleway font-light text-sm text-[#808184] group-hover:text-[#0F1822] transition-colors duration-500">
-                administracion@cflegal.cl
+                contacto@cflegal.cl
               </p>
             </a>
             
@@ -658,7 +658,7 @@ export default function CFLegalPage() {
               href="https://www.google.com/maps/search/?api=1&query=Francisco+de+Aguirre+3720+Vitacura"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col items-center text-center transition-all duration-500"
+              className="group flex flex-col items-center text-center transition-all duration-500 md:flex-1"
             >
               <div className="mb-4 flex items-center justify-center transition-transform duration-500 group-hover:-translate-y-1">
                 <MapPin className="w-7 h-7 text-[#8E1927]" strokeWidth={1} />
@@ -678,7 +678,7 @@ export default function CFLegalPage() {
               href="https://linkedin.com/company/cflegal"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col items-center text-center transition-all duration-500"
+              className="group flex flex-col items-center text-center transition-all duration-500 md:flex-1"
             >
               <div className="mb-4 flex items-center justify-center transition-transform duration-500 group-hover:-translate-y-1">
                 <Linkedin className="w-7 h-7 text-[#8E1927]" strokeWidth={1} />
@@ -744,7 +744,7 @@ export default function CFLegalPage() {
                   <Linkedin className="w-4 h-4 text-white" />
                 </a>
                 <a
-                  href="mailto:administracion@cflegal.cl"
+                  href="mailto:contacto@cflegal.cl"
                   className="p-2 bg-white/10 hover:bg-cf-burgundy rounded-lg transition-all duration-300 hover:scale-110"
                 >
                   <Mail className="w-4 h-4 text-white" />
