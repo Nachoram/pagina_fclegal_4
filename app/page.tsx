@@ -93,7 +93,7 @@ const practiceAreas = [
     name: "Derecho Inmobiliario",
     icon: Home,
     description: "Desarrollo de proyectos inmobiliarios",
-    details: "Asesoramos en la negociación de terrenos y conformación de paños, due diligence, reglamentación, escrituración y cierre de proyecto."
+    details: "Asesoramos en la negociación de terrenos y conformación de paños, due diligence, reglamentación, escrituración y cierre de proyectos."
   },
   {
     name: "Claims, Juicios y Arbitrajes",
@@ -420,7 +420,7 @@ export default function CFLegalPage() {
           </div>
 
           {/* Practice areas list */}
-          <div className="flex flex-col items-center gap-4 sm:gap-6 md:grid md:grid-cols-4 md:items-start md:gap-0">
+          <div className="flex flex-col items-center gap-4 sm:gap-6 md:grid md:grid-cols-4 md:items-start md:gap-8">
             {practiceAreas.map((area, index) => (
               <div
                 key={index}
