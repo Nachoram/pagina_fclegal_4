@@ -625,7 +625,7 @@ export default function CFLegalPage() {
         <div className="absolute top-0 left-0 w-64 h-64 bg-[#CDD4D8]/15 rounded-full blur-2xl" />
         <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#808184]/8 rounded-full blur-2xl" />
 
-        <div className="container mx-auto px-4 sm:px-6 max-w-4xl relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 max-w-5xl relative z-10">
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
 
             {/* Título principal al estilo de las otras secciones */}
@@ -636,11 +636,11 @@ export default function CFLegalPage() {
 
           </div>
 
-          <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-16 lg:gap-24 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 place-items-center w-full">
             {/* Email */}
             <a
               href="mailto:contacto@cflegal.cl"
-              className="group flex flex-col items-center text-center transition-all duration-500 md:flex-1"
+              className="group flex flex-col items-center text-center transition-all duration-500 "
             >
               <div className="mb-4 flex items-center justify-center transition-transform duration-500 group-hover:-translate-y-1">
                 <Mail className="w-7 h-7 text-[#8E1927]" strokeWidth={1} />
@@ -658,7 +658,7 @@ export default function CFLegalPage() {
               href="https://www.google.com/maps/search/?api=1&query=Francisco+de+Aguirre+3720+Vitacura"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col items-center text-center transition-all duration-500 md:flex-1"
+              className="group flex flex-col items-center text-center transition-all duration-500 "
             >
               <div className="mb-4 flex items-center justify-center transition-transform duration-500 group-hover:-translate-y-1">
                 <MapPin className="w-7 h-7 text-[#8E1927]" strokeWidth={1} />
@@ -667,8 +667,8 @@ export default function CFLegalPage() {
                 Ubicación
               </h3>
               <p className="font-raleway font-light text-sm text-[#808184] group-hover:text-[#0F1822] transition-colors duration-500">
-                Francisco de Aguirre 3720, oficina 7<br />
-                Vitacura, Santiago
+                Francisco de Aguirre 3720<br />
+                Oficina 7, Vitacura, Santiago
               </p>
             </a>
 
@@ -678,7 +678,7 @@ export default function CFLegalPage() {
               href="https://linkedin.com/company/cflegal"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col items-center text-center transition-all duration-500 md:flex-1"
+              className="group flex flex-col items-center text-center transition-all duration-500 "
             >
               <div className="mb-4 flex items-center justify-center transition-transform duration-500 group-hover:-translate-y-1">
                 <Linkedin className="w-7 h-7 text-[#8E1927]" strokeWidth={1} />
