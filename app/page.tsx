@@ -420,11 +420,11 @@ export default function CFLegalPage() {
           </div>
 
           {/* Practice areas list */}
-          <div className="flex flex-col items-center gap-4 sm:gap-6 md:grid md:grid-cols-4 md:items-start md:gap-8">
+          <div className="flex flex-col items-center gap-4 sm:gap-6 md:grid md:grid-cols-4 md:items-start md:gap-0">
             {practiceAreas.map((area, index) => (
               <div
                 key={index}
-                className={`group text-center w-full max-w-xl md:max-w-none md:px-6 ${index < practiceAreas.length - 1 ? 'md:border-r md:border-[#CDD4D8]' : ''}`}
+                className={`group text-center flex flex-col items-center w-full max-w-xl md:max-w-none md:px-8 ${index < practiceAreas.length - 1 ? 'md:border-r md:border-[#CDD4D8]' : ''}`}
               >
                 {/* Icon */}
                 <div className="mb-3 flex justify-center">
@@ -636,7 +636,7 @@ export default function CFLegalPage() {
 
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 place-items-center w-full">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 items-start justify-items-center w-full">
             {/* Email */}
             <a
               href="mailto:contacto@cflegal.cl"
