@@ -25,7 +25,7 @@ const teamMembers: TeamMember[] = [
     photo: "/default-avatar.svg",
     photoColor: "/default-avatar.svg",
     education: [
-      "Abogado, Universidad Diego Portales (2007 - 2013)",
+      "Abogado, Universidad Diego Portales",
       "MBA, Pontificia Universidad Católica de Chile (2020 - 2022)",
       "Intercambio Académico, Tilburg University (2011 - 2012)",
     ],
@@ -45,8 +45,7 @@ const teamMembers: TeamMember[] = [
     photo: "/default-avatar.svg",
     photoColor: "/default-avatar.svg",
     education: [
-      "Licenciado en Ciencias Sociales, Pontificia Universidad Católica de Chile (2012 - 2016)",
-      "Licenciado en Derecho, Pontificia Universidad Católica de Chile",
+      "Abogado, Pontificia Universidad Católica de Chile",
     ],
     experience: [
       "Abogado, CF Legal (2025 - Presente)",
@@ -63,7 +62,7 @@ const teamMembers: TeamMember[] = [
     photo: "/default-avatar.svg",
     photoColor: "/default-avatar.svg",
     education: [
-      "Licenciado en Ciencias Jurídicas y Sociales, Universidad del Desarrollo (2014)",
+      "Abogado, Universidad del Desarrollo",
       "Curso Regulación de la Industria Acuícola y Medioambiente, Universidad del Desarrollo (2024)",
       "Curso Contabilidad para Abogados, Universidad del Desarrollo (2018)",
     ],
@@ -123,12 +122,12 @@ export default function CFLegalPage() {
     // Fade out
     const fadeTimer = setTimeout(() => {
       setLogoFading(true)
-    }, 3000)
+    }, 2500)
 
     // Hide completely
     const hideTimer = setTimeout(() => {
       setShowLogo(false)
-    }, 4500)
+    }, 9500)
 
     const handleScroll = () => {
       setScrolled(window.scrollY > 100)
@@ -190,14 +189,18 @@ export default function CFLegalPage() {
     <div className="min-h-screen bg-white font-sans">
       {/* Loader de entrada con prioridad para pre-carga del contenido */}
       {showLogo && (
-        <div className={`fixed inset-0 z-[100] flex items-center justify-center bg-[#CDD4D8] transition-opacity duration-1000 ease-in-out ${logoFading ? 'opacity-0' : 'opacity-100'}`}>
+        <div
+          className={`fixed inset-0 z-[100] flex items-center justify-center bg-[#CDD4D8] ${logoFading ? 'opacity-0' : 'opacity-100'}`}
+          style={{ transition: 'opacity 3500ms ease-in-out' }}
+        >
           <div className="px-6 sm:px-8">
             <Image
               src="/cf-legal-logo-horizontal.png"
               alt="CF Legal"
               width={400}
               height={120}
-              className={`w-auto h-[240px] xs:h-[300px] sm:h-[360px] md:h-[440px] lg:h-[560px] max-w-[95vw] ${logoFading ? 'opacity-0 scale-90' : logoVisible ? 'animate-logo-entrance' : 'opacity-0 scale-95'}`}
+              className={`w-auto h-[240px] xs:h-[300px] sm:h-[360px] md:h-[440px] lg:h-[560px] max-w-[95vw] ${logoFading ? 'opacity-0' : logoVisible ? 'animate-logo-entrance' : 'opacity-0'}`}
+              style={{ transition: 'opacity 3500ms ease-in-out' }}
               priority
             />
           </div>
