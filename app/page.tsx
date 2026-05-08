@@ -353,7 +353,7 @@ export default function CFLegalPage() {
         )}
       </header>
 
-      <section className="relative h-[75vh] min-h-[600px] md:h-[85vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[75vh] min-h-[600px] md:h-[85vh] flex items-center justify-center overflow-hidden bg-[#042A3D]">
         <div className="absolute inset-0 z-0">
           <Image
             src="/hola (5).svg"
