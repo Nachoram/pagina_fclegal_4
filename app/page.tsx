@@ -190,7 +190,7 @@ export default function CFLegalPage() {
       {/* Loader de entrada con prioridad para pre-carga del contenido */}
       {showLogo && (
         <div
-          className={`fixed inset-0 z-[100] flex items-center justify-center bg-[#CDD4D8] ${logoFading ? 'opacity-0' : 'opacity-100'}`}
+          className={`fixed inset-0 z-[100] flex items-center justify-center bg-[#042A3D] ${logoFading ? 'opacity-0' : 'opacity-100'}`}
           style={{ transition: 'opacity 3500ms ease-in-out' }}
         >
           <div className="px-6 sm:px-8">
@@ -199,7 +199,7 @@ export default function CFLegalPage() {
               alt="CF Legal"
               width={400}
               height={120}
-              className={`w-auto h-[240px] xs:h-[300px] sm:h-[360px] md:h-[440px] lg:h-[560px] max-w-[95vw] ${logoFading ? 'opacity-0' : logoVisible ? 'animate-logo-entrance' : 'opacity-0'}`}
+              className={`w-auto h-[240px] xs:h-[300px] sm:h-[360px] md:h-[440px] lg:h-[560px] max-w-[95vw] brightness-0 invert ${logoFading ? 'opacity-0' : logoVisible ? 'animate-logo-entrance' : 'opacity-0'}`}
               style={{ transition: 'opacity 3500ms ease-in-out' }}
               priority
             />
@@ -364,7 +364,7 @@ export default function CFLegalPage() {
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-br from-cf-dark-gray/80 via-cf-blue/70" />
-          <div className={`absolute inset-0 bg-[#CDD4D8] transition-opacity duration-[6000ms] ease-in-out ${logoFading ? 'opacity-0' : 'opacity-100'}`} />
+          <div className={`absolute inset-0 bg-[#042A3D] transition-opacity duration-[6000ms] ease-in-out ${logoFading ? 'opacity-0' : 'opacity-100'}`} />
         </div>
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 sm:px-8 w-full max-w-4xl mx-auto">
           <div className={`mb-8 md:mb-10 transition-all duration-[1200ms] ease-out ${!logoFading ? 'opacity-0 translate-y-8' : 'opacity-100 translate-y-0'}`}>
