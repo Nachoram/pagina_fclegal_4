@@ -270,30 +270,12 @@ body {
   }
 }
 
-/* High-quality logo rendering optimizations */
+/* High-quality logo rendering: smooth interpolation for scaled line-art.
+   NOTE: crisp-edges / nearest-neighbor are intentionally NOT used here — they
+   disable anti-aliasing and make downscaled thin-line logos look jagged. */
 .logo-quality-enhance {
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: crisp-edges;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
+  image-rendering: auto;
+  image-rendering: high-quality;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-/* Force high DPI rendering */
-@media (-webkit-min-device-pixel-ratio: 2),
-(min-resolution: 192dpi) {
-  img {
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-  }
-}
-
-/* Specific optimization for PNG logos */
-img[src$=".png"] {
-  image-rendering: -webkit-optimize-contrast;
-  -ms-interpolation-mode: nearest-neighbor;
 }

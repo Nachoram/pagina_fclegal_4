@@ -195,13 +195,13 @@ export default function CFLegalPage() {
         >
           <div className="px-6 sm:px-8">
             <Image
-              src="/cf-legal-slash-logo.png"
+              src="/cf-legal-slash-tight.png"
               alt="CF Legal"
-              width={1400}
-              height={1400}
+              width={3885}
+              height={561}
               quality={100}
-              sizes="(max-width: 640px) 95vw, 1120px"
-              className={`w-auto h-[240px] xs:h-[300px] sm:h-[360px] md:h-[440px] lg:h-[560px] max-w-[95vw] ${logoFading ? 'opacity-0' : logoVisible ? 'animate-logo-entrance' : 'opacity-0'}`}
+              sizes="(max-width: 640px) 90vw, 760px"
+              className={`w-auto h-[30px] xs:h-[37px] sm:h-[45px] md:h-[55px] lg:h-[70px] max-w-[90vw] logo-quality-enhance ${logoFading ? 'opacity-0' : logoVisible ? 'animate-logo-entrance' : 'opacity-0'}`}
               style={{ transition: 'opacity 3500ms ease-in-out' }}
               priority
             />
@@ -373,15 +373,14 @@ export default function CFLegalPage() {
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 sm:px-8 w-full max-w-4xl mx-auto">
           <div className={`mb-8 md:mb-10 transition-all duration-[1200ms] ease-out ${!logoFading ? 'opacity-0 translate-y-8' : 'opacity-100 translate-y-0'}`}>
             <Image
-              src="/cf-legal-slash-logo.png"
+              src="/cf-legal-slash-tight.png"
               alt="CF Legal"
-              width={1400}
-              height={1400}
-              sizes="(max-width: 640px) 600px, (max-width: 768px) 720px, (max-width: 1024px) 960px, (max-width: 1280px) 1120px, 1280px"
-              className="w-auto h-[280px] sm:h-[350px] md:h-[480px] lg:h-[560px] xl:h-[640px] max-w-[600px] sm:max-w-[720px] md:max-w-[960px] lg:max-w-[1120px] xl:max-w-[1280px] mx-auto logo-quality-enhance"
+              width={3885}
+              height={561}
+              sizes="(max-width: 640px) 280px, (max-width: 768px) 360px, (max-width: 1024px) 480px, (max-width: 1280px) 560px, 640px"
+              className="w-auto h-[36px] sm:h-[44px] md:h-[60px] lg:h-[70px] xl:h-[80px] mx-auto logo-quality-enhance"
               style={{
                 filter: 'drop-shadow(0 4px 18px rgba(0, 0, 0, 0.4)) contrast(1.05) brightness(1.02)',
-                transform: 'translateZ(0)',
               }}
               quality={100}
               priority
