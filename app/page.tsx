@@ -190,15 +190,17 @@ export default function CFLegalPage() {
       {/* Loader de entrada con prioridad para pre-carga del contenido */}
       {showLogo && (
         <div
-          className={`fixed inset-0 z-[100] flex items-center justify-center bg-[#CDD4D8] ${logoFading ? 'opacity-0' : 'opacity-100'}`}
+          className={`fixed inset-0 z-[100] flex items-center justify-center bg-[#042A3D] ${logoFading ? 'opacity-0' : 'opacity-100'}`}
           style={{ transition: 'opacity 3500ms ease-in-out' }}
         >
           <div className="px-6 sm:px-8">
             <Image
-              src="/cf-legal-logo-horizontal.png"
+              src="/cf-legal-slash-logo.png"
               alt="CF Legal"
-              width={400}
-              height={120}
+              width={1400}
+              height={1400}
+              quality={100}
+              sizes="(max-width: 640px) 95vw, 1120px"
               className={`w-auto h-[240px] xs:h-[300px] sm:h-[360px] md:h-[440px] lg:h-[560px] max-w-[95vw] ${logoFading ? 'opacity-0' : logoVisible ? 'animate-logo-entrance' : 'opacity-0'}`}
               style={{ transition: 'opacity 3500ms ease-in-out' }}
               priority
