@@ -214,15 +214,15 @@ export default function CFLegalPage() {
           }`}
       >
         <div className="w-full md:w-[95%] mx-auto px-4 sm:px-6 md:px-4 flex items-start justify-between max-w-[100vw] h-[64px] sm:h-[80px] md:h-[96px]">
-          <div className="flex items-center min-w-0 flex-shrink">
+          <div className="flex items-center min-w-0 flex-shrink self-center">
             <Image
-              src="/cf-legal-logo-horizontal.png"
+              src="/cf-legal-horizontal-tight.png"
               alt="CF Legal"
-              width={600}
-              height={600}
+              width={6460}
+              height={899}
               quality={100}
-              sizes="288px"
-              className={`h-[96px] sm:h-[120px] md:h-[144px] w-auto block origin-left transition-all duration-500 -mt-2 sm:-mt-4 md:-mt-6 ${scrolled ? "scale-100 opacity-100" : "scale-0 opacity-0"
+              sizes="280px"
+              className={`h-[12px] sm:h-[15px] md:h-[18px] w-auto block origin-left transition-all duration-500 logo-quality-enhance ${scrolled ? "scale-100 opacity-100" : "scale-0 opacity-0"
                 }`}
               priority
             />
