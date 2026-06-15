@@ -201,7 +201,7 @@ export default function CFLegalPage() {
               height={561}
               quality={100}
               sizes="(max-width: 640px) 90vw, 760px"
-              className={`w-auto h-[30px] xs:h-[37px] sm:h-[45px] md:h-[55px] lg:h-[70px] max-w-[90vw] logo-quality-enhance ${logoFading ? 'opacity-0' : logoVisible ? 'animate-logo-entrance' : 'opacity-0'}`}
+              className={`w-auto h-[36px] sm:h-[44px] md:h-[60px] lg:h-[70px] xl:h-[80px] max-w-[90vw] logo-quality-enhance ${logoFading ? 'opacity-0' : logoVisible ? 'animate-logo-entrance' : 'opacity-0'}`}
               style={{ transition: 'opacity 3500ms ease-in-out' }}
               priority
             />
