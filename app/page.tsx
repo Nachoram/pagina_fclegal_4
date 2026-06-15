@@ -709,11 +709,13 @@ export default function CFLegalPage() {
             {/* Logo and tagline */}
             <div className="text-center md:text-left">
               <Image
-                src="/cf-legal-logo-horizontal.png"
+                src="/cf-legal-slash-logo.png"
                 alt="CF Legal"
-                width={350}
-                height={98}
-                className="w-auto h-16 sm:h-20 md:h-24 brightness-0 invert mx-auto md:mx-0 mb-4"
+                width={500}
+                height={500}
+                quality={100}
+                sizes="(max-width: 768px) 96px, 96px"
+                className="w-auto h-16 sm:h-20 md:h-24 mx-auto md:mx-0 mb-4"
               />
               <div className="text-white/60 text-xs sm:text-sm font-light leading-relaxed">
                 <p>Francisco de Aguirre 3720, oficina 7</p>
