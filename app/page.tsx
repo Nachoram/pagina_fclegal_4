@@ -355,7 +355,7 @@ export default function CFLegalPage() {
         )}
       </header>
 
-      <section className="relative h-[75vh] min-h-[600px] md:h-[85vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[75vh] min-h-[600px] md:h-[85vh] flex items-center justify-center overflow-hidden bg-[#042A3D]">
         <div className="absolute inset-0 z-0">
           <Image
             src="/hola (5).svg"
@@ -366,7 +366,7 @@ export default function CFLegalPage() {
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-br from-cf-dark-gray/80 via-cf-blue/70" />
-          <div className={`absolute inset-0 bg-[#CDD4D8] transition-opacity duration-[6000ms] ease-in-out ${logoFading ? 'opacity-0' : 'opacity-100'}`} />
+          <div className={`absolute inset-0 bg-[#042A3D] transition-opacity duration-[6000ms] ease-in-out ${logoFading ? 'opacity-0' : 'opacity-100'}`} />
         </div>
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 sm:px-8 w-full max-w-4xl mx-auto">
           <div className={`mb-8 md:mb-10 transition-all duration-[1200ms] ease-out ${!logoFading ? 'opacity-0 translate-y-8' : 'opacity-100 translate-y-0'}`}>
