@@ -190,21 +190,24 @@ export default function CFLegalPage() {
       {/* Loader de entrada con prioridad para pre-carga del contenido */}
       {showLogo && (
         <div
-          className={`fixed inset-0 z-[100] flex items-center justify-center bg-[#042A3D] ${logoFading ? 'opacity-0' : 'opacity-100'}`}
+          className={`fixed inset-0 z-[100] bg-[#042A3D] ${logoFading ? 'opacity-0' : 'opacity-100'}`}
           style={{ transition: 'opacity 3500ms ease-in-out' }}
         >
-          <div className="px-6 sm:px-8">
-            <Image
-              src="/cf-legal-slash-tight.png"
-              alt="CF Legal"
-              width={3885}
-              height={561}
-              quality={100}
-              sizes="(max-width: 640px) 90vw, 760px"
-              className={`w-auto h-[36px] sm:h-[44px] md:h-[60px] lg:h-[70px] xl:h-[80px] max-w-[90vw] logo-quality-enhance ${logoFading ? 'opacity-0' : logoVisible ? 'animate-logo-entrance' : 'opacity-0'}`}
-              style={{ transition: 'opacity 3500ms ease-in-out' }}
-              priority
-            />
+          {/* Mirrors the hero section layout so the logo sits at the same height as la portada */}
+          <div className="h-[75vh] min-h-[600px] md:h-[85vh] flex items-center justify-center px-6 sm:px-8">
+            <div className="mb-8 md:mb-10">
+              <Image
+                src="/cf-legal-slash-tight.png"
+                alt="CF Legal"
+                width={3885}
+                height={561}
+                quality={100}
+                sizes="(max-width: 640px) 90vw, 760px"
+                className={`w-auto h-[36px] sm:h-[44px] md:h-[60px] lg:h-[70px] xl:h-[80px] max-w-[90vw] logo-quality-enhance ${logoFading ? 'opacity-0' : logoVisible ? 'animate-logo-entrance' : 'opacity-0'}`}
+                style={{ transition: 'opacity 3500ms ease-in-out' }}
+                priority
+              />
+            </div>
           </div>
         </div>
       )}
