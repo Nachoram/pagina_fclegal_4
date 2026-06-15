@@ -218,8 +218,10 @@ export default function CFLegalPage() {
             <Image
               src="/cf-legal-logo-horizontal.png"
               alt="CF Legal"
-              width={518}
-              height={144}
+              width={600}
+              height={600}
+              quality={100}
+              sizes="288px"
               className={`h-[96px] sm:h-[120px] md:h-[144px] w-auto block origin-left transition-all duration-500 -mt-2 sm:-mt-4 md:-mt-6 ${scrolled ? "scale-100 opacity-100" : "scale-0 opacity-0"
                 }`}
               priority
@@ -373,15 +375,15 @@ export default function CFLegalPage() {
             <Image
               src="/cf-legal-slash-logo.png"
               alt="CF Legal"
-              width={800}
-              height={1200}
+              width={1400}
+              height={1400}
               sizes="(max-width: 640px) 600px, (max-width: 768px) 720px, (max-width: 1024px) 960px, (max-width: 1280px) 1120px, 1280px"
               className="w-auto h-[280px] sm:h-[350px] md:h-[480px] lg:h-[560px] xl:h-[640px] max-w-[600px] sm:max-w-[720px] md:max-w-[960px] lg:max-w-[1120px] xl:max-w-[1280px] mx-auto logo-quality-enhance"
               style={{
                 filter: 'drop-shadow(0 4px 18px rgba(0, 0, 0, 0.4)) contrast(1.05) brightness(1.02)',
                 transform: 'translateZ(0)',
               }}
-              quality={80}
+              quality={100}
               priority
             />
           </div>
