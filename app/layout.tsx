@@ -28,10 +28,10 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: "CF Legal",
-    description: "Asesoría legal de excelencia para empresas y patrimonios",
+    title: "Estudio de abogados",
+    description: "",
     url: "https://cflegal.cl",
-    siteName: "CF Legal",
+    siteName: "Estudio de abogados",
     locale: "es_CL",
     type: "website",
   },
